@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>pvr test</title>
+<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8">
+
+<link  rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="dialog.css">
+<link   rel="stylesheet" href="../libs/mtvui/base.css" />
+<script type="text/javascript" src="../libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+<script type="text/javascript" src="./js/recording.js"></script>
+<script type="text/javascript">
+ //<![CDATA[
+ $(document).on('keydown', function (evt){
+     var key = evt.which || evt.keyCode;
+     var sys_item = get_sys_page_by_key(key);
+     if (sys_item) {
+         /* not self page */
+         if (sys_item.id != "sys_program_recording") {
+             window.location = "../" + sys_item.url;
+             return;
+         }
+     }
+     var key = evt.which || evt.keyCode;
+     handleKeyCode(key);
+     return true;
+ });
+ window.onload = function() {
+
+		$('#dialog_notification_1line_recording').show();
+		 	var recording= false;
+ 			if(recording == false){startPvr();}
+ };
+ function nameselect(snam) {
+     if (!snam) return;
+     for (var i=0; i<opts.length; i++) {
+         var check = opts[i].getAttribute('name');
+         if (check==snam) {
+             itemSelect(i);
+             setDescr();
+             break;
+         }
+     }
+ }
+function handleKeyCode(kc) {
+	// var recording= false;
+	// console.log('handleKeyCode');
+	// if (kc==KeyEvent.DOM_VK_RETURN) {
+	 	// console.log('handleKeyCode,kc==KeyEvent.DOM_VK_RETURN');
+     //if(recording == false){
+		//		startPvr();
+		// }
+   //  return true;
+   //}
+   if (kc==KeyEvent.DOM_VK_STOP) {
+     if ($('#dialog_button_confirm').css("display") == "none"){
+       	$('#dialog_button_confirm').show();
+       	$('#dialog_button_confirm_no').focus();
+     }
+     return true;
+   }if (kc==KeyEvent.DOM_VK_BACK_SPACE) {
+     if ($('#dialog_button_confirm').css("display") != "none"){
+       	$('#dialog_button_confirm').hide();
+     }
+     if ($('#dialog_notification_1line_recording').css("display") != "none"){
+       	$('#dialog_notification_1line_recording').hide();
+     }
+       return true;
+   } else if (kc==KeyEvent.DOM_VK_LEFT) {
+     if ($('#dialog_button_confirm').css("display") != "none"){
+     if( (focus_id)== "dialog_button_confirm_yes")
+     			$('#dialog_button_confirm_no').focus();
+     		else
+     			$('#dialog_button_confirm_yes').focus();
+     }
+     return true;
+   } else if (kc==KeyEvent.DOM_VK_RIGHT) {
+     if ($('#dialog_button_confirm').css("display") != "none"){
+     		if( (focus_id)== "dialog_button_confirm_yes")
+     			$('#dialog_button_confirm_no').focus();
+     		else
+     			$('#dialog_button_confirm_yes').focus();
+     }
+    return true;
+   }else if (kc==KeyEvent.DOM_VK_RETURN) {
+   if ($('#dialog_button_confirm').css("display") != "none"){
+   		if( (focus_id)== "dialog_button_confirm_yes"){
+   			stopPvr();
+   		$('#dialog_button_confirm').style.display = "none";
+   		}
+   		else {
+   			$('#dialog_button_confirm').style.display = "none";
+   		}
+   }
+  return true;
+ }
+   return false;
+ }
+ function setDescr() {
+     /* document.getElementById('descr').innerHTML = opts[selected].getAttribute('descr'); */
+ }
+ function closeApp() {
+     try {
+         var app = document.getElementById('appmgr').getOwnerApplication(document);
+         app.destroyApplication();
+         return;
+     } catch (e) {
+         alert('Cannot destroy application');
+     }
+ }
+ //]]>
+</script>
+</head>
+
+<body>
+<div id="dialog_notification_1line_recording"  style=" display:block;" >
+	<span id="dialog_notification_1line_recording" class="dialog_notification_1line" style="z-index:1;left:0px;position:absolute; ">
+		<div class="dialog_top_left" style="left:149px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:180px;top:0px;width:920px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:1100px;top:0px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:149px;top:32px; height:58px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:180px;top:32px;width:920px;height:58px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:1100px;top:32px;height:58px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:149px;top:90px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:180px;top:90px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:1100px;top:90px;position:inherit;"></div>
+		<div id="notification_content" style ="float:left;position:inherit;"></div>
+		<div  id="notification_content_icon" style="left:187px;top:38px;position:inherit;" ><img src="res/pvr/Notification_icon_warning.png"/></div>
+		<div  id="notification_content_text" style="left:232px;top:50px;width:500px;text-align:left;margin-left:16px;color:rgb(211,212,213);position:inherit;">recording is starting </div>
+	</span>
+</div>
+<div id="recording_start_icon">
+	<span  id="recording_start_icon" style="z-index:100; display:hide;float:right;left:1132px;margin-top:20px;margin-right:20px;width:128px;height:128px; position:absolute;display:none;">
+		<div class="dialog_top_left" style="left:0px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:32px;heigth:32px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:64px;top:0px; position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:32px; height:32px; position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:32px;width:32px;height:32px; position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:64px;top:32px;height:32px; position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:64px; position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:64px;width:32px;height:32px; position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:64px;top:64px;position:inherit;"></div>
+		<div id="starting_icon" style="left:26px;top:26px;position:inherit;"><img src="res/pvr/iconPVR_recording_normal.png"/></div>
+	</span>
+</div>
+<div id="dialog_button_confirm" dialog_button_confirm_id="none"; style="z-index:2;position:absolute;display:none;" >
+	<span id="dialog_button_confirm" class="dialog_button_confirm" style="position:absolute;">
+		<div class="dialog_top_left" style="left:0px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:920px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:952px;top:0px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:32px; height:236px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:32px;width:920px;height:236px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:952px;top:32px;height:236px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:268px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:268px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:952px;top:268px;position:inherit;"></div>
+		<div id="dialog_button_confirm_content" class="dialog_content" style="left:64px;top:50px;margin-top:0px;position:inherit;">Are you sure you want to stop the recording?</div>
+		<div id="dialog_button_confirm_yes" tabindex='0' onfocus='button_focus(true,"dialog_button_confirm_yes");'  onblur='button_focus(false, "dialog_button_confirm_yes");' style="left:180px;top:182px;width:200px;height:70px;outline:none;border:none;position:inherit;">
+			<span>
+				<div class="btn_left" style="left:80px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+				<div class="btn_center" style="left:102px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+				<div class="btn_right" style="left:258px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+
+			</span>
+			<div class="btn_text" style="left:18px;top:18px;position:inherit;">Yes</div>
+		</div>
+		<div id="dialog_button_confirm_no" tabindex='0' onfocus='button_focus(true,"dialog_button_confirm_no");'  onblur='button_focus(false, "dialog_button_confirm_no");' style="left:540px;top:182px;width:200px;height:70px;outline:none;border:none;position:inherit;" >
+			<span>
+				<div class="btn_left" style="left:540px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+				<div class="btn_center" style="left:562px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+				<div class="btn_right" style="left:718px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+			</span>
+			<div class="btn_text" style="left:18px;top:18px;position:inherit;">No</div>
+		</div>
+	</span>
+</div>
+</body>
+</html>

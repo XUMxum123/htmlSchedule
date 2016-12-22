@@ -1,0 +1,12 @@
+HTML-UI
+├───dash                 // dashboard folder
+├───X...                 // PVR/Input source/...
+├───.git                 // git folder
+├───2K16_4K_UX_Asset     // images resource
+├───bower.json           // bower configure file
+└───libs
+    ├───jquery           // jquery
+    ├───jquery-ui
+    ├───js               // for TV key
+    ├───materialize      // material implement
+    └───roboto-fontface  // roboto font for web

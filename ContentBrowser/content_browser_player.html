@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Content browser player</title>
+
+<link rel="stylesheet" href="./tab.css" />
+<link   rel="stylesheet" href="../libs/mtvui/base.css" />
+<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css" />
+<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+<script type="text/javascript" src="../libs/mtvui/contentbrowser-test.js"></script>
+<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+<script type="text/javascript" src="../libs/mtvui/contentbrowser.js"></script>
+<script type="text/javascript" src="./js/common-data.js"></script>
+<script type="text/javascript" src="./js/translate_lang.js"></script>
+<script type="text/javascript" src="./js/dlna-common-data.js"></script>
+<script type="text/javascript" src="./js/pus-common-data.js"></script>
+<script type="text/javascript" src="js/handle-key-dialog.js"></script>
+<script type="text/javascript" src="./js/video_play.js"></script>
+<script src="../libs/artDialog/lib/sea.js">
+</script>
+<script>
+
+seajs.config({
+    alias: {
+        "jquery": "jquery-1.10.2.js"
+    }
+});
+</script>
+</head>
+<style>
+body, html {
+    font-family: "roboto", sans-serif !important;
+    background-color: rgba(0, 0, 0, 0);
+}
+</style>
+<body style='position:absolute; left:0px; top:0px; width:1280px; height:720px;padding:0px;margin:0 auto;' >
+		
+		<div id="video_player_bg" style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:2;display:none'>
+			<img src="../Assets/_Slices/Slice_572.png" style="position:absolute; left:0px; top:0px;width:100%; height:100%" />
+			<div style="position:absolute;bottom:0px;height:148px;width:100%;">
+			
+				<div class="music_progress_bar" id="bar">
+					<div id='video_progress' class="music_progress"></div>
+				</div>
+				<div id='btnVideoPlay' tabindex='0' class='music_play_btn' ></div>
+
+				<p id='video_player_current_time' class='music_player_current_time'>0:00</p>
+				<p id='video_player_total_time' class='music_player_total_time'>0:00</p>
+				<ul id="show_speed" style="display: none;">
+					<li id="pre_select" class="inline_disblock_span glyphicon glyphicon-backward"></li>
+					<li class="inline_disblock_span show_content_bottom">
+					
+						<ul class="pager">
+						    <li class="previous" id="sr_1">1x</li>
+						  	<li id="sr_1_2">1/2</li>
+					    	<li id="sr_1_4" class="next">1/4</li>
+					  	</ul>
+				  	</li>
+					<li id="cur_select" class="inline_disblock_span glyphicon glyphicon-play"></li>
+					<li class="inline_disblock_span show_content_bottom">
+						<ul class="pager">
+						    <li id="sf_1_4" class="previous">1/4</li>
+						  	<li id="sf_1_2" >1/2</li>
+					    	<li id="sf_1" class="next">1x</li>
+					  	</ul>
+					
+					</li>
+					<li id="next_select" class="inline_disblock_span glyphicon glyphicon-forward"></li>
+				</ul>
+				<div id="show_video_title" style='height: 68px;width: 100%;margin: 0 auto;position: relative;top: 68px;'>
+					<p id="video_current_name" class='music_player_current_title'></p>
+				</div>
+			</div>
+		</div>
+		<div id='video_play_footer' class="footer" style='display:none'>
+			<ul>
+				<li><img src="../Assets/_Color_Key_Bar/Icon_Info_2K14.png" style='vertical-align:middle;'/>Info</li>
+				<li><img src="../Assets/_Color_Key_Bar/ColorKey_Red.png"/>Play All</li>
+				<li><img src="../Assets/_Color_Key_Bar/ColorKey_Green.png"/>Shuffle On</li>
+				<li><img src="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"/></li>
+				<li><img src="../Assets/_Color_Key_Bar/ColorKey_Blue.png"/>Help</li>
+				<li><img src="../Assets/_Color_Key_Bar/Icon_Options_2K14.png" style='vertical-align:middle;'/>Option</li>
+			</ul>
+		</div>
+
+<script>
+
+$(window).unload(function(){
+mtvObj.acfgSetConfigValue('g_misc__content_browser_pvr_video_playing', 0);
+stopContentBrowser(true);
+});
+
+languageChangeNotifyCallback = function(){
+	var stopInfo = isStopInfoDialogShow();
+	videoPlayObj.closeVideoDialog();
+	if(stopInfo){
+		showStopInfoDialog('stopInfoBtnNotify');
+	} else {
+		videoPlayObj.getSubLanguage();
+		videoPlayObj.getAudLanguage();
+	}
+	videoPlayObj.initBottombar();
+}
+
+//1 msgconvert(netflix);2 nettv;0 other app
+var appStatus = mtvObj.acfgGetConfigValue('g_misc__next_app_status');
+if(appStatus == 1){
+	mtvObj.pause3rdApp();
+}
+
+mtvObj.acfgSetConfigValue('g_misc__content_browser_pvr_video_playing', 1);
+
+var playInfoObj = {};
+var curSourceType = SourceType.Usb;
+playInfoObj.fileid = null;
+playInfoObj.mediaPath = getQueryString("filePath");
+playInfoObj.title = getQueryString("title");
+
+
+playInfoObj.bMode = getQueryString("bufferingModel");
+if (!playInfoObj.bMode) {
+    playInfoObj.bMode = 1;
+} else {
+	curSourceType = SourceType.Pvr;
+	playInfoObj.fileid = getQueryString("fileid");
+	console.log("fileid = " + playInfoObj.fileid);
+}
+
+console.log("decodeURI(window.location.search) = " + decodeURI(window.location.href.substring(window.location.href.indexOf('?'))));
+console.log('getQueryString filePath =' + playInfoObj.mediaPath);
+console.log('getQueryString title =' + playInfoObj.title);
+console.log('getQueryString bufferingModel =' + playInfoObj.bMode);
+console.log('getQueryString protocal =' + playInfoObj.protocal);
+console.log('getQueryString playInfoObj.devId =' + playInfoObj.devId);
+
+usbDetectNotifyFunc = function(usbItem){
+	switch(Number(usbItem.TYPE)){
+	case USB_DETECT_NOTIFY_TYPE.Plugin:
+
+	break;
+	case USB_DETECT_NOTIFY_TYPE.Plugout:
+	console.log("USB_DETECT_NOTIFY_TYPE.Plugout");
+	if(playInfoObj.mediaPath && playInfoObj.mediaPath.length >= usbItem.PATH.length){
+		console.log("playInfoObj.mediaPath.indexOf(usbItem.PATH) = " + playInfoObj.mediaPath.indexOf(usbItem.PATH));
+		if(playInfoObj.mediaPath.indexOf(usbItem.PATH) == 0  && (curSourceType <= SourceType.Pvr)){
+			if(curSourceType == SourceType.Pvr){
+				videoPlayObj.playStop();
+			} else {
+				videoPlayObj.videoDelInit();
+				videoPlayObj.setPvrFileInfo(false);
+				startDtvService();
+				mtvuiUtil.gotoSysPage("sys_index");
+			}
+		}
+	} else {
+		mtvuiUtil.gotoSysPage("sys_index");
+	}
+	break;
+	}
+};
+
+$(document).on("keydown", function(event) {
+    var key = event.which || event.keyCode;
+    if (KeyEvent.DOM_VK_BACK == key || KeyEvent.DOM_VK_RECORD == key || mtvuiUtil.procSysKey(key)) {
+		video_player_red_keydown(event);
+	}
+    event.stopPropagation();
+}
+);
+
+$(document).on("keyup", function(event) {
+	video_play_key_dispatch(event);
+}
+);
+
+var timeFormat = function(isMillisecond) {
+	var seconds = isMillisecond/1000;
+    if (seconds >= 3600) {
+        var h = Math.floor(seconds / 3600);
+		console.log("time h = " +h);
+        var m = Math.floor((seconds % 3600) / 60) < 10 ? "0" + Math.floor((seconds % 3600) / 60) : Math.floor((seconds % 3600) / 60);
+        var s = ((seconds % 3600) % 60) < 10 ? "0" + Math.floor((seconds % 3600) % 60) : Math.floor((seconds % 3600) % 60);
+        return h + ":" + m + ":" + s;
+    } else {
+        var m = Math.floor(seconds / 60) < 10 ? "0" + Math.floor(seconds / 60) : Math.floor(seconds / 60);
+        var s = Math.floor(seconds - (m * 60)) < 10 ? "0" + Math.floor(seconds - (m * 60)) : Math.floor(seconds - (m * 60));
+        return m + ":" + s;
+    }
+
+};
+
+function videoPlayNotify(jsonStr){
+	var notify = JSON.parse(jsonStr);
+	if(notify.URI != NotifyURI.Cmpb){
+		return;
+	}
+	for(var index in notify.ITEMS){
+		var videoNotify = notify.ITEMS[index];
+		videoPlayObj.videoPlayNotify(videoNotify);
+	}
+}
+
+var action = getQueryString("action");
+if('pus_play' == action){
+	pusNotifyFunc = pusCmdNotifyFunc;
+	var param = getQueryString("params");
+	pusCmdNotifyFunc(param);
+	curSourceType = SourceType.Pus;
+}
+
+window.onload = function(){
+	addCBEventListener(EventListenerName.cmpbNotify, videoPlayNotify);
+	mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_source_type, icl_mmp_source_type.pvr);
+	if (playInfoObj.mediaPath) {
+		switch(curSourceType){
+		case SourceType.Pvr:
+			videoPlayObj.init(playInfoObj, SourceType.Pvr);
+		break;
+		}
+	}
+}
+</script>
+</body>
+</html>

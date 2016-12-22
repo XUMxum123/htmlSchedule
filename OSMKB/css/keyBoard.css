@@ -1,0 +1,286 @@
+/* body {
+	margin: 0px;
+	overflow: hidden;
+	background-color: transparent;
+	width:0;
+	height: 0;
+	text-align:center;
+ }*/
+
+ /******************************/
+
+ .osmbtn-select-style{
+	/*border-color: #ffffff;
+	border-width: 1px;
+	border-style: solid;*/
+	background-color:#1d1e20;
+	color:white;
+	border-radius:10px;
+	border: 2px solid #57616c;
+ }
+
+.osmkbbtn-keyboard-done {
+	left: 605px;
+	top: 165px;
+	position:absolute;
+	text-align: center;
+	height: 40px;
+	width: 150px;
+}
+
+.osmkbbtn-keyboard-hide {
+	background-image: url(../res/ColourBar/osmkbback.png);
+	left: 605px;
+	top: 240px;
+	padding-left:40px;
+	position:absolute;
+	height: 40px;
+	width: 150px;
+}
+
+
+
+ .osmkeyboard
+ {
+     width:480px;
+     height:200px;
+     text-align:center;
+     position:relative;
+ }
+
+ .osmkeyboard div
+ {
+    height:38px;
+	line-height:38px;
+    float:left;
+	margin-top:25px;
+	margin-bottom:4px;
+ }
+
+ #keyboardHead
+ {
+     width:420px;
+     position:relative;
+ }
+
+ #keyboardSpaceBar
+ {
+    position:relative;
+	width:540px;
+    left:235px;
+ }
+
+ #keyboardLetterA
+ {
+    position:relative;
+	width:540px;
+    left:45px;
+ }
+
+ #keyboardLetterQ
+ {
+    position:relative;
+	width:540px;
+    left:45px;
+ }
+
+  #keyboardLetterZ
+ {
+    position:relative;
+	width:540px;
+    left:45px;
+ }
+ #keyboardSpaceBar 30 {
+     width:540px;
+     position:relative;
+     left:200px;
+     top:52px;
+ }
+
+ .simple3Key
+ {
+    width:50px;
+    margin-top:2px;
+	background-color:#1d1e20;
+ }
+
+ .simple4Key
+ {
+    width:37.5px;
+    margin-top:2px;
+	background-color:#1d1e20;
+ }
+  .simple5Key
+ {
+    width:30px;
+    margin-top:2px;
+	background-color:#1d1e20;
+ }
+   .simple1Key
+ {
+    width:150px;
+    margin-top:2px;
+	background-color:#1d1e20;
+ }
+  .simple2Key
+ {
+    width:75px;
+    margin-top:2px;
+	background-color:#1d1e20;
+ }
+
+.symbolKey
+{
+    width:45px;
+    margin-top:2px;
+	margin-bottom:2px;
+	background-color:#1d1e20;
+}
+ .enterKey
+ {
+     width:150px;
+     height:100px;
+     border:1px solid black;
+ }
+
+ .shiftKey
+ {
+     width:25px;
+     border:1px solid black;
+ }
+
+ .backspaceKey
+ {
+     width:120px;
+     border:1px solid black;
+ }
+
+ .capslockKey
+ {
+     width:90px;
+     border:1px solid black;
+ }
+
+ .spaceKey
+ {
+     width:50px;
+  border:1px solid black;
+ }
+
+ .osmkeyboard div[name="key"]:hover{
+     background: #13437f;
+	 box-shadow:0px 0px 50px 10px #13437f;
+ }
+
+ .osmkeyboard div[name="key"]
+ {
+     cursor:pointer;
+ }
+
+
+.osmkbkeylayout{
+	border-radius:10px;
+	border: 2px solid #57616c;
+	height: 354px;
+}
+.osmkbinputlayout{
+	height: 96px;
+	border-radius:10px;
+	border: 2px solid #57616c;
+}
+ .keyBoard-dialog{
+	position:absolute;
+	left:0px;
+	height:450px;
+	width:780px;
+	top:0px;
+	z-index:5;
+	opacity:1;
+	z-index:999;
+	background-color: black;
+	font-family: "roboto", sans-serif !important;
+	font-size:17pt;
+	color: #8091a5;
+/*	border:1px solid ;*/
+	background-color:rgba(0, 0, 0, 0.9);
+ }
+ .osmkbinput-text{
+ 	position:relative;
+	left:120px;
+	width:550px;
+	height:51px;
+	top:18px;
+	z-index:5;
+	vertical-align:middle;
+	text-align: left;
+    display:table-cell;  
+    border-radius:5px;
+	background-color:rgba(255, 255, 255, 0.9);
+ }
+
+ .osmkeyboard div[key="65"], div[key="68"], div[key="74"], div[key="77"] , div[key="84"], div[key="87"],
+ div[value="A"], div[value="D"], div[value="J"], div[value="M"] , div[value="T"], div[value="W"]
+ {
+    margin-left:40px;
+  /*  border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;*/
+ }
+
+/* .osmkeyboard div[key="190"], div[key="71"], div[key="80"], div[key="32"]
+ {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+ }
+ .osmkeyboard div[key="222"], div[key="92"], div[key="104"], div[key="101"],div[key="102"],div[key="103"],
+ div[key="83"],div[key="99"],div[key="90"],div[key="189"]
+ {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+ }*/
+.footer-keyBoard
+{
+top:86%;
+position:absolute;
+bottom:0;
+width:776px;
+left: 2px;
+padding:2px;
+margin:2 auto;
+height:55px;
+background:url(../res/ColourBar/ColorKey_back_bar_fill.png);
+}
+
+.footer-keyBoard ul{
+margin:0px;
+padding:0px;
+text-align:center;
+height:100%;
+line-height:55px;
+vertical-align:middle;
+}
+.footer-keyBoard li
+{
+float: left;
+width: auto;
+height: 55px;
+color: white;
+text-align: center;
+margin-left: 40px;
+vertical-align: middle;
+line-height: 55px;
+}
+
+ .osmkbkey-active{
+     background: #13437f;
+     color: #e0f2f9;
+     font-size: 21pt;
+	 box-shadow:0px 0px 50px 10px #13437f;
+ }
+
+
+ .osmkbkey-hideactive{
+     background-image:url(../res/ColourBar/osmkbbackfocus.png) ;
+     color: #e0f2f9;
+     font-size: 20pt;
+	 box-shadow:0px 0px 50px 10px #13437f;
+ }

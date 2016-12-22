@@ -1,0 +1,1249 @@
+<html>
+<head>
+<title>pvr test</title>
+<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8">
+
+<link  rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="pvr.css">
+<link rel="stylesheet" href="option.css">
+<link rel="stylesheet" href="dialog.css">
+<link   rel="stylesheet" href="../libs/mtvui/base.css" />
+<link   rel="stylesheet" href="../libs/materialize/dist/css/materialize.min.css" />
+<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+<script type="text/javascript" src="../libs/mtvui/mtvapi_obj.js"></script>
+<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+<script type="text/javascript" src="../libs/mtvui/channelObj.js"></script>
+<script type="text/javascript" src="../libs/mtvui/contentbrowser.js"></script>
+<script type="text/javascript" src="../libs/mtvui/recording.js"></script>
+<script type="text/javascript" src="js/handle_key.js"></script>
+<script type="text/javascript" src="js/option_handle_key.js"></script>
+<script type="text/javascript" src="./js/iscroll.js"></script>
+<script type="text/javascript">
+mtvObject = new MtvObj();
+var last_date = 0;
+var last_month = 0;
+var last_year = 0;
+if (isInternetTvGuide(mtvObject) == true) {
+    if(mtvObject.startNetTvByAppMode("MYRECORDING")  == true){
+		mtvuiUtil.gotoSysPage("sys_index");/* Go to root page */
+	}
+    //startInternetMyRecording(mtvObject);
+    // Go to system root page.
+    //window.location = "../index.html";
+}
+if(mtvObject)
+{
+	mtvObject.addEventListener('ConfigUpdateNotify', pvrRecordingStatusNotifyHandler);
+}
+</script>
+<script type="text/javascript">
+ //<![CDATA[
+ $(document).on('keydown', function (evt){
+		var key = evt.which || evt.keyCode;
+		if( key != KeyEvent.DOM_VK_BACK ){
+			var sys_item = get_sys_page_by_key(key);
+			if (sys_item) {
+				if (sys_item.id != "sys_page_pvr") {
+					mtvuiUtil.gotoSysPage(sys_item.id);
+				}
+				return;
+			}  
+		}
+		if ($('#dialog_button_confirm').css("display") != "none"){
+			dialog_button_confirm_handleKeyCode(key);
+		}else if ($('#dialog_item_infomation').css("display") != "none"){
+			infomation_handle_key(key);
+		}else if ($('#dialog_manual_select').css("display") != "none"){
+			manual_handle_key(key);
+		}else if ($('#dialog_manual_select_time').css("display") != "none"){
+			manual_time_handle_key(key);
+		}else if ($('#dialog_adjust_time').css("display") != "none"){
+			adjust_time_handle_key(key);
+		}else if ($('#input_rename').css("display") != "none"){
+			VKB_rename_handle_key(key); 
+		}else if ($('#option_menu').css("display") != "none"){
+  			option_menu_handle_key(key);  	
+		}else {
+			handleKeyCode(key);
+		}
+		return true;
+ });
+ var scroll;
+ var osmkb=null;
+ window.onload = function() {
+    item_Init();
+     /* initVideo(); */
+     /* registerKeyEventListener(); */
+     /* setDescr(); */
+	   setTimeout(function () {
+	   $('.preloader-wrapper').hide();},
+	          2000);/* 为了演示效果延时，实际中直接hide即可 */ 
+     /* document.getElementById('relid').innerHTML = releaseinfo; */
+ };
+ function handleKeyCode(kc) {
+     if (kc==KeyEvent.DOM_VK_UP) {
+         selected--;
+		if(selected < 0)
+		{  
+			if(recording_list_page_id == 0){selected = 0;return;}
+			if(recording_list_page_id >0)
+			{
+				recording_list_page_id --;
+				item_update(sort_type,recording_list_page_id);
+				itemSelect(recording_list_page_item_num -1);
+				return true;
+			}
+		}
+    } else if (kc == KeyEvent.DOM_VK_DOWN) {
+        selected++;
+	    if((recording_list_page_id * recording_list_page_item_num + selected)  ==  item_num)
+		{
+			selected--;
+			return;
+		}
+		if(selected == recording_list_page_item_num)
+		{ 
+			if((recording_list_page_id * recording_list_page_item_num + selected) < item_num)
+			{
+			    recording_list_page_id ++;
+				item_update(sort_type,recording_list_page_id);
+				itemSelect(0);
+				return true;
+			}
+		}
+     } else if (kc==KeyEvent.DOM_VK_BACK_SPACE ||
+				kc==KeyEvent.DOM_VK_BACK) {
+			exist_record_list();
+			mtvuiUtil.gotoSysPage("sys_index");/* Go to root page */
+         return true;
+	} else if (kc == KeyEvent.DOM_VK_RETURN ||
+			kc == KeyEvent.DOM_VK_PLAY) {
+		if(selected > record_list.length)
+		{
+			return true;
+		}	
+		handle_play_key(selected);
+		return true;
+    } else if (kc==KeyEvent.DOM_VK_YELLOW)  {
+		if(item_num == 0){       
+			 return true;
+		}
+	/*delete*/
+		var	item= (document.getElementById('pvrcontent_item_' + selected));
+		var item_type = $(item).attr("data-type");
+		if(item_type == recfile_status[7]){
+			//window.location =  get_recording_url()+'?stop_recording=true';
+			mtvuiUtil.gotoSysPage("sys_program_record",'stop_recording=true');
+		}
+		else{
+			item_delete_dialog_show(selected);
+		}
+       return true;
+     } else if (kc == KeyEvent.DOM_VK_RED ) {
+	 	var res = obj_tvServices.getPvrReminderEvent('{"PARAMETER":{"operation":2,"REQUEST":"QUERY"}}');
+		var ret = JSON.parse(res);
+		if(ret.ITEMS[0].is_usb_ready){
+			var current_ch    = mtvObj.getCurrentChannelInfo();
+			if ($('#dialog_manual_select').css("display") != "none"){
+				$('#dialog_manual_select').hide();
+			}
+			else if(current_ch == null){
+				$('#dialog_notification_1line_recording').show();
+				$("#notification_content_text").text(mtvObjRaw.getLangString("MSG_DRCT_CH_FAIL"));
+				setTimeout(function(){$('#dialog_notification_1line_recording').css("display" , "none");},3000);
+				return true;
+			}
+			else {
+			   $('#dialog_manual_select').show();
+			   manual_select_channel_list_init(0);
+			}
+		}
+		else{
+			exist_record_list();
+			mtvuiUtil.gotoSysPage("sys_index");/* Go to root page */
+		}
+		return true;
+	} else if (kc==KeyEvent.DOM_VK_GREEN) {
+		if ($('#dialog_adjust_time').css("display") != "none"){
+		   $('#dialog_adjust_time').hide();
+		   return true;
+		}
+		var	item= (document.getElementById('pvrcontent_item_' + selected));
+		var item_type = $(item).attr("data-type");
+		if(item_type == recfile_status[7]||
+			item_type == recfile_status[1]) {
+		   $('#dialog_adjust_time').show();
+		   adjust_time_update(selected);
+		}
+		else if(item_type == recfile_status[2]||
+		item_type == recfile_status[3] ||
+		item_type == recfile_status[4]){
+			str= $($(item).find('.pvrcontent_item_program')).html();
+			$('#input_rename').val(str); 
+			$('#input_rename').show();
+			$('#input_rename').focus();
+		}
+		return true;    
+     } else if (kc==KeyEvent.DOM_VK_INFO) {
+     		if(item_num == 0){       
+     			 return true;
+     		}
+        if ($('#dialog_item_infomation').css("display") != "none"){
+             $('#dialog_item_infomation').hide();
+        }
+        else {
+             $('#dialog_item_infomation').show();
+        }    
+        item_infomation_show(selected);
+        return true;
+     } else if (kc==KeyEvent.DOM_VK_OPTION) {
+        if ($('#option_menu').css("display") != "none"){
+             $('#option_menu').hide();
+        }
+        else {
+             $('#option_menu').show();
+			 option_list_left_Init();
+        }
+        return true;
+	} else if (kc==KeyEvent.DOM_VK_BLUE)  {
+		pvrHelpEnter();     
+		return true;
+     } else if (kc==KeyEvent.DOM_VK_LEFT) {
+         return true;
+     } else if (kc==KeyEvent.DOM_VK_RIGHT) {
+         return true;
+     }
+     itemSelect(selected);
+     return false;
+ }
+function adjust_time_handle_key(kc) {
+	if (kc==KeyEvent.DOM_VK_UP) {
+		adjust_time_exit_num_input_mode();
+		if(focus_id == "adjust_time_arrow_up")
+		{
+			$('#adjust_time_arrow').hide();
+			button_focus(true,"adjust_button_confirm");
+		}
+		else if(focus_id == "adjust_time_arrow_down")
+		{
+			$('#adjust_time_arrow_up').focus();
+			focus_id = "adjust_time_arrow_up";
+			$('#adjust_time_hl_bar').css("top","0px");
+		}
+		else{
+			set_button_focus(false,focus_id);
+			$('#adjust_time_arrow_down').focus();
+			focus_id = "adjust_time_arrow_down";
+			adjust_time_focus(true,"adjust_time_hour");
+			$('#adjust_time_arrow').show();
+			$('#adjust_time_hl_bar').css("top","88px");
+		}
+		return true;
+	} else if (kc==KeyEvent.DOM_VK_DOWN) {
+		adjust_time_exit_num_input_mode();
+		if(focus_id == "adjust_time_arrow_up")
+		{
+			$('#adjust_time_arrow_down').focus();
+			focus_id = "adjust_time_arrow_down";
+			$('#adjust_time_hl_bar').css("top","88px");
+		}
+		else if(focus_id == "adjust_time_arrow_down")
+		{
+			$('#adjust_time_arrow').hide();
+			set_button_focus(true,"adjust_button_confirm");
+		}
+		else{
+			set_button_focus(false,focus_id);
+			$('#adjust_time_arrow_up').focus();
+			focus_id = "adjust_time_arrow_up";
+			adjust_time_focus(true,"adjust_time_hour");
+			$('#adjust_time_arrow').show();
+			$('#adjust_time_hl_bar').css("top","0px");
+		}
+		return true;
+	} else if (kc==KeyEvent.DOM_VK_RETURN) {
+		if(num_input_status == 1){
+			adjust_time_exit_num_input_mode();
+			if(focus_id == "adjust_time_arrow_up" ||
+				focus_id == "adjust_time_arrow_down"){
+				if(time_focus_id == "adjust_time_min_end"){
+					$('#adjust_time_arrow').hide();
+					set_button_focus(true,"adjust_button_confirm");
+				}
+				else{
+					eval($('#'+time_focus_id).attr("move_right"));
+				}
+			}
+			return false;
+		}
+		if (focus_id == "adjust_button_confirm"){
+			if ($('#dialog_adjust_time').css("display") != "none"){
+				$('#dialog_adjust_time').hide();
+				update_rmdr(selected);}
+		}else	if (focus_id == "adjust_button_cancel"){
+			if ($('#dialog_adjust_time').css("display") != "none"){
+				$('#dialog_adjust_time').hide();
+				}
+		}
+		else if (focus_id == "adjust_time_arrow_up")
+			{
+				adjust_time_cal_update(focus_id,1);
+			}	       
+		else if(focus_id == "adjust_time_arrow_down"){
+				adjust_time_cal_update(focus_id,-1);
+		}
+	  return true; 
+	} else if (kc==KeyEvent.DOM_VK_LEFT ){
+		adjust_time_exit_num_input_mode();
+		if(focus_id == "adjust_time_arrow_up" ||
+		   focus_id == "adjust_time_arrow_down")
+		{  
+			eval($('#'+time_focus_id).attr("move_left"));
+		}
+		else if(focus_id == "adjust_button_confirm"){
+			$('#adjust_button_cancel').focus();
+		}
+		else if(focus_id == "adjust_button_cancel"){
+			$('#adjust_button_confirm').focus();
+		}
+		return true;
+	} else if	(kc==KeyEvent.DOM_VK_RIGHT ) {
+		adjust_time_exit_num_input_mode();
+		if(focus_id == "adjust_time_arrow_up" ||
+		   focus_id == "adjust_time_arrow_down")
+		{
+			eval($('#'+time_focus_id).attr("move_right"));
+		}
+		else if(focus_id == "adjust_button_confirm"){
+			$('#adjust_button_cancel').focus();
+		}
+		else if(focus_id == "adjust_button_cancel"){
+			$('#adjust_button_confirm').focus();
+		}
+	 	return true;
+	} 		/* handle number key */
+	else if ((KeyEvent.DOM_VK_0 <= kc) && (kc <= KeyEvent.DOM_VK_9)) {
+		console.log("number kc = " + kc );
+		if(focus_id == "adjust_time_arrow_up" ||
+		   focus_id == "adjust_time_arrow_down" ||
+		   num_input_status == 1) {
+			switch(kc){
+				case KeyEvent.DOM_VK_0:
+					adjust_time_update_num_osd(0);
+					break;
+				case KeyEvent.DOM_VK_1:
+					adjust_time_update_num_osd(1);
+					break;
+				case KeyEvent.DOM_VK_2:
+					adjust_time_update_num_osd(2);
+					break;
+				case KeyEvent.DOM_VK_3:
+					adjust_time_update_num_osd(3);
+					break;
+				case KeyEvent.DOM_VK_4:
+					adjust_time_update_num_osd(4);
+					break;
+				case KeyEvent.DOM_VK_5:
+					adjust_time_update_num_osd(5);
+					break;
+				case KeyEvent.DOM_VK_6:
+					adjust_time_update_num_osd(6);
+					break;
+				case KeyEvent.DOM_VK_7:
+					adjust_time_update_num_osd(7);
+					break;
+				case KeyEvent.DOM_VK_8:
+					adjust_time_update_num_osd(8);
+					break;
+				case KeyEvent.DOM_VK_9:
+					adjust_time_update_num_osd(9);
+					break;				
+				default:
+					break;
+			}					
+		}
+		return false;
+	}
+	return true;
+} 
+function manual_time_handle_key(kc) {
+	if (kc==KeyEvent.DOM_VK_UP) {
+		manual_time_exit_num_input_mode();
+		if(focus_id == "manual_time_arrow_up")
+		{
+			$('#manual_time_arrow').hide();
+			button_focus(true,"manual_time_button_confirm");
+		}
+		else if(focus_id == "manual_time_arrow_down")
+		{
+			$('#manual_time_arrow_up').focus();
+			focus_id = "manual_time_arrow_up";
+			$('#manual_time_hl_bar').css("top","0px");
+		}
+		else{
+			set_button_focus(false,focus_id);
+			$('#manual_time_arrow_down').focus();
+			focus_id = "manual_time_arrow_down";
+			time_focus(true,"manual_time_date");
+			$('#manual_time_arrow').show();
+			$('#manual_time_hl_bar').css("top","88px");
+		}
+		return true;
+	} else if (kc==KeyEvent.DOM_VK_DOWN) {
+		manual_time_exit_num_input_mode();
+		if(focus_id == "manual_time_arrow_up")
+		{
+			$('#manual_time_arrow_down').focus();
+			focus_id = "manual_time_arrow_down";
+			$('#manual_time_hl_bar').css("top","88px");
+		}
+		else if(focus_id == "manual_time_arrow_down")
+		{
+			$('#manual_time_arrow').hide();
+			button_focus(true,"manual_time_button_confirm");
+		}
+		else{
+			set_button_focus(false,focus_id);
+			$('#manual_time_arrow_up').focus();
+			focus_id = "manual_time_arrow_up";
+			time_focus(true,"manual_time_date");
+			$('#manual_time_arrow').show();
+			$('#manual_time_hl_bar').css("top","0px");
+		}
+		return true;
+	} else if (kc==KeyEvent.DOM_VK_RETURN) {
+		if(num_input_status == 1){
+			manual_time_exit_num_input_mode();
+			if(focus_id == "manual_time_arrow_up" ||
+				focus_id == "manual_time_arrow_down"){
+				if(time_focus_id == "manual_time_min_end"){
+					$('#manual_time_arrow').hide();
+					set_button_focus(true,"manual_time_button_confirm");
+				}
+				else{
+					eval($('#'+time_focus_id).attr("move_right"));
+				}
+			}
+			return false;
+		}
+		if (focus_id == "manual_time_button_close"){
+			if ($('#dialog_manual_select_time').css("display") != "none"){
+				$('#dialog_manual_select_time').hide();}
+		}
+		else if (focus_id == "manual_time_button_previous"){
+			if ($('#dialog_manual_select_time').css("display") != "none"){
+				$('#dialog_manual_select_time').hide();}
+		  if ($('#dialog_manual_select').css("display") == "none"){
+					 $('#dialog_manual_select').show();
+					   manual_select_itemSelect(manual_selected);}
+			}
+		else	if (focus_id == "manual_time_button_confirm"){
+			if ($('#dialog_manual_select_time').css("display") != "none"){
+				$('#dialog_manual_select_time').hide();
+				set_rmdr();}
+			}
+		else if (focus_id == "manual_time_arrow_up")
+			{
+				time_cal_update(focus_id,1);
+			}	       
+		else if(focus_id == "manual_time_arrow_down"){
+				time_cal_update(focus_id,-1);
+		}
+	  return true; 
+	} else if (kc==KeyEvent.DOM_VK_LEFT ){
+		manual_time_exit_num_input_mode();
+		if(focus_id == "manual_time_arrow_up" ||
+		   focus_id == "manual_time_arrow_down")
+		{
+			eval($('#'+time_focus_id).attr("move_left"));
+		}
+
+		else{
+			eval($('#'+focus_id).attr("move_left"));
+		}
+		return true;
+	} else if	(kc==KeyEvent.DOM_VK_RIGHT ) {
+		manual_time_exit_num_input_mode();
+		if(focus_id == "manual_time_arrow_up" ||
+		   focus_id == "manual_time_arrow_down")
+		{
+			eval($('#'+time_focus_id).attr("move_right"));
+		}
+
+		else{
+			eval($('#'+focus_id).attr("move_right"));
+		}
+	 	return true;
+	} 	else if ((KeyEvent.DOM_VK_0 <= kc) && (kc <= KeyEvent.DOM_VK_9)) {
+		console.log("number kc = " + kc );
+		if(focus_id == "manual_time_arrow_up" ||
+		   focus_id == "manual_time_arrow_down" ||
+		   num_input_status == 1) {
+		   if(time_focus_id == "manual_time_date"||
+				time_focus_id == "manual_time_mon" )
+			{return true;}
+			switch(kc){
+				case KeyEvent.DOM_VK_0:
+					manual_time_update_num_osd(0);
+					break;
+				case KeyEvent.DOM_VK_1:
+					manual_time_update_num_osd(1);
+					break;
+				case KeyEvent.DOM_VK_2:
+					manual_time_update_num_osd(2);
+					break;
+				case KeyEvent.DOM_VK_3:
+					manual_time_update_num_osd(3);
+					break;
+				case KeyEvent.DOM_VK_4:
+					manual_time_update_num_osd(4);
+					break;
+				case KeyEvent.DOM_VK_5:
+					manual_time_update_num_osd(5);
+					break;
+				case KeyEvent.DOM_VK_6:
+					manual_time_update_num_osd(6);
+					break;
+				case KeyEvent.DOM_VK_7:
+					manual_time_update_num_osd(7);
+					break;
+				case KeyEvent.DOM_VK_8:
+					manual_time_update_num_osd(8);
+					break;
+				case KeyEvent.DOM_VK_9:
+					manual_time_update_num_osd(9);
+					break;				
+				default:
+					break;
+			}					
+		}
+		return false;
+	}
+	return true;
+}
+function manual_handle_key(kc) {
+	if (kc==KeyEvent.DOM_VK_UP) {
+		if (focus_id == "manual_button_next" || 
+				focus_id == "manual_button_cancel" ){
+			 	manual_select_itemSelect(manual_selected);
+			return true;
+		} 
+		else{
+			if(channel_count <= 0){return true;}
+			manual_selected--;
+			if(manual_selected < 0)
+			{  
+				if(channel_lis_page_id == 0)
+				{
+				    if(channel_count <= channel_list_page_item_num){
+						channel_lis_page_id = 0;
+						manual_selected = channel_count -1;
+					}
+					else {
+						
+						if(channel_count % channel_list_page_item_num == 0){
+							channel_lis_page_id = parseInt(channel_count / channel_list_page_item_num) -1;
+							manual_selected =channel_list_page_item_num -1; }
+						else{
+							channel_lis_page_id = parseInt(channel_count / channel_list_page_item_num);
+							manual_selected = channel_count % channel_list_page_item_num -1;}
+					}
+					if(manual_selected < 0){manual_selected = 0;}
+					manual_select_channel_list_update(channel_lis_page_id);
+					manual_select_itemSelect(manual_selected);
+					return true;
+				}
+				if(channel_lis_page_id >0)
+				{
+					channel_lis_page_id --;
+					manual_select_channel_list_update(channel_lis_page_id);
+					manual_select_itemSelect(channel_list_page_item_num -1);
+					return true;
+				}
+			}
+	 }
+	} else if (kc==KeyEvent.DOM_VK_DOWN) {
+			if (focus_id == "manual_button_next" || 
+				focus_id == "manual_button_cancel" ){
+			return true;
+		} 
+		if(channel_count <= 0){return true;}
+	    manual_selected++;
+	    if((channel_lis_page_id * 5 + manual_selected)  ==  channel_count)
+		{
+			channel_lis_page_id = 0;
+			manual_selected = 0;
+			manual_select_channel_list_update(channel_lis_page_id);
+			manual_select_itemSelect(manual_selected);
+			return true;
+		}
+		if(manual_selected == channel_list_page_item_num)
+		{ 
+			if((channel_lis_page_id * 5 + manual_selected) < channel_count)
+			{
+			    channel_lis_page_id ++;
+				manual_select_channel_list_update(channel_lis_page_id);
+				manual_select_itemSelect(0);
+				return true;
+			}
+		}	
+	} else if (kc==KeyEvent.DOM_VK_RETURN) {
+		if(focus_id == "manual_button_cancel")
+		{
+			if ($('#dialog_manual_select').css("display") != "none"){
+			$('#dialog_manual_select').hide();}
+		}
+		else if(focus_id == "manual_button_next")
+		{
+			 if ($('#dialog_manual_select').css("display") != "none"){
+					   $('#dialog_manual_select').hide();
+					}
+			if ($('#dialog_manual_select_time').css("display") == "none"){
+				$('#dialog_manual_select_time').show();
+				manual_select_time_update();
+			}
+		}
+		else{
+		  $('#manual_hlbar').hide();
+		  $('#manual_button_next').focus();
+		}
+	  return true; 
+	} else if (kc == KeyEvent.DOM_VK_LEFT ) {
+		if(focus_id == "manual_button_next")
+		 $('#manual_button_cancel').focus();
+		 else if(focus_id == "manual_button_cancel")
+		 $('#manual_button_next').focus();
+		 else{
+			$('#manual_hlbar').hide();
+		 	$('#manual_button_cancel').focus();
+		 }
+	 	return true;
+	} else if (kc == KeyEvent.DOM_VK_RIGHT ) {
+		if(focus_id == "manual_button_next")
+		 $('#manual_button_cancel').focus();
+		 else if(focus_id == "manual_button_cancel")
+		 $('#manual_button_next').focus();
+		 else{
+			$('#manual_hlbar').hide();
+		 	$('#manual_button_next').focus();
+			}
+	 	return true;
+	}  
+  manual_select_itemSelect(manual_selected);
+   return true;
+}
+function infomation_handle_key(kc) {
+	 if (kc==KeyEvent.DOM_VK_RETURN ||
+	 	kc==KeyEvent.DOM_VK_BACK ) {
+       if ($('#dialog_item_infomation').css("display") != "none"){
+					$('#dialog_item_infomation').hide();
+       }
+       return true;
+   } 
+   return true;
+}
+function dialog_button_confirm_handleKeyCode(kc) {
+	 if (kc==KeyEvent.DOM_VK_RETURN) {
+       if ($('#dialog_button_confirm').css("display") != "none")
+       {
+	       	if( (focus_id)== "dialog_button_confirm_yes"){
+					$('#dialog_button_confirm').hide();
+					var	item= (document.getElementById('pvrcontent_item_' + selected));
+					var dialog_page_id= $('#dialog_button_confirm').attr("dialog_button_confirm_id");
+					/* delete item*/
+					obj_tvServices.setPvrRecordInfo('{"PARAMETER":{"operation":"4","slot":"'+record_list[selected].slot+'","list_id":"'+record_list[selected].list_id+'","recording_status":"'+record_list[selected].recording_status+'","file_name_id":"'+record_list[selected].file_name_id+'","REQUEST":"SET"}}');
+					/*the last one */
+					var items = $(".pvrcontent_item");
+					if (items.length == 1)
+					{
+						if(recording_list_page_id > 0)
+						{
+							recording_list_page_id -- ;
+							selected = recording_list_page_item_num -1;
+						}
+					}
+					if (items.length > 1)
+					{
+						if(selected == (items.length -1))
+						{
+							selected--;
+						}
+					}
+					item_update(sort_type,recording_list_page_id);
+					itemSelect(selected);
+					update_disk_info();
+     		}
+     		else if( (focus_id)== "dialog_button_confirm_no"){
+     			 $('#dialog_button_confirm').hide();
+     		}
+       }
+       return true;
+   } else if (kc==KeyEvent.DOM_VK_LEFT) {
+       if ($('#dialog_button_confirm').css("display") != "none")
+       {
+       		if( (focus_id)== "dialog_button_confirm_yes")
+       			$('#dialog_button_confirm_no').focus();
+       		else
+       			$('#dialog_button_confirm_yes').focus();
+       }
+       return true;
+   } else if (kc==KeyEvent.DOM_VK_RIGHT) {
+       if ($('#dialog_button_confirm').css("display") != "none")
+       {
+       		if( (focus_id)== "dialog_button_confirm_yes")
+       			$('#dialog_button_confirm_no').focus();
+       		else
+       			$('#dialog_button_confirm_yes').focus();
+       }
+      return true;
+   }
+   return true;
+}
+function option_menu_handle_key(kc) {
+    if($('#list_content_right').attr("focus")== "true"){
+     	right_handleKeyCode(kc);
+		return;
+    }
+	if (kc==KeyEvent.DOM_VK_BACK ||
+		kc==KeyEvent.DOM_VK_EXIT ||
+		kc==KeyEvent.DOM_VK_OPTION) {
+       if ($('#option_menu').css("display") != "none"){
+		$('#option_menu').hide();
+       }
+       return true;
+	} else if (kc==KeyEvent.DOM_VK_UP) {
+     	var i=0;
+     	var items = document.getElementById('list_left').getElementsByTagName('li');
+		option_selected--;
+		for(i=option_selected;i>=0;i--)
+		{
+	        if($(items[option_selected]).attr("disable")== "true"){
+	         	option_selected--;
+	        }
+        }
+     } else if (kc==KeyEvent.DOM_VK_DOWN) {
+     		var i=0;
+     		var items = document.getElementById('list_left').getElementsByTagName('li');
+			option_selected++;
+			for(i=option_selected;i<items.length;i++)
+			{
+				if($(items[option_selected]).attr("disable")== "true"){
+	         	option_selected++;
+	         }
+        }
+     } else if (kc==KeyEvent.DOM_VK_LEFT ||
+     			kc==KeyEvent.DOM_VK_RIGHT||
+     			kc==KeyEvent.DOM_VK_RETURN) {
+		if ($('#list_content_right').css("display") != "none"){
+			var pos = $("#option_hlbar").offset();
+			$('#option_hlbar_selected').show();
+			pos.left -=3;
+			pos.top +=4;
+			$("#option_hlbar_selected").offset({top:pos.top});
+			$("#option_hlbar_selected").offset({left:pos.left});
+			$('#list_content_right').attr("focus","true")
+			option_selected_right= 0;
+			itemSelect_right(option_selected_right);
+			/*show selected highlight bar*/
+			return true;
+		}
+	}
+	option_itemSelect(option_selected);
+   return true;
+}
+function right_handleKeyCode(kc) {
+ if (kc==KeyEvent.DOM_VK_UP) {
+	 option_selected_right--;
+ } else if (kc==KeyEvent.DOM_VK_DOWN) {
+	 option_selected_right++;
+ } else if (kc==KeyEvent.DOM_VK_RETURN) {
+	if(option_selected_right == 0){
+		sort_type = 0;
+		recording_list_page_id = 0;
+		item_Init();
+	}
+	else if(option_selected_right == 1){
+		sort_type = 1;
+		recording_list_page_id = 0;
+		item_Init();
+	}
+	else if(option_selected_right == 2){
+		sort_type = 2;
+		recording_list_page_id = 0;
+		item_Init();
+	}
+	else if(option_selected_right == 3){
+		sort_type = 3;
+		recording_list_page_id = 0;
+		item_Init();
+	}
+	if ($('#option_menu').css("display") != "none"){
+		$('#list_content_right').attr("focus","false");
+		$('#option_menu').hide();
+    }
+	return true;
+ } else if (kc==KeyEvent.DOM_VK_LEFT ||
+			kc==KeyEvent.DOM_VK_RIGHT||
+			kc==KeyEvent.DOM_VK_BACK) {
+	$('#list_content_right').attr("focus","false");
+	option_itemSelect(option_selected);
+	$('#option_hlbar_selected').hide();	
+	return true;
+ }
+ itemSelect_right(option_selected_right);
+ return true;
+}
+function disptime(){  
+var res = obj_tvServices.getUtcTime();
+var ret = JSON.parse(res);
+var time = Number(ret.ITEMS[0].VALUE);
+var localTime = mtvObj.convertUtcToLocalTime(parseInt(time));
+var current_date = localTime.DTG.DAY;
+var current_month = localTime.DTG.MONTH;
+var current_year  = localTime.DTG.YEAR;
+		if(current_date != last_date ||
+			 current_month != last_month ||
+			 current_year  != last_year)
+		{
+			item_Init();
+		}
+		last_date = current_date;
+		last_month = current_month;
+		last_year  = current_year;
+var today = new Date(localTime.DTG.YEAR,localTime.DTG.MONTH - 1,localTime.DTG.DAY,localTime.DTG.HOUR,localTime.DTG.MINUTE,localTime.DTG.SECOND);
+document.getElementById("title_date").innerHTML=today.pattern("dd M HH:mm");
+}
+window.setInterval("disptime()",1000);
+</script>
+</head>
+
+<body>
+<div class="preloader-wrapper big active" style="position:fixed; top:50%; left:50%; margin-top:-32px; margin-left:-32px;">
+    <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left"><div class="circle"></div></div>
+        <div class="gap-patch"><div class="circle"></div></div>
+        <div class="circle-clipper right"><div class="circle"></div></div>
+    </div>
+</div>	
+<div id="record_main_list" style="position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:1;">
+    <img src="res/pvr/Background_1280x720.jpg" style="width:100%; height:100%">
+  <div class="title" >
+  		<div class="title_name" data-translate="HS_RECORDINGS"></div>
+  		<div class= "title_diskicon"><img id= "title_diskicon" src= ""></div>
+  		<div id="title_date" class="title_date"></div>
+  		<div id="title_diskinfo" class= "title_diskinfo" ></div>
+  		<div id="title_sortinfo" class= "title_sortinfo" ></div>
+	</div>
+  <div id= "titlemenu"  class="pvrmenu" >
+  		<ul>
+  			<li id="program" style="left:111px;" data-translate="MY_RECORDING_PROGRAM"></li>
+  			<li id="date" style="left:664px;" data-translate="MY_RECORDING_DATE"></li>
+  			<li id="duration" style="left:956px" data-translate="MY_RECORDING_DURATION"></li>
+  		</ul>
+
+  </div>
+  <div class="vertical_line" style= "left:57px; "></div>
+  <div class="vertical_line" style= "left:639px; "></div>
+  <div class="vertical_line" style= "left:931px; "></div>
+  <div class="vertical_line" style= "left:1211px; "></div>
+
+  <div id="pvrcontent" class="pvrcontent">
+		 <div id ="hlbar" class= "hlbar" style="left:59px;top:57px;display:none;">
+		  	<span id ="hlbar" class= "hlbar">
+		  		<img src="res/_Highlight/List_Glow_Blue.png" style="left:0px; top:-50px;width:179px;position: inherit;">
+		  		<img src="res/_Highlight/Blue_Left.png" style="left:10px; width:6px;position: inherit;">
+		  		<img src="res/_Highlight/Blue_Middle.png" style="left:16px; width:1140px;position:inherit;height:40px;">
+		  		<img src="res/_Highlight/Blue_Right.png" style="left:1156px; width:6px;position: inherit;">
+		  	</span>
+		 </div>
+  			<div id="record_list_layout">
+			<div  class="record_list" >
+			<ul id='record_list_ul'>
+				<!-- add record list information-->
+			</ul>
+			</div>
+			<div id="recording_list_scrollbar" class="list_scrollbar" style="top:0px;display:none;"><img id="recording_list_scrollbar_img" src="res/_Scroll/List_Scroll_Bar.png" style="width:8px;top:0px;height:100px;"></div>	
+			</div>
+  </div>
+	<div class="footer">
+		<ul>
+		  <li ><img src="res/ColourBar/Icon_Info.png" style="float: left; margin-top: 5px;"><span class="text-color-span"  style="float: left;  padding-left: 5px;"></span></li>
+		  <li ><img src="res/ColourBar/ColorKey_Red.png" style="float: left; margin-top: 15px;"><span  class="text-color-span" data-translate="MY_RECORDING_SCHEDULE"  style="float: left;  padding-left: 5px;"></span></li>
+		  <li ><img src="res/ColourBar/ColorKey_Green.png" style="float: left; margin-top: 15px;"><span  class="text-color-span"  style="float: left;  padding-left: 5px;"></span></li>
+		  <li ><img src="res/ColourBar/ColorKey_Yellow.png" style="float: left; margin-top: 15px;"><span  class="text-color-span"  style="float: left;  padding-left: 5px;"></span></li>
+		  <li ><img src="res/ColourBar/ColorKey_Blue.png" style="float: left; margin-top: 15px;"><span  class="text-color-span" data-translate="HELP" style="float: left;  padding-left: 5px;"></span></li>
+		  <li ><img src="res/ColourBar/Icon_Options.png" style="float: left; margin-top: 5px;"><span  class="text-color-span" data-translate="OPTS" style="float: left; padding-left: 5px;"></span></li>
+		</ul>
+	</div>
+	 <input tabindex=0 id= "input_rename" class="input-text" type="text" style="left:40px;width:280px;position: absolute;top: 300px;left: 300px;display:none;opacity:0;"></input> 
+</div>
+<div id="dialog_manual_select" class="dialog" style="z-index: 2; position: absolute;width: 1280px;height: 720px;background-color: rgba(0,0,0,0.7);display:none;">
+        <div class="dialog_top_left"></div>
+        <div class="dialog_top_middle"></div>
+        <div class="dialog_top_right"></div>
+        <div class="dialog_2a_middle_left"></div>
+        <div class="dialog_2a_middle_center"></div>
+        <div class="dialog_2a_middle_right"></div>
+        <div class="dialog_3a_middle_left"></div>
+        <div class="dialog_3a_middle_center"></div>
+        <div class="dialog_3a_middle_right"></div>
+        <div class="dialog_Vertical_divider1"></div>
+        <div class="dialog_Vertical_divider2"></div>
+        <div id = "dialog_title" class="dialog_title"></div>
+        <div id = "dialog_subtitle" class="dialog_subtitle" data-translate="QT_RECORD_SELECT_CHANNEL">Please select the channel that you would like to record</div>
+			  <div class="manual_select_list">
+					 <div id ="manual_hlbar" class= "hlbar" style=" left: 168px;top: 199px;display:block;">
+					  	<span id ="select_list_hlbar" class= "hlbar">
+					  		<img src="res/_Highlight/List_Glow_Blue.png" style="left:0px; top:-50px;width:179px;position: inherit;">
+					  		<img src="res/_Highlight/Blue_Left_double.png" style="left:10px; width:6px;height:56px;position: inherit;">
+					  		<img src="res/_Highlight/Blue_Middle_double.png" style="left:16px; width:920px;height:56px;position:inherit;">
+					  		<img src="res/_Highlight/Blue_Right_double.png" style="left:1156px; width:6px;height:56px;position: inherit;">
+					  	</span>
+					 </div>
+			  	<div id="manual_select_list_layout">
+						<div  id="channel_list" class="channel_list"   page_id = "1">
+							<ul id='channel_select_ul'>
+								<!-- add record list information-->
+							</ul>
+						</div>
+				<div id="channel_list_scrollbar" class="list_scrollbar" style="top:0px;display:none;"><img id="channel_list_scrollbar_img" src="res/_Scroll/List_Scroll_Bar.png" style="width:8px;top:0px;height:100px;"></div>		
+						</div>
+			  </div>
+				<div id="manual_button_cancel" tabindex='0' onfocus='button_focus(true,"manual_button_cancel");'  onblur='button_focus(false, "manual_button_cancel");' style="left:186px;top:589px;width:200px;height:70px;outline:none;border:none;position:inherit;">
+					<span>
+						<div class="btn_left" style="left:80px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+						<div class="btn_center" style="left:102px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+						<div class="btn_right" style="left:258px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+		
+					</span>
+					<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="MY_RECORDING_CANCEL"></div>
+				</div>
+				<div id="manual_button_next" tabindex='0' onfocus='button_focus(true,"manual_button_next");'  onblur='button_focus(false, "manual_button_next");' style="left:895px;top:589px;width:200px;height:70px;outline:none;border:none;position:inherit;" >
+					<span>
+						<div class="btn_left" style="left:540px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+						<div class="btn_center" style="left:562px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+						<div class="btn_right" style="left:718px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+					</span>
+					<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="MY_RECORDING_CONFIRM"></div>
+				</div>
+</div>
+<div id="dialog_manual_select_time" class="dialog" style="z-index: 2; position: absolute;width: 1280px;height: 720px;background-color: rgba(0,0,0,0.7);display:none;">
+	<span style="left:58px;top:105px;width:1164px;height:530px;position:absolute;">
+		<div class="dialog_top_left" style="left:0px;top:0px;height:85px;position:inherit;background:url(res/Dialog/dialog_panel_header_1a_top_left.png);" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:1100px;height:85px;position:inherit;background:url(res/Dialog/dialog_panel_header_1a_top_center.png);"></div>
+		<div class="dialog_top_right" style="left:1132px;top:0px;height:85px;position:inherit;background:url(res/Dialog/dialog_panel_header_1a_top_right.png);" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:85px; height:413px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:85px;width:1100px;height:413px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:1132px;top:85px;height:413px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:498px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:498px;width:1100px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:1132px;top:498px;position:inherit;"></div>
+		<div style="left:32px;top:32px;width:44px;height:44px;position:inherit;"><img id="Title_Icon" src="res/pvr/iconPVR_header_record.png"></div>
+		<div id="title_name" class="dialog_title" style="left:97px;top:34px;width:900px;height:40px;position:inherit;" data-translate="TME_ADJ_MANUAL"></div>
+		<div style="left:42px;top:105px;width:92px;height:69px;position:inherit;"><img class="chennel_logo" style="display:none;" src="../libs/test-res/blank.png"></div>
+		<div class="channel_num" style="left:42px;top:184px;width:92px;height:20px;position:inherit;text-align:center;color:rgb(212,213,214);">ff</div>
+		<div class="channel_name" style="left:42px;top:213px;width:92px;height:20px;position:inherit;text-align:center;color:rgb(212,213,214);">ff</div>
+		<div class="program_info" style="left:180px;top:105px;width:800px;height:60px;position:inherit;font-size:46px;text-align:left;color:rgb(212,213,214);"></div>
+		<div class="time_title" style="left:174px;top:105px;width:200px;height:48px;position:inherit;" data-translate="TME_ADJ_DATE"></div>
+		<div class="time_title" style="left:391px;top:105px;width:200px;height:48px;position:inherit;" data-translate="TME_ADJ_DAY"></div>
+		<div class="time_title" style="left:559px;top:105px;width:200px;height:48px;position:inherit;" data-translate="MY_RECORDING_START_TIME"></div>
+		<div class="time_title" style="left:828px;top:105px;width:200px;height:48px;position:inherit;" data-translate="MY_RECORDING_END_TIME"></div>
+		<div id="manual_time_date" class="manual_time" tabindex='0'  move_left='time_focus(true,"manual_time_min_end");' move_right='time_focus(true,"manual_time_mon");' onfocus='time_focus(true,"manual_time_date");'  onblur='time_focus(false, "manual_time_date");' style="left:174px;;">
+		</div>
+		<div class="manual_time_line"  style="left:252px;top:202px;width:20px;position:inherit;">/</div>
+	  <div id="manual_time_mon" class="manual_time" tabindex='0' move_left='time_focus(true,"manual_time_date");' move_right='time_focus(true,"manual_time_hour");' onfocus='time_focus(true,"manual_time_mon");'  onblur='time_focus(false, "manual_time_mon");' style="left:277px;">
+		</div>
+		<div id="manual_time_week" class="manual_time" tabindex='0' onfocus='time_focus(true,"manual_time_week");'  onblur='time_focus(false, "manual_time_week");' style="left:391px;position:inherit;">
+		</div>
+		<div id="manual_time_hour" class="manual_time" tabindex='0' move_left='time_focus(true,"manual_time_mon");' move_right='time_focus(true,"manual_time_min");' onfocus='time_focus(true,"manual_time_hour");'  onblur='time_focus(false, "manual_time_hour");' style="left:556px;">
+		</div>
+		<div class="manual_time_line"  style="left:642px;top:202px;position:inherit;">:</div>
+		<div id="manual_time_min" class="manual_time" tabindex='0' move_left='time_focus(true,"manual_time_hour");' move_right='time_focus(true,"manual_time_hour_end");' onfocus='time_focus(true,"manual_time_min");'  onblur='time_focus(false, "manual_time_min");' style="left:656px;;">
+		</div>
+		<div id="manual_time_hour_end" class="manual_time" tabindex='0' move_left='time_focus(true,"manual_time_min");' move_right='time_focus(true,"manual_time_min_end");' onfocus='time_focus(true,"manual_time_hour_end");'  onblur='time_focus(false, "manual_time_hour_end");' style="left:827px;">
+		</div>
+		<div class="manual_time_line"  style="left:910px;top:202px;position:inherit;">:</div>
+		<div id="manual_time_min_end" class="manual_time" tabindex='0' move_left='time_focus(true,"manual_time_hour_end");' move_right='time_focus(true,"manual_time_date");' onfocus='time_focus(true,"manual_time_min_end");'  onblur='time_focus(false, "manual_time_min_end");' style="left:925px;">
+		</div>
+		<div id="manual_time_arrow" style="left:574px;top:178px;width:73px;height:118px;position:inherit;display:none;">
+				<div id="manual_time_arrow_up" move_up='button_focus(true,"manual_time_button_confirm");' style="left:25%;top:0px;width:42px;height:32px;position:inherit;background:url(res/pvr/Pointer_button_arrow_up.png);">
+				</div>
+				<div id="manual_time_arrow_down" move_up='time_focus(true,"manual_time_min");' style="left:25%;top:88px;width:42px;height:32px;position:inherit;background:url(res/pvr/Pointer_button_arrow_down.png);">
+				</div>
+				<div id="manual_time_back_pic" style="left:-112px;top:-90px;width:303px;height:303px;position:inherit;"><img  src="res/pvr/Glow_blue.png">
+				</div>
+				<div id="manual_time_hl_bar"  style="left:0px;top:88px;width:73px;height:36px;position:inherit;">
+				<span class= "hlbar">
+				<img src="res/pvr/datetim_HL_bar_left.png" style=" left:0px;width:6px;height:36px;position: inherit;">
+				<img src="res/pvr/datetim_HL_bar_middle.png" style="left:6px; width:61px;height:36px;position:inherit;">
+				<img src="res/pvr/datetim_HL_bar_right.png" style="left:67px; width:6px;height:36px;position: inherit;">
+				</span>
+				</div>
+		</div>
+		<div class="notify_conflict_icon" style="left:732px;top:222px;position:inherit;"><img id="notify_conflict_start" style="display:none;"  src="res/pvr/iconPVR_conflict.png"></div>
+		<div class="notify_conflict_icon" style="left:1002px;top:222px;position:inherit;"><img id="notify_conflict_end" style="display:none;"  src="res/pvr/iconPVR_conflict.png"></div>
+		<div class="notify_conflict_icon" style="left:174px;top:299px;position:inherit;"><img id="notify_conflict_info" style="display:none;"  src="res/pvr/iconPVR_conflict.png"></div>
+		<div id="notify_conflict_text" class="notify_conflict_text" style="left:222px;top:312px;width:800px;height:100px;position:inherit;"></div>
+	</span>
+	<div id="manual_time_button_previous" tabindex='0' move_left='set_button_focus(true,"manual_time_button_close");' move_right='set_button_focus(true,"manual_time_button_confirm");' onfocus='button_focus(true,"manual_time_button_previous");'  onblur='button_focus(false, "manual_time_button_previous");' style="left:232px;top:519px;width:206px;height:70px;outline:none;border:none;position:inherit;">
+		<span>
+			<div class="btn_left" style="left:80px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+			<div class="btn_center" style="left:102px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+			<div class="btn_right" style="left:264px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+		</span>
+		<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="PREVIOUS"></div>
+	</div>
+	<div id="manual_time_button_confirm" tabindex='0'   move_left='set_button_focus(true,"manual_time_button_previous");' move_right='set_button_focus(true,"manual_time_button_close");' onfocus='button_focus(true,"manual_time_button_confirm");'  onblur='button_focus(false, "manual_time_button_confirm");' style="left:782px;top:519px;width:200px;height:70px;outline:none;border:none;position:inherit;" >
+		<span>
+			<div class="btn_left" style="left:540px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+			<div class="btn_center" style="left:562px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+			<div class="btn_right" style="left:718px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+		</span>
+		<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="MY_RECORDING_CONFIRM"></div>
+	</div>
+	<div id="manual_time_button_close" tabindex='0' move_left='set_button_focus(true,"manual_time_button_confirm");' move_right='set_button_focus(true,"manual_time_button_previous");'  onfocus='button_focus(true,"manual_time_button_close");'  onblur='button_focus(false, "manual_time_button_close");' style="left:978px;top:519px;width:200px;height:70px;outline:none;border:none;position:inherit;" >
+		<span>
+			<div class="btn_left" style="left:540px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+			<div class="btn_center" style="left:562px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+			<div class="btn_right" style="left:718px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+		</span>
+		<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="EVT_BTN_CLOSE"></div>
+	</div>
+	<div id="time-num" style="left:614px;top:320px;position:inherit;display:none;">
+		<ul  class="input_bac" id="show_input">
+			<li id="num_0" class="input_li"></li>
+			<li id="num_1" class="input_li"></li>
+		</ul>
+	</div>
+</div>
+<div id="dialog_item_infomation" style="z-index:2;position:absolute;width: 1280px;height: 720px;background-color: rgba(0,0,0,0.7);display:none;" >
+	<span id="dialog_item_infomation" class="dialog_item_infomation" style="position:absolute;">
+		<div class="dialog_top_left" style="left:0px;top:0px;height32px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:920px;height:32px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:952px;top:0px;height:32px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:32px; height:451px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:32px;width:920px;height:451px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:952px;top:32px;height:451px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:478px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:478px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:952px;top:478px;position:inherit;"></div>
+		<div class="btn_left" style="left:740px;top:414px;position:inherit;"><img src="res/_Button_OK/But_HL_Blue_Left.png"></div>
+		<div class="btn_center" style="left:762px;top:414px;width:156px;position:inherit;"><img src="res/_Button_OK/But_HL_Blue_Center.png"></div>
+		<div class="btn_right" style="left:918px;top:414px;position:inherit;"><img src="res/_Button_OK/But_HL_Blue_Right.png"></div>
+		<div class="btn_text" style="left:740px;top:414px;width:200px;height:70px;margin-top:18px;position:inherit;" data-translate="TME_ADJ_CLOSE"></div>
+		<div style="left:32px;top:30px;width:44px;height:44px;position:inherit;"><img id="info_title_Icon" src="res/_Button_OK/But_HL_Blue_Left.png"></div>
+		<div id="info_title_name" class="dialog_title" style="left:97px;top:36px;width:600px;height:40px;position:inherit;"></div>
+		<div id="disk_name" class="dialog_title"  style="left:841px;top:36px;width:150px;height:40px;position:inherit;"></div>
+		<div style="left:42px;top:105px;width:92px;height:69px;position:inherit;"><img class="chennel_logo" ></div>
+		<div class="channel_num" style="left:42px;top:184px;width:120px;height:20px;position:inherit;text-align:center;color:rgb(212,213,214);"></div>
+		<div class="channel_name" style="left:42px;top:213px;width:120px;height:100px;position:inherit;text-align:left;color:rgb(212,213,214);word-wrap:break-word;"></div>
+		<div id="program_name" class="dialog_title"  style="left:185px;top:90px;width:700px;font-size:30px;text-align: left;color:rgb(211,212,213);text-overflow: ellipsis;word-wrap:break-word; overflow: hidden;position:inherit;"></div>
+		<div id="infomation_duration"  style="left:185px;top:135px;width:339px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:block;"></div>
+		<div id="infomation_expired"  style="left:185px;top:175px;width:339px;height:26px;font-size:24px;text-align: left;color:red;position:inherit;display:none;" data-translate="MY_RECORDING_EXPIRED"></div>
+		<div id="infomation_title_recorded"  style="left:185px;top:267px;width:339px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:block;" data-translate="QT_RECORD_AT"></div>
+		<div id="infomation_title_expires"  style="left:185px;top:307px;width:339px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:block;" data-translate="MY_RECORDING_EXPIRED"></div>
+		<div id="infomation_title_diskspace"  style="left:185px;top:347px;width:339px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);;position:inherit;display:block;" data-translate="TSHIFT_DISK_SIZE"></div>
+		<div id="infomation_recorded"  style="left:382px;top:267px;width:400px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:block;"></div>
+		<div id="infomation_expires"  style="left:382px;top:307px;width:400px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:block;"></div>
+		<div id="infomation_diskspace"  style="left:382px;top:347px;width:400px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:block;"></div>
+		<div id="infomation_fail_reason"  style="left:185px;top:347px;width:678px;height:26px;font-size:24px;text-align: left;color:rgb(211,212,213);position:inherit;display:hide;"></div>
+	</span>
+</div>
+<div id="dialog_button_confirm" dialog_button_confirm_id="none"; style="z-index:2;position:absolute;width: 1280px;height: 720px;background-color: rgba(0,0,0,0.7);display:none;" >
+	<span id="dialog_button_confirm" class="dialog_button_confirm" style="position:absolute;">
+		<div class="dialog_top_left" style="left:0px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:920px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:952px;top:0px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:32px; height:236px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:32px;width:920px;height:236px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:952px;top:32px;height:236px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:268px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:268px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:952px;top:268px;position:inherit;"></div>
+		<div id="dialog_button_confirm_content" class="dialog_content" style="left:64px;top:50px;margin-top:0px;position:inherit;"></div>
+		<div id="dialog_button_confirm_yes" tabindex='0' onfocus='button_focus(true,"dialog_button_confirm_yes");'  onblur='button_focus(false, "dialog_button_confirm_yes");' style="left:180px;top:182px;width:200px;height:70px;outline:none;border:none;position:inherit;">
+			<span>
+				<div class="btn_left" style="left:80px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+				<div class="btn_center" style="left:102px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+				<div class="btn_right" style="left:258px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+
+			</span>
+			<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="BTN_YES"></div>
+		</div>
+		<div id="dialog_button_confirm_no" tabindex='0' onfocus='button_focus(true,"dialog_button_confirm_no");'  onblur='button_focus(false, "dialog_button_confirm_no");' style="left:540px;top:182px;width:200px;height:70px;outline:none;border:none;position:inherit;" >
+			<span>
+				<div class="btn_left" style="left:540px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+				<div class="btn_center" style="left:562px;top:182px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+				<div class="btn_right" style="left:718px;top:182px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+			</span>
+			<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="BTN_NO"></div>
+		</div>
+	</span>
+</div>
+<div id="dialog_adjust_time" style="z-index:2;position:absolute;width: 1280px;height: 720px;background-color: rgba(0,0,0,0.7);display:none;" >
+	<span id="dialog_adjust_time" class="dialog_adjust_time" style="left:108px;top:105px;width:984px;height:510px;position:absolute;">
+		<div class="dialog_top_left" style="left:0px;top:0px;height:32px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:920px;height:32px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:952px;top:0px;height:32px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:32px; height:451px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:32px;width:920px;height:451px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:952px;top:32px;height:451px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:478px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:478px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:952px;top:478px;position:inherit;"></div>
+		<div style="left:42px;top:105px;width:92px;height:69px;position:inherit;"><img class="chennel_logo" src="../libs/test-res/blank.png" style= "display:none;"></div>
+		<div class="channel_name" style="left:42px;top:184px;width:105px;height:20px;position:inherit;text-align:left;color:rgb(212,213,214);"></div>
+		<div class="channel_num" style="left:42px;top:213px;width:105px;height:20px;position:inherit;text-align:left;color:rgb(212,213,214);"></div>
+		<div class="program_info" style="left:180px;top:105px;width:750px;height:30px;position:inherit;font-size:24px;text-align:left;color:rgb(212,213,214);overflow:hidden;"></div>
+		<div id="adjust_button_confirm" tabindex='0' onfocus='button_focus(true,"adjust_button_confirm");'  onblur='button_focus(false, "adjust_button_confirm");' style="left:80px;top:410px;width:200px;height:70px;outline:none;border:none;position:inherit;">
+			<span>
+				<div class="btn_left" style="left:80px;top:583px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+				<div class="btn_center" style="left:102px;top:583px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+				<div class="btn_right" style="left:258px;top:583px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+
+			</span>
+			<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="MY_RECORDING_CONFIRM"></div>
+		</div>
+		<div id="adjust_button_cancel" tabindex='0' onfocus='button_focus(true,"adjust_button_cancel");'  onblur='button_focus(false, "adjust_button_cancel");' style="left:678px;top:410px;width:200px;height:70px;outline:none;border:none;position:inherit;" >
+			<span>
+				<div class="btn_left" style="left:540px;top:583px;position:inherit;"><img src="res/_Button_OK/But_Normal_Left.png"></div>
+				<div class="btn_center" style="left:562px;top:583px;width:156px;position:inherit;"><img src="res/_Button_OK/But_Normal_Center.png"></div>
+				<div class="btn_right" style="left:718px;top:583px;position:inherit;"><img src="res/_Button_OK/But_Normal_Right.png"></div>
+			</span>
+			<div class="btn_text" style="left:18px;top:18px;position:inherit;" data-translate="DLG_CANCEL"></div>
+		</div>
+		<div style="left:32px;top:30px;width:44px;height:44px;position:inherit;"><img class="Title_Icon" src="res/pvr/iconPVR_recorded_HL.png"></div>
+		<div class="dialog_title" style="left:97px;top:36px;width:600px;height:40px;position:inherit;"></div>
+		<div class="time_title" style="left:174px;top:155px;width:200px;height:48px;position:inherit;" data-translate="MY_RECORDING_START_TIME"></div>
+		<div class="time_title" style="left:441px;top:155px;width:200px;height:48px;position:inherit;" data-translate="MY_RECORDING_END_TIME"></div>
+		<div id="adjust_time_hour" class="manual_time" tabindex='0' move_left='adjust_time_focus(true,"adjust_time_min_end");' move_right='adjust_time_focus(true,"adjust_time_min");' onfocus='adjust_time_focus(true,"adjust_time_hour");'  onblur='adjust_time_focus(false, "manual_time_hour");' style="left:174px;top:255px;">
+		</div>
+		<div class="manual_time_line"  style="left:247px;top:252px;position:inherit;">:</div>
+		<div id="adjust_time_min" class="manual_time" tabindex='0' move_left='adjust_time_focus(true,"adjust_time_hour");' move_right='adjust_time_focus(true,"adjust_time_hour_end");' onfocus='adjust_time_focus(true,"adjust_time_min");'  onblur='adjust_time_focus(false, "adjust_time_min");' style="left:271px;top:255px;">
+		</div>
+		<div id="adjust_time_hour_end" class="manual_time" tabindex='0' move_left='adjust_time_focus(true,"adjust_time_min");' move_right='adjust_time_focus(true,"adjust_time_min_end");' onfocus='adjust_time_focus(true,"adjust_time_hour_end");'  onblur='adjust_time_focus(false, "adjust_time_hour_end");' style="left:418px;top:255px;">
+		</div>
+		<div class="manual_time_line"  style="left:492px;top:252px;position:inherit;">:</div>
+		<div id="adjust_time_min_end" class="manual_time" tabindex='0' move_left='adjust_time_focus(true,"adjust_time_hour_end");' move_right='adjust_time_focus(true,"adjust_time_hour");' onfocus='adjust_time_focus(true,"adjust_time_min_end");'  onblur='adjust_time_focus(false, "adjust_time_min_end");' style="left:516px;top:255px;">
+		</div>
+		<div id="adjust_time_arrow" style="left:174px;top:230px;width:73px;height:118px;position:inherit;display:block;">
+				<div id="adjust_time_arrow_up" move_up='button_focus(true,"manual_time_button_confirm");' style="left:25%;top:0px;width:42px;height:32px;position:inherit;background:url(res/pvr/Pointer_button_arrow_up.png);">
+				</div>
+				<div id="adjust_time_arrow_down" move_up='time_focus(true,"manual_time_min");' style="left:25%;top:88px;width:42px;height:32px;position:inherit;background:url(res/pvr/Pointer_button_arrow_down.png);">
+				</div>
+				<div id="adjust_time_back_pic" style="left:-112px;top:-90px;width:303px;height:303px;position:inherit;"><img  src="res/pvr/Glow_blue.png">
+				</div>
+				<div id="adjust_time_hl_bar"  style="left:0px;top:88px;width:73px;height:36px;position:inherit;">
+				<span class= "hlbar">
+				<img src="res/pvr/datetim_HL_bar_left.png" style=" left:0px;width:6px;height:36px;position: inherit;">
+				<img src="res/pvr/datetim_HL_bar_middle.png" style="left:6px; width:61px;height:36px;position:inherit;">
+				<img src="res/pvr/datetim_HL_bar_right.png" style="left:67px; width:6px;height:36px;position: inherit;">
+				</span>
+				</div>
+		</div>
+		<div class="notify_conflict_icon" style="left:332px;top:270px;position:inherit;"><img id="notify_conflict_start" style="display:none;"  src="res/pvr/iconPVR_conflict.png"></div>
+		<div class="notify_conflict_icon" style="left:586px;top:270px;position:inherit;"><img id="notify_conflict_end" style="display:none;"  src="res/pvr/iconPVR_conflict.png"></div>
+		<div class="notify_conflict_icon" style="left:174px;top:335px;position:inherit;"><img id="notify_conflict_info" style="display:none;"  src="res/pvr/iconPVR_conflict.png"></div>
+		<div id="notify_conflict_text" class="notify_conflict_text" style="left:222px;top:342px;width:700px;height:72px;position:inherit;"></div>
+		<div id="adjust-time-num" style="left:418px;top:270px;position:inherit;display:none;">
+			<ul  class="input_bac" id="show_input">
+				<li id="adjust_num_0" class="input_li"></li>
+				<li id="adjust_num_1" class="input_li"></li>
+			</ul>
+		</div>
+	</span>
+</div>
+<div id="option_menu" style="z-index:2;position:absolute;width: 1280px;height: 720px;background-color: rgba(0,0,0,0.7);display:none;" >
+<div id="option" style="position:absolute; left:243px; top:126px; width:774px; height:470px;float:left;">
+<div id="list_content_left"  style="width:394px; height:460px;float:left;background-image: url(./img/OptionMeamu_Panel.png);">
+	<div id="title" style="position:absolute; left:-140px; top:120px; width:380px; height:42px; color:rgb(211,212,213);text-alignc:center;font-size:26px;vertical-align=middle;margin:0px;-webkit-transform:rotate(270deg);" data-translate="QT_RECORD_OPTIONS">Recordings Options</div>
+	<div id="list_left" class="option_list" style="left:80px; width:314px;" >
+		<ul>
+			<li id="sort" tabindex='0' onfocus='option_item_focus(true,"sort");'  onblur='option_item_focus(false, "sort");' disable="none" data-translate="PPG_SORT" >Sort</li>
+		</ul>
+	</div>
+</div>
+<div  class="option_list" focus="false" style="width:380px;z-index:0;">
+    <div id ="option_hlbar" class= "option_hlbar" style="left:75px;top:36px;z-index:50;">
+		<img src="./img/List_Glow_Blue.png" style="left:5px;top:-32px;width:179px;height:108px ;position: inherit;">
+		<img src="./img/Blue_Left.png" style="left:10px; width:6px;position: inherit;">
+		<img src="./img/Blue_Middle.png" style="left:16px; width:302px;height:40px;position: inherit;">
+		<img src="./img/Blue_Right.png" style="left:318px; width:6px;position: inherit;">
+    </div>
+    <div id="list_content_right" style="position:absolute;z-index:100;">
+        <ul style="top:30px;margin-left:25px;">
+        </ul>
+    </div>
+</div>
+<div id ="option_hlbar_selected" class= "option_hlbar" style="left:80px;top:157px;display:none;">
+		<img src="./img/Selected_Left.png" style="left:10px; width:20px;position: inherit;">
+		<img src="./img/Selected_Middle.png" style="left:30px; width:270px;height:40px;position: inherit;">
+		<img src="./img/Selected_Right.png" style="left:286px; width:20px;height:40px;position: inherit;">
+</div>
+</div>
+</div>
+<div id="dialog_notification_1line_recording" class="dialog_notification_1line"  style=" display:none;" >
+	<span style="z-index:10;left:0px;position:absolute; ">
+		<div class="dialog_top_left" style="left:148px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:180px;top:0px;width:920px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:1100px;top:0px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:148px;top:32px; height:68px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:180px;top:32px;width:920px;height:68px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:1100px;top:32px;height:68px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:148px;top:100px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:180px;top:100px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:1100px;top:100px;position:inherit;"></div>
+		<div id="notification_content" style ="float:left;position:inherit;"></div>
+		<div  id="notification_content_icon" style="left:187px;top:38px;position:inherit;" ><img src="res/pvr/Notification_icon_warning.png"/></div>
+		<div  id="notification_content_text" style="left:232px;top:40px;width:800px;text-align:left;margin-left:16px;color:rgb(211,212,213);position:inherit;"></div>
+	</span>
+</div>
+<form style='display:none'><input class='saveHistory' type="text" name="page_info"></form>
+<script type="text/javascript">
+var mtvObjRaw = new MtvObjRaw();
+$.each($("[data-translate]"), function (k, item) {
+ var strId = $(item).data("translate");
+ $(item).text(mtvObjRaw.getLangString(strId));
+});
+</script>
+<script> 
+ $(window).unload(function() {
+	exist_record_list();    	    
+ });
+function closeApp() {
+	try {
+		var app = document.getElementById('appmgr').getOwnerApplication(document);
+		app.destroyApplication();
+		return;
+	} catch (e) {
+		alert('Cannot destroy application');
+	}
+ }  
+ function VKB_rename_handle_key(kc){
+	if (kc==KeyEvent.DOM_VK_RETURN){
+		var	item= (document.getElementById('pvrcontent_item_' + selected)); 		
+			//back up to record list
+		var str = $('#input_rename').val();
+		$('#input_rename').hide();
+		$(item).focus();
+		obj_tvServices.setPvrRecordInfo('{"PARAMETER":{"operation":"5",\
+									"recording_status":"'+record_list[selected].recording_status+'",\
+									"channel_id":"'+record_list[selected].channel_id+'",\
+									"start_time":"'+record_list[selected].start_time+'",\
+									"duration":"'+record_list[selected].duration+'",\
+									"program_name":"'+str+'", \
+									"REQUEST":"SET"}}');
+		$($(item).find('.pvrcontent_item_program')).html(str);
+		return false;
+	}
+	else if(kc==KeyEvent.DOM_VK_ESCAPE){
+		$('#input_rename').hide();
+		$(item).focus();
+		return false;
+	}
+	return false;
+} 
+</script>  
+</body>
+</html>

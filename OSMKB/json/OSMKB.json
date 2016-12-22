@@ -1,0 +1,4678 @@
+var OSMKBDate=  
+  
+    {
+        "hbr": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "רשתן",
+                    "MAIN_KB_RED_9": "םףךץ",
+                    "MAIN_KB_RED_7": "עפצק"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": "com.",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "א*ב*ג",
+                    "MAIN_KB_RED_3": "ד*ה*ו",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "מ*נ*ס",
+                    "MAIN_KB_RED_4": "ז*ח*ט",
+                    "MAIN_KB_RED_5": "י*כ*ל"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "עברית",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "lav": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ū",
+                    "MAIN_KB_RED_9": "***ž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ņ",
+                    "MAIN_KB_GREEN_4": "ģ***Ī",
+                    "MAIN_KB_GREEN_5": "**Ķ*Ļ"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ā***č",
+                    "MAIN_KB_RED_3": "**ē**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Atpak. taust.",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ā***Č",
+                    "MAIN_KB_GREEN_3": "**Ē**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ņ**",
+                    "MAIN_KB_RED_4": "ģ***ī",
+                    "MAIN_KB_RED_5": "**ķ*ļ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ū",
+                    "MAIN_KB_GREEN_9": "***Ž",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "gre": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "τ*υ*φ",
+                    "MAIN_KB_RED_9": "χ*ψ*ω",
+                    "MAIN_KB_RED_7": "πρσς"
+                },
+                {
+                    "MAIN_KB_RED_8": "Τ*Υ*Φ",
+                    "MAIN_KB_RED_9": "Χ*Ψ*Ω",
+                    "MAIN_KB_RED_7": "Π*Ρ*Σ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "α*β*γ",
+                    "MAIN_KB_RED_3": "δ*ε*ζ",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "Α*Β*Γ",
+                    "MAIN_KB_RED_3": "Δ*Ε*Ζ",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "ν*ξ*ο",
+                    "MAIN_KB_RED_4": "η*θ*ι",
+                    "MAIN_KB_RED_5": "κ*λ*μ"
+                },
+                {
+                    "MAIN_KB_RED_6": "Ν*Ξ*Ο",
+                    "MAIN_KB_RED_4": "Η*Θ*Ι",
+                    "MAIN_KB_RED_5": "Κ*Λ*Μ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_\0\0\0": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "αβγΑΒΓ",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "bul": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "шщъы",
+                    "MAIN_KB_RED_9": "ьэюя",
+                    "MAIN_KB_RED_7": "фхцч"
+                },
+                {
+                    "MAIN_KB_RED_8": "ШЩЪЫ",
+                    "MAIN_KB_RED_9": "ЬЭЮЯ",
+                    "MAIN_KB_RED_7": "ФХЦЧ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "абвг",
+                    "MAIN_KB_RED_3": "дежз",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "АБВГ",
+                    "MAIN_KB_RED_3": "ДЕЖЗ",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Връщане",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "рсту",
+                    "MAIN_KB_RED_4": "ийкл",
+                    "MAIN_KB_RED_5": "мноп"
+                },
+                {
+                    "MAIN_KB_RED_6": "РСТУ",
+                    "MAIN_KB_RED_4": "ИЙКЛ",
+                    "MAIN_KB_RED_5": "МНОП"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_\0\0\0": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "авгАВГ",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "fin": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ö",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ä*å**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Askelpal.",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ä*Å**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ö",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "slk": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "ť**ú",
+                    "MAIN_KB_RED_9": "**ýž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "Ň*Ó*Ô",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": "**Ĺ*Ľ"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á*ä*č",
+                    "MAIN_KB_RED_3": "ď*é**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Vymazať znak",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á*Ä*Č",
+                    "MAIN_KB_GREEN_3": "Ď**É**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "ň*ó*ô",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": "**ĺ*ľ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "Ť*Ú",
+                    "MAIN_KB_GREEN_9": "**ÝŽ",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "ron": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "ţ****",
+                    "MAIN_KB_RED_7": "***ş"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_4": "****Î"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ă****",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Ştergere",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ă****"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_4": "****î"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "Ţ****",
+                    "MAIN_KB_GREEN_7": "***Ş"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "dan": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ø",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "å*æ**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Slet tilbage",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Å***Æ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ø",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "tur": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ü*û",
+                    "MAIN_KB_RED_7": "***ş"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ö",
+                    "MAIN_KB_GREEN_4": "Ğ*İ*Î",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "â***ç",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Geri silme",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Â***Ç"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*ı",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ö",
+                    "MAIN_KB_RED_4": "ğ*i*î",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ü*Û",
+                    "MAIN_KB_GREEN_7": "***Ş"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "fre": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "àáâç",
+                    "MAIN_KB_RED_3": "é*è*ê",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Retour arrière",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "À*Á*Ç",
+                    "MAIN_KB_GREEN_3": "È*É*Ê"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "por": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ú**",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ó*Õ",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á*ã*ç",
+                    "MAIN_KB_RED_3": "**é*ê",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Retrocesso",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á*Ã*Ç",
+                    "MAIN_KB_GREEN_3": "**É*Ê"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ó*õ",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ú**",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        //Brazilian_Portuguese (bpt)
+        "bpt": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ú**",
+                    "MAIN_KB_RED_7": "***í"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ó*Õ",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á*ã*ç",
+                    "MAIN_KB_RED_3": "**é*ê",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á*Ã*Ç",
+                    "MAIN_KB_GREEN_3": "**É*Ê"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ó*õ",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".tv",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ú**",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "ukr": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "ш***щ",
+                    "MAIN_KB_RED_9": "*юяь*",
+                    "MAIN_KB_RED_7": "*фхцч"
+                },
+                {
+                    "MAIN_KB_RED_8": "Ш***Щ",
+                    "MAIN_KB_RED_9": "*ЮЯЬ*",
+                    "MAIN_KB_RED_7": "*ФХЦЧ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "абвгґ",
+                    "MAIN_KB_RED_3": "деєжз",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "АБВГҐ",
+                    "MAIN_KB_RED_3": "ДЕЄЖЗ",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Назад",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "рсту",
+                    "MAIN_KB_RED_4": "иіїйк",
+                    "MAIN_KB_RED_5": "лмноп"
+                },
+                {
+                    "MAIN_KB_RED_6": "РСТУ",
+                    "MAIN_KB_RED_4": "ИІЇЙК",
+                    "MAIN_KB_RED_5": "ЛМНОП"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "авгАВГ",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "spa": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ú*ü",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ñ*Ó",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á****",
+                    "MAIN_KB_RED_3": "**é**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Retroceso",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á****",
+                    "MAIN_KB_GREEN_3": "**É**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ñ*ó",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ú*Ü",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "slo": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "",
+                    "MAIN_KB_RED_9": "***ž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "**ć*č",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Vračalka",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "**Ć*Č"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "",
+                    "MAIN_KB_GREEN_9": "****Ž",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        //Argentinian Spanish (eas)
+        "eas": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ú*ü",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ñ*Ó",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á****",
+                    "MAIN_KB_RED_3": "**é**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Retroceso",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á****",
+                    "MAIN_KB_GREEN_3": "**É**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ñ*ó",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".tv",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ú*Ü",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "ara": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "ﺣ*ﺢ*ﺡ",
+                    "MAIN_KB_RED_9": "ﺧ*ﺦ*ﺥ",
+                    "MAIN_KB_RED_7": "ﺟ*ﺞ*ﺝ"
+                },
+                {
+                    "MAIN_KB_RED_8": "ﻇ*ﻆ*ﻅ",
+                    "MAIN_KB_RED_9": "ﻋﻌﻊﻉ",
+                    "MAIN_KB_RED_7": "ﻃ*ﻂ*ﻁ"
+                },
+                {
+                    "MAIN_KB_RED_8": "ﻫﻪﻩﻮﻭ",
+                    "MAIN_KB_RED_9": "ﻳﻲﻰﻱﻯ",
+                    "MAIN_KB_RED_7": "ﻧ*ﻦ*ﻥ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "ﺀﺅﺋﺉ",
+                    "MAIN_KB_RED_3": "ﺍ*ﺎ*ا",
+                    "MAIN_KB_RED_1": "ﺃﺇﺄﺈ"
+                },
+                {
+                    "MAIN_KB_RED_2": "ﺮﺭﺰﺯ",
+                    "MAIN_KB_RED_3": "ﺳ*ﺲ*ﺱ",
+                    "MAIN_KB_RED_1": "ﺪﺩﺬﺫ"
+                },
+                {
+                    "MAIN_KB_RED_2": "ﻓ*ﻒ*ﻑ",
+                    "MAIN_KB_RED_3": "ﻗﻖﻕ",
+                    "MAIN_KB_RED_1": "ﻏﻐﻎﻍ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "مسافة للخلف",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "ﺛ*ﺚ*ﺙ",
+                    "MAIN_KB_RED_4": "ﺑ*ﺐ*ﺏ",
+                    "MAIN_KB_RED_5": "ﺗﺓﺔﺖﺕ"
+                },
+                {
+                    "MAIN_KB_RED_6": "ﺿ*ﺾ*ﺽ",
+                    "MAIN_KB_RED_4": "ﺷ*ﺶ*ﺵ",
+                    "MAIN_KB_RED_5": "ﺻ*ﺺ*ﺹ"
+                },
+                {
+                    "MAIN_KB_RED_6": "ﻣ*ﻢ*ﻡ",
+                    "MAIN_KB_RED_4": "ﻛ*ﻚ*ﻙ",
+                    "MAIN_KB_RED_5": "ﻟ*ﻞ*ﻝ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "التالي",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "eng": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ö",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "â***ç",
+                    "MAIN_KB_RED_3": "é*è*ê",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Â***Ç",
+                    "MAIN_KB_GREEN_3": "É*È*Ê"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ö",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "rus": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "шщъы",
+                    "MAIN_KB_RED_9": "ьэюя",
+                    "MAIN_KB_RED_7": "фхцч"
+                },
+                {
+                    "MAIN_KB_RED_8": "ШЩЪЫ",
+                    "MAIN_KB_RED_9": "ЬЭЮЯ",
+                    "MAIN_KB_RED_7": "ФХЦЧ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "абвг",
+                    "MAIN_KB_RED_3": "деёжз",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "АБВГ",
+                    "MAIN_KB_RED_3": "ДЕЁЖЗ",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Вернуться назад",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "рсту",
+                    "MAIN_KB_RED_4": "ийкл",
+                    "MAIN_KB_RED_5": "мноп"
+                },
+                {
+                    "MAIN_KB_RED_6": "РСТУ",
+                    "MAIN_KB_RED_4": "ИЙКЛ",
+                    "MAIN_KB_RED_5": "МНОП"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "авгАВГ",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "deu": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ü**",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ö",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ä****",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Rücktaste",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ä****"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ö",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ü**",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "ita": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "****ù",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ò",
+                    "MAIN_KB_GREEN_4": "****Ì",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "****à",
+                    "MAIN_KB_RED_3": "****è",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Tasto indietro",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "****À",
+                    "MAIN_KB_GREEN_3": "****È"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ò",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "****Ù",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "kaz": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "abcABC",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "шщъыі",
+                    "MAIN_KB_RED_9": "ьэюя",
+                    "MAIN_KB_RED_7": "үфхцч"
+                },
+                {
+                    "MAIN_KB_RED_8": "ШЩЪЫІ",
+                    "MAIN_KB_RED_9": "ЬЭЮЯ",
+                    "MAIN_KB_RED_7": "ҮФХЦЧ7"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "m*n*o",
+                    "MAIN_KB_GREEN_4": "g*h*i",
+                    "MAIN_KB_GREEN_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "аәбвг",
+                    "MAIN_KB_RED_3": "ғдежз",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "АӘБВГ",
+                    "MAIN_KB_RED_3": "ҒДЕЖЗ",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "a*b*c",
+                    "MAIN_KB_GREEN_3": "d*e*f"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "рстуұ",
+                    "MAIN_KB_RED_4": "ийкқл",
+                    "MAIN_KB_RED_5": "мноөп"
+                },
+                {
+                    "MAIN_KB_RED_6": "РСТУҰ",
+                    "MAIN_KB_RED_4": "ИЙКҚЛ",
+                    "MAIN_KB_RED_5": "МНОӨП"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "t*u*v",
+                    "MAIN_KB_GREEN_9": "wxyz",
+                    "MAIN_KB_GREEN_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "авгАВГ",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "dut": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "****ç",
+                    "MAIN_KB_RED_3": "**é*è",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "pol": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "",
+                    "MAIN_KB_RED_9": "**źż",
+                    "MAIN_KB_RED_7": "***ś"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ń*Ó",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": "****Ł"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ą***ć",
+                    "MAIN_KB_RED_3": "**ę**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Cofn.",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ą***Ć",
+                    "MAIN_KB_GREEN_3": "**Ę**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ń*ó",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": "****ł"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "",
+                    "MAIN_KB_GREEN_9": "**ŹŻ",
+                    "MAIN_KB_GREEN_7": "***Ś"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "swe": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ü**",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ö",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ä*å**",
+                    "MAIN_KB_RED_3": "**é**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backstegstangent",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ä*Å",
+                    "MAIN_KB_GREEN_3": "**É**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ö",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ü**",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "chi": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "退格键",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "cze": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "ť*ú*ů",
+                    "MAIN_KB_RED_9": "**ýž",
+                    "MAIN_KB_RED_7": "**řš"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Ň*Ó",
+                    "MAIN_KB_GREEN_4": "Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á***č",
+                    "MAIN_KB_RED_3": "ď*é*ě",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Vymazat",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á***Č",
+                    "MAIN_KB_GREEN_3": "Ď*É*Ě"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**ň*ó",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "Ť*Ú*Ů",
+                    "MAIN_KB_GREEN_9": "**ÝŽ",
+                    "MAIN_KB_GREEN_7": "**ŘŠ"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "scr": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "",
+                    "MAIN_KB_RED_9": "***ž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "**ć*č",
+                    "MAIN_KB_RED_3": "đ****",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "**Ć*Č",
+                    "MAIN_KB_GREEN_3": "Đ****"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "",
+                    "MAIN_KB_GREEN_9": "***Ž",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        //Hungarian (hu)
+        "hun": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "ú*ü*ű",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "Ó*Ö*Ő",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á****",
+                    "MAIN_KB_RED_3": "**é**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Visszalépés",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á****",
+                    "MAIN_KB_GREEN_3": "**É**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "ó*ö*ő",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "Ú*Ü*Ű",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "est": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ü**",
+                    "MAIN_KB_RED_9": "***ž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "**Õ*Ö",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ä****",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Tagasisammuklahv",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ä****"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "**õ*ö",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ü",
+                    "MAIN_KB_GREEN_9": "***Ž",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "lit": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ų*ū",
+                    "MAIN_KB_RED_9": "***ž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_4": "****Į"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "ą****",
+                    "MAIN_KB_RED_3": "**ę*ė",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Grįžimo klavišas",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Ą****",
+                    "MAIN_KB_GREEN_3": "**Ę*Ė"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_4": "****į"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ų*Ū",
+                    "MAIN_KB_GREEN_9": "***Ž",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "nor": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*HI*",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ø",
+                    "MAIN_KB_GREEN_4": "",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "å*æ**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Rettetast",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Å***Æ"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ø",
+                    "MAIN_KB_RED_4": "",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "scc": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "",
+                    "MAIN_KB_RED_9": "***ž",
+                    "MAIN_KB_RED_7": "***š"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "**ć*č",
+                    "MAIN_KB_RED_3": "đ****",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Taster Backspace",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "**Ć*Č",
+                    "MAIN_KB_GREEN_3": "Đ****"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "",
+                    "MAIN_KB_GREEN_9": "***Ž",
+                    "MAIN_KB_GREEN_7": "***Š"
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        },
+        "gle": {
+            "MAIN_KB_YELLOW_SYMBOL_2": "2-+*=",
+            "MAIN_KB_YELLOW_SYMBOL_3": "3$%~",
+            "MAIN_KB_YELLOW_SYMBOL_4": "4/&(",
+            "MAIN_KB_YELLOW_SYMBOL_5": "5€#)",
+            "MAIN_KB_YELLOW_WEB_5_FIN": ".fi",
+            "MAIN_KB_GREEN_BUTTON": "ABÂÇ",
+            "MAIN_KB_YELLOW_SYMBOL_0": "0yÂ?!",
+            "MAIN_KB_YELLOW_SYMBOL_1": "1.,@",
+            "MAIN_KB_YELLOW_WEB_5_EST": ".ee",
+            "MAIN_KB_RED_0": "yÂ?!-",
+            "MAIN_KB_YELLOW_WEB_5_BIH": ".ba",
+            "MAIN_KB_RED_789": [
+                {
+                    "MAIN_KB_RED_8": "t*u*v",
+                    "MAIN_KB_RED_9": "wxyz",
+                    "MAIN_KB_RED_7": "pqrs"
+                },
+                {
+                    "MAIN_KB_RED_8": "**ú**",
+                    "MAIN_KB_RED_7": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_HRV": ".hr",
+            "MAIN_KB_YELLOW_SYMBOL_6": "6:;^<",
+            "MAIN_KB_YELLOW_WEB_5_GBR": ".co.uk",
+            "MAIN_KB_YELLOW_SYMBOL_7": "7£_>{",
+            "MAIN_KB_YELLOW_SYMBOL_8": "8'\"`}",
+            "MAIN_KB_YELLOW_SYMBOL_9": "9|\\[]",
+            "MAIN_KB_YELLOW_WEB_5_PRT": ".pt",
+            "MAIN_KB_YELLOW_WEB_2": ".com",
+            "MAIN_KB_YELLOW_WEB_5_ALB": ".al",
+            "MAIN_KB_YELLOW_WEB_3": ".org",
+            "MAIN_KB_YELLOW_WEB_5_ISR": ".il",
+            "MAIN_KB_YELLOW_WEB_1": "www.",
+            "MAIN_KB_YELLOW_WEB_5_TUR": ".tr",
+            "MAIN_KB_YELLOW_WEB_5_MKD": ".mk",
+            "MAIN_KB_YELLOW_WEB_5_SVK": ".sk",
+            "MAIN_KB_YELLOW_WEB_5_LUX": ".lu",
+            "MAIN_KB_GREEN_456": [
+                {
+                    "MAIN_KB_GREEN_6": "M*N*O",
+                    "MAIN_KB_GREEN_4": "G*H*I",
+                    "MAIN_KB_GREEN_5": "J*K*L"
+                },
+                {
+                    "MAIN_KB_GREEN_6": "****Ó",
+                    "MAIN_KB_GREEN_4": "****Í",
+                    "MAIN_KB_GREEN_5": ""
+                }
+            ],
+            "MAIN_KB_RED_123": [
+                {
+                    "MAIN_KB_RED_2": "a*b*c",
+                    "MAIN_KB_RED_3": "d*e*f",
+                    "MAIN_KB_RED_1": ".,@'"
+                },
+                {
+                    "MAIN_KB_RED_2": "á****",
+                    "MAIN_KB_RED_3": "**é**",
+                    "MAIN_KB_RED_1": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_ROU": ".ro",
+            "MAIN_KB_YELLOW_WEB_5_MNE": ".me",
+            "MAIN_KB_BLUE_BUTTON": "Cúlspás",
+            "MAIN_KB_YELLOW_WEB_5_BLR": ".by",
+            "MAIN_KB_YELLOW_WEB_5_DEU": ".de",
+            "MAIN_KB_YELLOW_WEB_5_GEO": ".ge",
+            "MAIN_KB_YELLOW_WEB_5_URY": ".uy",
+            "MAIN_KB_YELLOW_WEB_5_AZE": ".az",
+            "MAIN_KB_YELLOW_WEB_5_DNK": ".dk",
+            "MAIN_KB_YELLOW_WEB_5_ESP": ".es",
+            "MAIN_KB_YELLOW_WEB_5_NOR": ".no",
+            "MAIN_KB_YELLOW_WEB_5_PRY": ".py",
+            "MAIN_KB_YELLOW_WEB_5_ITA": ".it",
+            "MAIN_KB_YELLOW_WEB_5_BEL": ".be",
+            "MAIN_KB_YELLOW_WEB_5_IRL": ".ie",
+            "MAIN_KB_YELLOW_WEB_5_HUN": ".hu",
+            "MAIN_KB_YELLOW_WEB_5_FRA": ".fr",
+            "MAIN_KB_YELLOW_WEB_5_ARM": ".am",
+            "MAIN_KB_YELLOW_WEB_5_LVA": ".lv",
+            "MAIN_KB_YELLOW_WEB_5_CZE": ".cz",
+            "MAIN_KB_YELLOW_WEB_5_BGR": ".bg",
+            "MAIN_KB_YELLOW_WEB_5_AUT": ".at",
+            "MAIN_KB_YELLOW_WEB_5_CHE": ".ch",
+            "MAIN_KB_YELLOW_WEB_5_LTU": ".lt",
+            "MAIN_KB_YELLOW_WEB_5_BRA": ".br",
+            "MAIN_KB_YELLOW_WEB_5_ARG": ".ar",
+            "MAIN_KB_YELLOW_WEB_5_SWE": ".se",
+            "MAIN_KB_GREEN_123": [
+                {
+                    "MAIN_KB_GREEN_1": ".,@'",
+                    "MAIN_KB_GREEN_2": "A*B*C",
+                    "MAIN_KB_GREEN_3": "D*E*F"
+                },
+                {
+                    "MAIN_KB_GREEN_1": "",
+                    "MAIN_KB_GREEN_2": "Á****",
+                    "MAIN_KB_GREEN_3": "**É**"
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_SVN": ".si",
+            "MAIN_KB_RED_456": [
+                {
+                    "MAIN_KB_RED_6": "m*n*o",
+                    "MAIN_KB_RED_4": "g*h*i",
+                    "MAIN_KB_RED_5": "j*k*l"
+                },
+                {
+                    "MAIN_KB_RED_6": "****ó",
+                    "MAIN_KB_RED_4": "****í",
+                    "MAIN_KB_RED_5": ""
+                }
+            ],
+            "MAIN_KB_YELLOW_WEB_5_UKR": ".ua",
+            "MAIN_KB_YELLOW_WEB_5_KAZ": ".kz",
+            "MAIN_KB_YELLOW_WEB_5_NLD": ".nl",
+            "MAIN_KB_YELLOW_WEB_5_OTHER": ".us",
+            "MAIN_KB_YELLOW_WEB_4": ".net",
+            "MAIN_KB_YELLOW_WEB_7": ".gov",
+            "MAIN_KB_YELLOW_WEB_6": ".eu",
+            "MAIN_KB_YELLOW_BUTTON": "123+/; www.",
+            "MAIN_KB_YELLOW_WEB_5_RUS": ".ru",
+            "MAIN_KB_YELLOW_WEB_5_SRB": ".rs",
+            "MAIN_KB_YELLOW_WEB_5_POL": ".pl",
+            "MAIN_KB_GREEN_789": [
+                {
+                    "MAIN_KB_GREEN_8": "T*U*V",
+                    "MAIN_KB_GREEN_9": "WXYZ",
+                    "MAIN_KB_GREEN_7": "PQRS"
+                },
+                {
+                    "MAIN_KB_GREEN_8": "**Ú**",
+                    "MAIN_KB_GREEN_7": ""
+                }
+            ],
+            "MAIN_KB_RED_BUTTON": "abâç",
+            "MAIN_KB_YELLOW_WEB_5_GRC": ".gr",
+            "MAIN_KB_GREEN_0": "yÂ?!-"
+        }
+    }

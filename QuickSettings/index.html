@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Quick Settings</title>
+
+<link rel="stylesheet" href="../libs/mtvui/base.css" />
+<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css" />
+<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+<script type="text/javascript" src="./translate_lang.js"></script>
+</head>
+<style>
+body, html {
+    font-family: "roboto", sans-serif !important;
+    background-color: rgba(0, 0, 0, 0);
+}
+.quick_settings{
+  width:450px;
+  height:720px;
+  background-color:#333;
+  padding-top:60px;
+}
+.vertical_line
+{
+position:absolute;
+width:3px; 
+height:507px; 
+text-align:center; 
+margin:0 auto;
+background:url(../Assets/Contents_Browser/divider.png);
+z-index:4;
+}
+
+
+.settings_ul {
+list-style:none;
+padding:0;
+width:100%;
+text-align:left;
+}
+
+.settings_ul li {
+height:34px;
+width:360px;
+line-height:34px;
+font-size:24px;
+color:rgb(255,255,255);
+text-align: left;
+padding-left:10px;
+padding-right:10px;
+outline:none;
+border-radius: 20px;
+margin-bottom: 1px;
+}
+
+.settings_ul li.selected{
+border: 1px solid white;
+}
+
+.settings_ul li.selected div{
+background:url(../2K16_4K_UX_Asset/Settings_screen/list_radiobutton_activated.png);
+}
+
+.settings_ul li.focus{
+border: 1px solid #76D7D6;
+color:#76D7D6;
+}
+
+.settings_ul li.focus span{
+color:#76D7D6;
+background:url(../2K16_4K_UX_Asset/Settings_screen/list_arrow_highlighted.png);
+}
+
+.settings_ul li.focus div{
+color:#76D7D6;
+background:url(../2K16_4K_UX_Asset/Settings_screen/list_radiobutton_highlighted.png);
+}
+
+.settings_ul li span {
+float: right;
+position: relative;
+top: 10px;
+width: 10px;
+height: 15px;
+background:url(../2K16_4K_UX_Asset/Settings_screen/list_arrow_normal.png);
+}
+
+.settings_ul li div {
+float: left;
+position: relative;
+top: 5px;
+width: 24px;
+height: 24px;
+background:url(../2K16_4K_UX_Asset/Settings_screen/list_radiobutton_normal.png);
+}
+
+</style>
+<body>
+<div class="quick_settings">
+	<div style="width:450px; height:520px;float:left;top:60px;position: absolute;">
+		<div id="settings_title" style="position: relative;left: -115px;top: 200px;width:300px;height: 42px;color:white;text-align: right;font-size: 26px;margin: 0px;-webkit-transform: rotate(270deg);"></div>
+		<div id="settings_list" style="left: 80px;width: 360px;height: 380px;float: left;position: absolute;display: block;z-index: 3;overflow: hidden;margin-top:32px;" >
+			<ul class="settings_ul">
+			</ul>
+		</div>
+		<div id="powermeter_leaf" style="position:absolute;width:360px;height:24px;left:80px;bottom:0px;display:none;">
+		<div style="position:relative;width:360px;height:8px;top:8px;background:url(../2K16_4K_UX_Asset/Green_menu/powermeter_filled_bar.png)">
+			<div id="powermeter_leaf_div" style="position:relative;float:right;width:10%;height:8px;background:url(../2K16_4K_UX_Asset/Green_menu/powermeter_default_bar.png)"></div>
+		</div>
+		<img id="powermeter_leaf_img" style="position:relative;float:right;top:-8px" src="../2K16_4K_UX_Asset/Green_menu/powermeter_leaf_icon.png" />
+		</div>
+		<div id="settings_column" style="left: 80px;width: 360px;height: 400px;float: left;position: absolute;display: block;z-index: 3;overflow: hidden;margin-top:32px;display:none;" >
+			<div id='column_title' style="width:100px;height:auto;color:#838485;text-align:center;font-size:20px;left:80px;position:relative;margin:0;">Headphones volume</div>
+			<div id="column_up" style="width:34px;height:13px;background:url(../2K16_4K_UX_Asset/gcc/slider_arrow_up_highlighted.png);left:110px;position:relative;margin:0 0 10px 0;"></div>
+			<div style="width:75px;height:280px;background:url(../2K16_4K_UX_Asset/gcc/slider_bg_hl_720P.png);left:90px;position:relative;display:table-cell;">
+				<div id="column_value" style="width:100%;height:10%;background:#76D7D6;bottom:0px;position:absolute;"></div>
+			</div>
+			<div id="column_down" style="width:34px;height:13px;background:url(../2K16_4K_UX_Asset/gcc/slider_arrow_down_highlighted.png);left:110px;position:relative;margin:10px 0 0 0;"></div>
+			<div id="max_value" style="position:absolute;width:24px;height:24px;font-size:24px;text-align:right;color:#838485;top:60px;left:60px;"></div>
+			<div id="mid_value" style="position:absolute;width:24px;height:24px;font-size:24px;text-align:right;color:#838485;top:200px;left:60px;"></div>
+			<div id="cur_value" style="position:absolute;width:40px;height:30px;font-size:24px;text-align:center;color:black;top:180px;left:108px;"></div>
+			<div id="min_value" style="position:absolute;width:24px;height:24px;font-size:24px;text-align:right;color:#838485;top:340px;left:60px;"></div>
+		</div>
+	</div>
+	<div id="vertical_line1" class="vertical_line" style= "left:58px;"></div>
+</div>
+</body>
+<script>
+var mtvObj = new MtvObj();
+var Picture_Style = {"name":"Picture style",'showMode':1,'acfgKey':'g_misc__cust_picture_style',"cacheValue":2,"curValue":2,"value":["Personal","Vivid","Natural","Standard","Movie","Photo"]};
+var Sound_Style = {"name":"Sound style",'showMode':2,'acfgKey':'g_misc__cust_sound_style',"cacheValue":2,"curValue":2,"value":["Personal_1","Original","Movie_1","Music","Game","News"]};
+var Headphones_Volume = {"name":"Headphones volume",'showMode':3,'acfgKey':'g_misc__cust_hdphone_volume'};
+var Quick_Setting = {"name":"Quick settings",'showMode':0,'focusIndex':0,"value":[Picture_Style,"Picture format",Sound_Style,Headphones_Volume]};
+var isNoPicFormat = false;
+
+var settings_data_obj = null ;
+var valueNotify;
+
+var selected = 0;
+var show_subsettings_obj;
+
+function settings_list_init(dataObj) {
+	$("#settings_column").hide();
+	$("#settings_list").show();
+	show_subsettings_obj = dataObj;
+	var settingsTitle = dataObj.name;
+	if(dataObj.hasOwnProperty("curValue")){
+		selected = dataObj.curValue;
+	} else if(dataObj.hasOwnProperty("focusIndex")){
+		selected = dataObj.focusIndex;
+	} else {
+		selected = 0;
+	}
+    
+	$('#settings_title').html(getTranslate(settingsTitle));
+	$('#settings_list').find('ul').empty();
+	
+    
+    for (var index in dataObj.value) {
+		var name;
+		var instructions = '';
+		var img = '';
+		var div = '';
+		var style = "tabindex='0'";
+		if(typeof(dataObj.value[index]) == 'string'){
+			switch(dataObj.showMode){
+			case 2:
+			div = '<div ></div>'
+			break;
+			case 1:
+			if(index == 3){
+				img = '<img style="position:relative;bottom:2px;" src="../2K16_4K_UX_Asset/Green_menu/powermeter_leaf_icon.png" />';
+			}
+			break;
+			}
+			if(dataObj.value[index] === "Picture format" && isNoPicFormat){
+				style = 'style="color:#838485;"'
+			}
+			name = dataObj.value[index];
+		} else {
+			name = dataObj.value[index].name;
+			instructions = '<span ></span>'
+		}
+		var id = name.replace(new RegExp(" ","g"),'_');
+		$('#settings_list').find('ul').append("<li id='" + id + "'"+ style+"onfocus=item_focus(true,'" + id + "');  onblur=item_focus(false,'" + id + "');>" + img + div + getTranslate(name) + instructions + "</li>"); 
+	}
+    setTimeout(function() {
+		if(show_subsettings_obj.hasOwnProperty("curValue")){
+			$($('#settings_list').find('li')[show_subsettings_obj.curValue]).addClass("selected");
+		}
+        $($('#settings_list').find('li')[selected]).focus();
+		if(dataObj.showMode == 1){
+			showPowermeter(true);
+		} else {
+			showPowermeter(false);
+		}
+    }
+    , 100);
+
+}
+
+function item_focus(isfocus, id) {
+    console.log('item_focus isfocus =' + isfocus + ' id =' + id);
+    if (isfocus) {
+    	$("#"+id).addClass("focus");
+		if(show_subsettings_obj.showMode == 2){
+			if(show_subsettings_obj.curValue == $("#"+id).index()){
+				$($("#"+id).find('div')).css('background','url(../2K16_4K_UX_Asset/Settings_screen/list_radiobutton_activated_highlighted.png)');
+			}
+		}
+    } else {
+		$("#"+id).removeClass("focus");
+		$($("#"+id).find('div')).css('background','');
+	}
+}
+
+function settings_init(show_obj){
+	resetCacheValue();
+	settings_data_obj = show_obj;
+	$('#settings_list').attr("showIndex", 0);
+	settings_list_init(show_obj);
+}
+
+function list_submenu_init(show_obj){
+	$('#settings_list').attr("showIndex", 1);
+	show_obj.curValue = mtvObj.acfgGetConfigValue(show_obj.acfgKey);
+	if(show_obj.showMode == 1 || show_obj.showMode == 2){
+		show_obj.cacheValue = show_obj.curValue;
+	}
+	settings_list_init(show_obj);
+}
+
+function showsettingsMenu(show_obj, notify){
+	valueNotify = notify;
+	settings_init(show_obj);
+}
+
+function settings_column_init(show_obj){
+	show_subsettings_obj = show_obj;
+	getConfigRange(show_obj);
+	$('#settings_title').html(getTranslate(show_obj.name));
+	$('#column_title').html(getTranslate(show_obj.name));
+	$('#settings_list').attr("showIndex", 1);
+	$("#settings_list").hide();
+	$("#max_value").html(show_obj.maxValue);
+	$("#min_value").html(show_obj.minValue);
+	$("#mid_value").html(Math.floor((show_obj.maxValue + show_obj.minValue)/2));
+	setCurColumn(show_obj);
+	$("#settings_column").show();
+	$("#settings_column").focus();
+}
+
+function setCurColumn(show_obj, add){
+	if(add){
+		if(show_obj.curValue >= show_obj.maxValue){
+			return;
+		}
+		show_obj.curValue++;
+	} else if(typeof(add) != 'undefined'){
+		if(show_obj.curValue <= show_obj.minValue){
+			return;
+		}
+		show_obj.curValue--;
+	}
+	if(typeof(add) != 'undefined'){
+		valueNotify(show_subsettings_obj);
+	}
+	$("#cur_value").html(show_obj.curValue);
+	$("#column_value").css('height', Math.floor((show_obj.curValue - show_obj.minValue) * 100 / (show_obj.maxValue - show_obj.minValue))+"%");
+}
+
+function getConfigRange(show_obj){
+	var ret = mtvObj.acfgGetConfigRange(show_obj.acfgKey);
+	if(ret){
+		ret = JSON.parse(ret);
+		show_obj.minValue = ret.ITEMS[0].valueMin;
+		show_obj.maxValue = ret.ITEMS[0].valueMax;
+		show_obj.curValue = ret.ITEMS[0].valueInt;
+	}
+		//show_obj.minValue = 0;
+		//show_obj.maxValue = 60;
+		//show_obj.curValue = 36;
+}
+
+function showPowermeter(isShow){
+	if(powermeter_timer){
+		clearInterval(powermeter_timer);
+		powermeter_timer = null;
+	}
+	if(isShow){
+		powermeter_timer = setInterval('showPowermeterValue()', 1000);
+		$('#powermeter_leaf').show();
+	} else {
+		$('#powermeter_leaf').hide();
+	}
+}
+
+var powermeter_timer = null;
+var i = 0;
+function showPowermeterValue(){
+	var ret = mtvObj.acfgGetConfigValue('g_misc__cust_energy_bar');
+	//ret = ++i;
+	console.log("showPowermeterValue ret = " + ret);
+	$('#powermeter_leaf_div').css('width', (100 - ret)+'%');
+	$('#powermeter_leaf_img').css('right', (3.6 * (100 - ret) - 10)+'px');
+
+}
+
+function left_handleKeyCode(evt, isDown) {
+    var kc = evt.which || evt.keyCode;
+    var id = evt.target.id;
+    if (kc == KeyEvent.DOM_VK_UP) {
+		if(isDown){
+			if(show_subsettings_obj && show_subsettings_obj.showMode == 3){
+				$("#column_up").css('background','url(../2K16_4K_UX_Asset/gcc/slider_arrow_up_pressed.png)');
+				setCurColumn(show_subsettings_obj, true);
+				return;
+			}
+			var content;
+			do{
+				if(content)
+					id = content.attr('id');
+				content = $('#' + id).prev();
+			} while (content.length > 0 && content.attr('tabindex') == undefined);
+			if (content.length > 0) {
+				selected = content.index();
+				content.focus();
+			} else {
+				li_list = $('.settings_ul').find('li');
+				selected = li_list.length -1;
+				$(li_list[selected]).focus();
+			}
+		} else {
+			if(show_subsettings_obj){
+				if(show_subsettings_obj.showMode == 3){
+					$("#column_up").css('background','url(../2K16_4K_UX_Asset/gcc/slider_arrow_up_highlighted.png)');
+				} else if(show_subsettings_obj.showMode == 1 || show_subsettings_obj.showMode == 2){
+					show_subsettings_obj.cacheValue = selected;
+					valueNotify({'name':show_subsettings_obj.name,'curValue':show_subsettings_obj.cacheValue});
+				}
+			}
+		}
+    } else if (kc == KeyEvent.DOM_VK_DOWN) {
+		if(isDown){
+			if(show_subsettings_obj && show_subsettings_obj.showMode == 3){
+				$("#column_down").css('background','url(../2K16_4K_UX_Asset/gcc/slider_arrow_down_pressed.png)');
+				setCurColumn(show_subsettings_obj, false);
+				return;
+			}
+			var content;
+			do{
+				if(content)
+					id = content.attr('id');
+				content = $('#' + id).next();
+			} while (content.length > 0 && content.attr('tabindex') == undefined);
+			if (content.length > 0) {
+				selected = content.index();
+				content.focus();
+			} else {
+				li_list = $('.settings_ul').find('li');
+				selected = 0;
+				$(li_list[selected]).focus();
+			} 
+		} else {
+			if(show_subsettings_obj){
+				if(show_subsettings_obj.showMode == 3){
+					$("#column_down").css('background','url(../2K16_4K_UX_Asset/gcc/slider_arrow_down_highlighted.png)');
+				} else if(show_subsettings_obj.showMode == 1 || show_subsettings_obj.showMode == 2){
+					show_subsettings_obj.cacheValue = selected;
+					valueNotify({'name':show_subsettings_obj.name,'curValue':show_subsettings_obj.cacheValue});
+				}
+			}
+		}
+
+    } else if (
+    kc == KeyEvent.DOM_VK_RIGHT || 
+    kc == KeyEvent.DOM_VK_RETURN) {
+		if ('0' == $('#settings_list').attr("showIndex")) {
+			var subObj = settings_data_obj.value[selected];
+			settings_data_obj.focusIndex = selected;
+			if (typeof(subObj) == 'object') {
+				if(subObj.showMode == 3){
+					settings_column_init(subObj);
+				} else {
+					list_submenu_init(subObj);
+				}
+				return true;
+			} else {
+				if(valueNotify){
+					var key = $($('#settings_list').find('li')[selected]).attr('id');
+					valueNotify(key);
+				}
+			}
+		} else if(kc == KeyEvent.DOM_VK_RETURN){
+            if(show_subsettings_obj.showMode == 1 || show_subsettings_obj.showMode == 2){
+                show_subsettings_obj.cacheValue = selected;
+                show_subsettings_obj.curValue = selected;
+                $(".settings_ul>li").removeClass("selected");
+                $($('#settings_list').find('li')[selected]).addClass("selected");
+                $($($('#settings_list').find('li')[selected]).find('div')).css('background','url(../2K16_4K_UX_Asset/Settings_screen/list_radiobutton_activated_highlighted.png)');
+                valueNotify(show_subsettings_obj);
+            }
+		}
+    } else if(kc == KeyEvent.DOM_VK_LEFT ||
+	kc == KeyEvent.DOM_VK_BACK) {
+	console.log("debug KeyEvent.DOM_VK_LEFT");
+		if('1' == $('#settings_list').attr("showIndex")){
+			settings_init(settings_data_obj);
+		} else if(kc == KeyEvent.DOM_VK_BACK){
+			mtvuiUtil.gotoSysPage("sys_index");
+		}
+	}
+    
+}
+
+var lastKeyDownNum = -1;
+var repeatCount = -1;
+var keyDownRepeat_t = null;
+
+function stopKeyDownRepeat (){
+	clearTimeout(keyDownRepeat_t);
+	keyDownRepeat_t = null;
+	lastKeyDownNum = -1;
+	repeatCount = -1;
+}
+
+function HandleKeydownLongPress(){//key down trriger this function
+	console.log("HandleKeydownLongPress");
+	try {
+		if(repeatCount > 0){
+			repeatCount = 0;
+			keyUpNotify(shareEvent);
+		}
+	}catch (e) {
+		console.log("<<<<<HandleKeydownLongPress>>>>>----error---:"+e);
+	}
+}
+
+$(document).on("keydown", function(event) {
+	var key = event.which || event.keyCode;
+	if(KeyEvent.DOM_VK_DOWN == key || KeyEvent.DOM_VK_UP == key){
+		left_handleKeyCode(event, true);
+	} else if (KeyEvent.DOM_VK_BACK != key) {
+		mtvuiUtil.procSysKey(key);
+	}
+    event.stopPropagation();
+}
+);
+
+$(document).on("keyup", function(event) {
+	left_handleKeyCode(event);
+    event.stopPropagation();
+}
+);
+
+function settingsNotify(notifyData){
+	var key;
+	if(typeof(notifyData) == 'object'){
+		key = notifyData.name.replace(new RegExp(" ","g"),'_');
+	} else {
+		key = notifyData;
+	}
+	console.log("key = " + key);
+	switch(key){
+	case Picture_Style.name.replace(new RegExp(" ","g"),'_'):
+	mtvObj.acfgSetConfigValue(Picture_Style.acfgKey, notifyData.curValue);
+	break;
+	case "Picture_format":
+	mtvObj.acfgSetConfigValue('g_misc__cust_picture_format', 1);
+	break;
+	case Sound_Style.name.replace(new RegExp(" ","g"),'_'):
+	mtvObj.acfgSetConfigValue(Sound_Style.acfgKey, notifyData.curValue);
+	break;
+	case Headphones_Volume.name.replace(new RegExp(" ","g"),'_'):
+	mtvObj.acfgSetConfigValue(Headphones_Volume.acfgKey, notifyData.curValue);
+	break;
+	}
+}
+
+window.onload = function(){
+	var netTvStatus = mtvObj.getNetTVAppMode();
+	if(netTvStatus == 'OPEN_INTERNET' || netTvStatus == 'YOUTUBE'){
+		isNoPicFormat = true;
+	}
+	showsettingsMenu(Quick_Setting, settingsNotify);
+};
+
+function resetCacheValue(){
+	if(show_subsettings_obj){
+		if(show_subsettings_obj.showMode == 1 || show_subsettings_obj.showMode == 2){
+			if(show_subsettings_obj.curValue != show_subsettings_obj.cacheValue){
+				settingsNotify(show_subsettings_obj);
+			}
+		}
+	}
+}
+
+$(window).unload(function(){
+	resetCacheValue();
+});
+
+</script>
+
+</html>

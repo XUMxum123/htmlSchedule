@@ -1,0 +1,84 @@
+.scanDeviceDialog {
+  width:620px;
+  background-color:rgba(0, 0, 0, 0.92);
+  font-size: 14pt;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+.scanDeviceDialog .head {
+  width: 100%;
+  min-height: 12px;
+}
+.scanDeviceDialog .body {
+  width:100%;
+  min-height: 122px;
+  overflow: hidden;
+}
+.scanDeviceDialog .body ul {
+  position:relative;
+  float:left;
+  width:620px;
+  margin:10px;
+}
+.scanDeviceDialog .body li {
+  float:left;
+  width:150px;
+  height:120px;
+  border-radius: 5px;
+}
+.scanDeviceDialog .body li img {
+  margin: 12px;
+  -webkit-filter: grayscale(1);
+  /* opacity: 0.45; */
+}
+.scanDeviceDialog .body li p {
+  font-size:12pt;
+  color: rgba(255, 255, 255, 1);
+}
+.scanDeviceDialog .body li.marked {
+  background-color: rgba(255,255,255, 0.1);
+}
+.scanDeviceDialog .body li:focus {
+  background-color: rgba(255,255,255, 0.45);
+}
+.scanDeviceDialog .body li:focus img {
+  -webkit-filter: grayscale(0);
+  opacity: 1;
+}
+.scanDeviceDialog .body li:focus p {
+  color: #76D7D6;
+}
+.scanDeviceDialog .foot {
+  width:100%;
+  height:72px;
+}
+
+.scanDeviceDialog .foot {
+  width: 100%;
+  height: 50px;
+  padding: 0 50px;
+}
+.scanDeviceDialog .foot button {
+  position:relative;
+  float:left;
+  height: 36px;
+  border: 2px solid #ffffff;
+  color:white;
+  background-color:#151515;
+  border-radius: 4px;
+  margin: 0 10px;
+  min-width: 120px;
+  margin: 0 25px;
+  top: 50%;                     /* vertical middle*/
+  transform: translateY(-50%);
+}
+
+.scanDeviceDialog .foot button.disabled {
+  color: rgba(255,255,255, 0.45);
+  border-color: rgba(255,255,255, 0.45);
+}
+.scanDeviceDialog .foot button:focus {
+  border-color: #76D7D6;
+  background-color: #76D7D6;
+}

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Channel Matrix Page</title>
+	<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8" />
+	<link   rel="stylesheet" href="../libs/materialize/dist/css/materialize.min.css" />
+	<link   rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" />
+	<link   rel="stylesheet" href="./css/style.css" />
+	<link 	rel="stylesheet" href="../libs/mtvui/base.css" />	
+</head>
+<body >
+<div class="preloader-wrapper big active" style="position:fixed; top:50%; left:50%; margin-top:-32px; margin-left:-32px;">
+	<div class="spinner-layer spinner-blue-only">
+		<div class="circle-clipper left"><div class="circle"></div></div>
+		<div class="gap-patch"><div class="circle"></div></div>
+		<div class="circle-clipper right"><div class="circle"></div></div>
+	</div>
+</div>
+<div id="colour_bar" style='display:none; position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:1;'>
+	<div class="footer"><ul>
+	  <li><span id="ColorKey_Info"></span></li>  
+      <li><img src="../Assets/_Color_Key_Bar/ColorKey_Red.png"/><span id="ColorKey_Red"></span></li>
+      <li><img src="../Assets/_Color_Key_Bar/ColorKey_Green.png"/><span id="ColorKey_Green"></span></li>
+	  <li><img src="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"/><span id="ColorKey_Yellow"></span></li>
+      <li><img src="../Assets/_Color_Key_Bar/ColorKey_Blue.png"/><span id="ColorKey_Blue"></span></li>
+      <li><img src="../Assets/_Color_Key_Bar/Icon_Options_2K14.png" style='vertical-align:middle;'/><span id="ColorKey_Options"></span></li>
+    </ul></div>
+</div>
+<div class="content_box">
+	<div id="top_menu_bar" class="top_menu_bar" style="display:none;">
+		<span style="position:absolute;left:478px;width: 324px; height:48px; vertical-align:middle; margin:0 auto;z-index:-1;">
+			<img src="../Assets/_Top_Menu_Bar/TMB_BG_Panel_Left.png" style="width:6px;position: inherit;left:0px;">
+			<img src="../Assets/_Top_Menu_Bar/TMB_BG_Panel_Center.png" style="left:6px; width:310px;position:inherit;height:48px;">
+			<img src="../Assets/_Top_Menu_Bar/TMB_BG_Panel_Right.png" style="left:316px; width:6px;position: inherit;">
+		</span>
+		<ul class="Menubox">
+		<li id="top_menu_0" tabindex = '0' data-focus-down-level="tv_submenu_bar" onfocus='top_menu_item_focus(true, "top_menu_0");'  onblur='top_menu_item_focus(false, "top_menu_0");' >
+			<img src="../Assets/_Top_Menu_Bar/Top_Menu_Bar_Icons/TV_HL_TR.png"/>
+			<p class="top-menu-info" id="top_menu_info_tv">TV</p>
+		</li>
+		<li id="top_menu_1" tabindex = '0' data-focus-down-level="satellite_submenu_bar" onfocus='top_menu_item_focus(true, "top_menu_1");'  onblur='top_menu_item_focus(false, "top_menu_1");' >
+			<img src="../Assets/_Top_Menu_Bar/Top_Menu_Bar_Icons/Satelite_HL_TR.png"/>
+			<p class="top-menu-info" id="top_menu_info_sa">Satellite</p>
+		</li>
+		</ul>
+	</div>
+	<div id="sub_menu_bar" style="font-size:22px;">
+		<div id="con_top_menu_0">
+			<div class='submenu_bar_layout_bg'>
+				<div id='tv_submenu_bar_layout' class="submenu_bar_layout">
+					<div class='submenu_bar'>
+						<ul id='tv_submenu_bar' data-focus-up-function='reset_top_menu_focus();'>
+						<!-- add submenu information-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="con_top_menu_1" >
+			<div class='submenu_bar_layout_bg'>
+				<div id='satellite_submenu_bar_layout' class="submenu_bar_layout">
+					<div class='submenu_bar'>
+						<ul id='satellite_submenu_bar' data-focus-up-function='reset_top_menu_focus();' >
+						<!-- add submenu information style="display:none"-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="id_div_contain" tabindex='0' style="position:absolute; left:80px; right:80px; top:280px; width:1120px; height:400px; padding:0px; z-index:2;">
+		<div class='channel-container right-side' >
+			<div >
+				<ul class="collapsible" data-collapsible="accordion" >
+					<li style="top: 100px;">
+						<div class="collapsible-header active"></div>
+						<div class="collapsible-body" id="id_collapsible_channel" >
+							<table>
+							<tr>
+								<td>
+									<div class="col-md-12" style="min-width: 860px; width:100%; ">
+										<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" id="channelCarousel">
+											<div class="carousel-inner" id="id_channel_carousel"></div>
+											<a class="left carousel-control" href="#channelCarousel" data-slide="prev"><i class="glyphicon "></i></a>
+											<a class="right carousel-control" href="#channelCarousel" data-slide="next"><i class="glyphicon "></i></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+							</table>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cd-pagination" id='cd-pagination'></div>
+	</div>
+	<div id="guidance_text" class="guidance-text" style="display:none">
+		<p id="guidance_text_content"><font size="4" color="white"></font></p>
+	</div>
+	<div id="create-fav-dialog" tabindex='0' class="modal-dialog" style="display:none">
+	</div>
+	<div id="new-search-dialog" class="new-search-dialog" style="display:none;opacity:0;">
+		<input  class="input-text" id="new-search-txtID" type="text" style="width: 1px; margin-left: 50px;left:40px; opacity:0;"/>
+	</div>
+	<div id="installChannel-dialog" class="modal-dialog" style="display:none">
+	</div>
+	<div id="option-menu" style="display:none">
+	</div>
+	<div id="pin-code-dialog" class="pin-code-dialog" style="display:none" >
+	</div>
+
+</div>
+	<div id="channel-num" style="display:none">
+		<ul class="input_bac" id="show_input">
+			<li id="num_0" class="input_li"></li>
+			<li id="num_1" class="input_li"></li>
+			<li id="num_2" class="input_li"></li>
+			<li id="num_3" class="input_li"></li>
+		</ul>
+	</div>
+	<div id="mark-all-as-fav" class="mark-all-as-fav-dialog"  style="display: none;">
+	</div>
+
+	<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../libs/materialize/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../libs/materialize/js/collapsible.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+	<script type="text/javascript" src="./js/ui-data.js"></script>
+	<script type="text/javascript" src="./js/layout.js" ></script>
+	<script type="text/javascript" src="../libs/mtvui/channelObj.js" ></script>
+	<script type="text/javascript" src="./js/handle_key.js" ></script>
+	
+<script>
+$(window).unload(function(){afterurlstoreChannelList();});
+var full_dash = false;
+//channel count of each page.
+const CAROUSEL_ITEM_CNT = 10;
+//all channel lsit
+var g_all_channel_list = [];
+//favorite channel lsit
+var g_favorite_channel_list = [];
+//Radio channel lsit
+var g_radio_channel_list = [];
+//new channel lsit
+var g_new_channel_list = [];
+//tv channel lsit
+var g_tv_channel_list = [];
+//channel count
+var g_channel_cnt = -1;
+//channel index
+var g_channel_idx = 0;
+var g_channel_page_idx = 0;
+//  is blinking
+var isblink = 0;
+// input vale
+var textValue = '';
+/* enable test data */
+var mtvObj = new MtvObj();
+
+String.prototype.getWidth = function(fontSize) {
+    var span = document.getElementById("__getwidth");
+    if (span == null) {
+        span = document.createElement("span");
+        span.id = "__getwidth";
+        document.body.appendChild(span);
+        span.style.visibility = "hidden";
+        span.style.whiteSpace = "nowrap";
+    }
+    span.innerText = this;
+    span.style.fontSize = fontSize;
+    return span.offsetWidth;
+}
+
+setTimeout(function() {
+    dalayloadingjs();
+}, 500);
+
+function dalayloadingjs() {
+    mtvuiLoadScript("./js/fav_list.js", function() {
+    });
+}
+</script>
+</body>
+</html>

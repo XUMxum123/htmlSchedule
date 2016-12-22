@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Input Source</title>
+        <!--<link   rel="stylesheet" href="../libs/roboto-fontface/css/roboto-fontface.css" />-->
+        <link   rel="stylesheet" href="../libs/materialize/dist/css/materialize.css" />
+        <!--<link   rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css" /> -->
+        <link   rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css" />
+        <!-- <link   rel="stylesheet" href="../libs/jquery-ui/themes/black-tie/jquery-ui.css" /> -->
+
+        <link   rel="stylesheet" href="./style.css" type="text/css"/>
+		<!--<link   rel="stylesheet" href="../OSMKB/css/keyBoard.css" type="text/css"/>-->
+        <link   rel="stylesheet" href="./deviceDialog.css" type="text/css"/>
+        <link   rel="stylesheet" href="../libs/mtvui/base.css" />
+
+        <style>
+         body, html {
+             font-size: 21pt;
+             font-family: "roboto", sans-serif !important;
+             background-color: rgba(0, 0, 0, 0);
+         }
+         :focus {
+             outline: none;                /* don't show the border when TAB focus */
+         }
+         .carousel-inner {
+             margin: 5px;
+         }
+         .card-cell {
+             margin: 5px;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="preloader-wrapper big active" style="position:fixed; top:50%; left:50%; margin-top:-32px; margin-left:-32px;">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left"><div class="circle"></div></div>
+                <div class="gap-patch"><div class="circle"></div></div>
+                <div class="circle-clipper right"><div class="circle"></div></div>
+            </div>
+        </div>
+
+        <!-- 1. Input Source Main Menu -->
+        <div id="id_div_contain" class="inputsource container" style="visibility:hidden;">
+            <div id="top" class="top_home">
+                <div style="width:53px;background-image:url(../2K16_4K_UX_Asset/Input_sources/topmenubar_home_icon_circle_d.png);background-size: 100% 100%;">
+                    <div style="width:24px;height:24px;background-image:url(../2K16_4K_UX_Asset/Icons/icon_117_Home_Dashboard_d_24x24_px.png);"> </div>
+                </div>
+                <div style="background-image:url(../2K16_4K_UX_Asset/dashboard/topmenubar_app_icon_circle_activated.png);">
+                    <div style="width:24px;height:24px;background-image:url(../2K16_4K_UX_Asset/Icons/icon_192_Sources_n_24x24_px.png);"> </div>
+                </div>
+                <div style="color:#FFFFFF; width:auto;" data-translate='REC_INPUT_SRC'>Input Source</div>
+            </div>
+
+            <div class="input_source_main">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header active"></div>
+                        <div class="dock" id="id_collapsible_input">
+                            <div class="carousel slide" id="inputCarousel" data-ride="carousel" data-type="multi" data-interval="false">
+                                <div class="carousel-inner" id="id_input_carousel"></div>
+                                <!-- <a class="left carousel-control" href="#inputCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                                     <a class="right carousel-control" href="#inputCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- this div should be created accroding to focused item, and then show color key -->
+            <div id="color_key" class="footer">
+                <ul id="color_list_bar" style="display:none;">
+                    <li>
+                        <div class="color-key-button" style="background: red;margin: 11px 0px;"></div>
+                        <span data-translate="MSG_EDIT" style="margin:5px;">EDIT</span>
+                    </li>
+                    <li>
+                        <div class="color-key-button" style="background: green;margin: 11px 0px;"></div>
+                        <span data-translate="REFRESH" style="margin:5px;">SCAN</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2. Press RED Key - Change Type Menu -->
+            <div id="dialog_device_list"  class="deviceDialog" style="position:absolute;left:300px;top:160px;z-index:5;display:none;">
+                <div class="head">
+					<!--<div tabindex=0 class="input-text" style="left:40px;width:280px;position:relative;float:left;"></div> -->
+                     <input tabindex=0 class="input-text" type="text" style="left:40px;width:280px;position:relative;float:left;"></input>
+                    <div class="icon">
+                        <img style="width:100%; height:100%;"></img>
+                    </div>
+                    <div class="name"></div>
+                </div>
+                <div class="body">
+                    <ul style="text-align:center;">
+                    </ul>
+                    <div class="marked">
+                        <img src="../2K16_4K_UX_Asset/Input_sources/tickmark_highlighted.png" style="width:24px; height:24px;">
+                    </div>
+                </div>
+                <div class="foot">
+                    <button type='button' data-translate='RC_OPT_CLOSE'>Close</button>
+                    <button type='button' data-translate='PF_RESET'>Reset</button>
+                    <button type='button' data-translate='CHM_TEXTE_DONE'>Done</button>
+                </div>
+            </div>
+
+            <!-- 3. Press GREEN Key - Scan Menu -->
+            <div id="scanDeviceDialog" class="scanDeviceDialog" style="position:absolute;left:305px;top:220px;z-index:5;display:none;">
+                <div class="head">
+                    <div tabindex=0 class="input"> </div>
+                    <div class="icon">
+                        <img style="width:100%; height:100%;"></img>
+                    </div>
+                    <div class="name"></div>
+                </div>
+                <div class="body">
+                    <ul style="text-align:center;">
+                    </ul>
+                </div>
+                <div class="foot">
+                    <button type="button" data-translate='HS_DLG_CANCEL'>Cancel</button>
+                    <button type="button" data-translate='NWZD_BTN_SCAN'>Scan</button>
+                    <button type="button" data-translate='CHM_TEXTE_DONE'>Done</button>
+                </div>
+            </div>
+        </div>
+		
+		<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="../libs/materialize/dist/js/materialize.js"></script>-->
+
+        <script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+        <script type="text/javascript" src="../libs/mtvui/base.js"></script>
+        <script type="text/javascript" src="../libs/mtvui/input_source.js"></script>
+        <script type="text/javascript" src="./input_source.js"></script>
+        <script type="text/javascript" src="../libs/jquery-ui/ui/core.js"></script>
+        <script type="text/javascript" src="../libs/jquery-ui/ui/widget.js"></script>
+        <!--<script type="text/javascript" src="../OSMKB/js/osmkb.js"></script>
+        <script type="text/javascript" src="./OSMKB_wrapper.js"></script>-->
+        <script>
+         $(document).ready(function(){
+             $('.preloader-wrapper').hide();
+             $('#id_div_contain').css('visibility', 'visible');
+         });
+         g_mtvObj = new MtvObj();
+         $.each($("[data-translate]"), function (k, item) {
+             var strId = $(item).data("translate");
+             $(item).text(g_mtvObj.getLangString(strId));
+         });
+        </script>
+    </body>
+</html>

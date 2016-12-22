@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>The Dash Board</title>
+        <link   rel="stylesheet" href="../libs/materialize/dist/css/materialize.min.css" />
+        <!-- <link   rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" /> -->
+        <!-- <link   rel="stylesheet" href="../libs/roboto-fontface/css/roboto-fontface.css" /> -->
+        <link   rel="stylesheet" href="../libs/mtvui/base.css" />
+        <link   rel="stylesheet" href="./dash.css" />
+        <style>
+         body, html {
+             font-family: "roboto", sans-serif !important;
+             font-size: 10px;
+             background-color: rgba(0, 0, 0, 0);
+         }
+         body {
+             font-size: 16px;
+             color: #FFFFFF;
+             margin: 50px;
+             overflow: hidden;
+         }
+         td, tr {
+             padding: 0;/* remove the padding property from materialize */
+         }
+         .dash-right-side {
+             left: 885px;
+         }
+         .dash-full-win {
+             left: 0px;
+             width: 100%;
+         }
+         .td-left {
+             padding-top: 4px;
+         }
+         .dash-right-side .td-left {
+             padding-left:30px;
+         }
+         .dash-full-win .td-left {
+             padding-left:27px;
+         }
+         .collapsible {
+             border: none;
+             box-shadow: none;
+         }
+         .collapsible-header {
+             color: rgba(255,255,255,0.45);
+             background: transparent;
+             font-size: 21pt;
+             height: 64px;
+             line-height: auto;
+             border: none;
+             overflow:hidden;
+             padding: 0;
+         }
+         .collapsible-header.active {
+             background-color: rgba(0, 0, 0, 0.9);
+             border-top: 1px solid rgba(255, 255, 255, 0.2);
+             overflow: visible;
+         }
+         .collapsible-body {
+             width: 100vw;
+             height: 192px;
+             overflow:hidden;
+             background-color: rgba(0, 0, 0, 0.9);
+             border-bottom-color: rgba(255, 255, 255, 0.2);
+         }
+         .active {
+             color: #76D7D6;
+         }
+         .dash-container {
+             background:#1d1f21;
+             background-size:100% 100%;
+             z-index:99;
+             top:0px;
+             height: 100vh;
+             width: 100%;
+             position:absolute;
+         }
+         .carousel-inner {
+             width: 100%;
+             height: 255px;
+             overflow: hidden;
+         }
+         .carousel-inner .item>div:first-child {
+             padding-top: 4px;
+         }
+         /* disable gradient background when not active */
+         .carousel-control.left, .carousel-control.right {
+             background-image: none;
+             display: none;/* for default */
+         }
+         .item {
+             position:relative;
+         }
+         div.btn {
+             background: none;
+             border: 2px solid;
+             width: 120px;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         }
+         div.btn.active {
+             background: #76D7D6;
+             color: #FFFFFF;
+             border: 2px solid #76D7D6;
+         }
+         .card-cell {
+             width: 245px;
+             height:122px;
+         }
+         .card.mtvui {
+             height: 122px;
+             width: 243px;
+             color: #838485;
+             background-color:rgba(255,255,255, 0);
+             margin: 0px; /* overide parent margin  */
+             box-shadow: none; /* remove the shardow */
+             padding: 1px;
+             font-size: 17pt;
+         }
+         .card.mtvui.active {
+             color: #76D7D6;
+             background-color:rgba(255,255,255, 0.45);
+         }
+         .card.mtvui .card-image {
+             width: 48px;
+             height: 48px;
+             margin-bottom: 12px;/* make sure the element below this won't be displayed */
+             overflow: hidden;
+         }
+         #id_channel_carousel .card.mtvui .card-image {
+             height:36px;
+             margin:18px 12px;
+         }
+         #id_channel_carousel .card.mtvui .card-image:empty {
+             border-radius: 24px;
+             background: rgba(255, 255, 255, 0.45);
+         }
+         li.active .card.mtvui .card-image {
+             height:64px;
+             width:64px;
+             margin:12px;
+         }
+         li.active #id_channel_carousel .card.mtvui .card-image {
+             height:48px;
+         }
+         li.active #id_channel_carousel .card.mtvui.active .card-image:empty {
+             background-color: #FFFFFF;
+         }
+         .card.mtvui .card-image img {/* gray the image when not active */
+             -webkit-filter: grayscale(1);
+             opacity: 0.45;
+         }
+         .card.mtvui.active  .card-image img {
+             -webkit-filter: grayscale(0);
+             opacity: 1;
+         }
+         #id_channel_carousel .card.mtvui .card-image img {
+             border-radius: 24px;
+         }
+         .card.mtvui .card-content {
+             padding: 2px;
+             overflow:hidden;
+         }
+         .card.mtvui .card-action {padding: 2px; }
+         .card.mtvui .card-title {padding: 2px;}
+         .card.mtvui p {padding: 2px; }
+         .card.mtvui .icon {
+             width: 31px;
+             height: 31px;
+             position: absolute;
+         }
+         .card.mtvui .icon.new {
+             top: 0px;
+             right: 0px;
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_New_Small_N.png);
+         }
+         .card.mtvui.active .icon.new {
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_New_Small_HL.png);
+         }
+         .card.mtvui .icon.lock {
+             right: 0px;
+             bottom: 0px;
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_Lock_Small_N.png);
+         }
+         .card.mtvui.active .icon.lock {
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_Lock_Small_HL.png);
+         }
+         .card.mtvui .icon.favorite {
+             top: 0px;
+             right: 0px;
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_Favorite_Small_N.png);
+         }
+         .card.mtvui.active .icon.favorite {
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_Favorite_Small_HL.png);
+         }
+         .card.mtvui .icon.scrambled {
+             top: 0px;
+             left: 0px;
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_Scrambled_Small_N.png);
+         }
+         .card.mtvui.active .icon.scrambled {
+             background-image:url(../Assets/Channelgrid/Channelgrid_Icons/Icon_Scrambled_Small_HL.png);
+         }
+         .shelf-tail {
+             top: 0px;
+             right: 0;
+             width: 148px;
+             height: 254px;
+             line-height: 254px;
+             color: #838485;
+             background-color: #1d1f21;
+             font-size: 17pt;
+             position: absolute;
+             padding-left: 30px;
+         }
+         .see-all {
+             width:80px;
+             overflow: hidden;
+         }
+         .see-all.active {
+             color: #76D7D6;
+         }
+         .panel-preview {
+             float: left;
+             width: 266px;
+             height: 188px;
+             line-height:21pt;
+             margin-top: 12px;
+         }
+         .td-left.active #broadcast_vod {
+             color: #76D7D6;
+             border: solid 1px;
+         }
+         #broadcast_info {
+             top: 10px;
+             left:8px;
+             width: 266px;
+             position: relative;
+             overflow: hidden;
+             text-overflow: ellipsis;
+             white-space: nowrap;
+         }
+         .collapsible-desc-text {
+             top: 7px;
+             left: 37px;
+             width: 281px;
+             height: 159px;
+             position: relative;
+             font-size: 17pt;
+             line-height: 100%;
+         }
+         #broadcast_ch_num {
+             background-color:#262626;
+         }
+         #broadcast_ch_num span {
+             top: 70px;
+             left: 112px;
+             position: relative;
+         }
+         .collapsible td {vertical-align: top;}
+         .td-left  {
+             min-width:395px;/* 385 + 895 == 1280 */
+             max-width:395px;
+             float:left;
+         }
+         .active .td-left {
+             color: white;
+         }
+         .td-left.active {
+             color: #76D7D6;
+         }
+         .td-right {min-width:895px;max-width:895px;overflow:hidden;}
+         .td-left .right.carousel-control {
+             display: block;
+         }
+         ul li {overflow: hidden;}
+         .page-right-radio {
+             top: 0;
+             right: 0;
+             height: 100vh;
+             width: 109px;
+             float: right;
+             position: absolute;
+             z-index: 1000;
+             left: auto;
+             background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+             background-image: -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+             background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
+             background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+             background-repeat: repeat-x;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="preloader-wrapper big active" style="position:fixed; top:50%; left:50%; margin-top:-32px; margin-left:-32px;">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <div id="id_div_contain" class='dash-container dash-right-side' style="visibility:hidden;">
+            <div class="dash-head">
+                <div class="app-icon-circle home" style="float:left;"><div class="app-icon-home"></div></div>
+                <div style="float:left;height:48px;width:auto;padding-left:12px;">
+                    <span data-translate='DASHBOARD_DRAWER_TITLE' style='font-size:25pt;position:relative;top:-5px;'>Philips TV</span>
+                    <br />
+                    <span data-translate='dashboard_welcome_msg'  style='font-size:17pt'>&nbsp;</p>
+                </div>
+            </div>
+            <div style="float:left;">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header active" id="id_collapsible_channel">
+                            <table>
+                                <tr><td class="td-left active">
+                                    <div class="app-icon-circle"><div class="app-icon-list-view"></div></div>
+                                    <div class="app-title"><span data-translate='MAIN_HE_CHANNELS'>Channels</span></div><br />
+                                    <div id="channel_left" class="panel-preview">
+                                        <!-- for epg info -->
+                                        <div id="broadcast_info">
+                                            <span id="channel_epg_name" style="font-size:24pt;line-height:30pt;"></span><br />
+                                            <span id="channel_epg_sum" style="font-size:17pt;"></span><br />
+                                            <span id="channel_epg_detail" style="font-size:12pt; white-space:normal; -webkit-box-orient: vertical; display:-webkit-box;-webkit-line-clamp:3;"></span>
+                                        </div>
+                                        <!-- for PIP region -->
+                                        <div id="broadcast_vod" class="collapsible-desc-text" style="display:none;">
+                                            <object type="video/broadcast" style="width:100%;height:100%;"></object>
+                                            <progress value="0" max="100" style="width:100%;height:3px;top:-20px;position:relative;" />
+                                        </div>
+                                        <!-- for channel number only -->
+                                        <div id="broadcast_ch_num" class="collapsible-desc-text" style="display:none;">
+                                            <span style="font-size:21pt;">CH:</span>
+                                        </div>
+                                    </div>
+                                    <div style="position:relative;float:right;right:25px;top:25px;">
+                                        <a class="right carousel-control" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td><td class="td-right">
+                                    <div class="carousel slide" data-ride="carousel" data-interval="false" id="channelCarousel">
+									<a class="left carousel-control" href="#channelCarousel" data-slide="prev">
+                                                <i class="glyphicon glyphicon-chevron-left"></i></a>
+                                        <div id="id_dlg_install_channel" style="display:none;">
+                                            <!-- row 1 -->
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8" style="padding-top:64px;padding-bottom:64px;" data-translate="HS_DLG_SEARCH_CH">Do you want to install channel now?</div>
+                                            <div class="col-md-2"></div>
+                                            <!-- row 2 -->
+                                            <div class="col-md-3"></div>
+                                            <div class="btn col-md-2" data-type="show_half_side">
+                                                <span data-translate='2K14_CAM_not_now'>Not now</span>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="btn col-md-2" data-type="scan_channel">
+                                                <span data-translate='YES'>Yes</span>
+                                            </div>
+                                            <div class="col-md-3"></div>
+                                        </div>
+                                        <div class="carousel-inner" id="id_channel_carousel">
+                                        </div>
+                                        <a class="right carousel-control" href="#channelCarousel" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                        <div class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header" id="id_collapsible_input">
+                            <table>
+                                <tr><td class="td-left">
+                                    <div class="app-icon-circle"><div class="app-icon-sources"></div></div>
+                                    <div class="app-title"><span data-translate='MAIN_HE_SOURCES'>Source</span></div><br />
+                                    <div class="panel-preview">
+                                        <div class="collapsible-desc-text" data-translate='EL_DASHBOARD_SOURCE_DESCRIPTION'>
+                                        </div>
+                                    </div>
+                                    <div style="position:relative;float:right;right:25px;top:25px;">
+                                        <a class="right carousel-control" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td><td>
+                                    <div class="td-right">
+                                        <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" id="inputCarousel">
+                                            <div class="carousel-inner" id="id_input_carousel">
+                                            </div>
+                                            <a class="left carousel-control" href="#inputCarousel" data-slide="prev">
+                                                <i class="glyphicon glyphicon-chevron-left"></i></a>
+                                            <a class="right carousel-control" href="#inputCarousel" data-slide="next">
+                                                <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                        <div class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header" id="id_collapsible_utilities">
+                            <table>
+                                <tr><td class="td-left">
+                                    <div class="app-icon-circle"><div class="app-icon-utilities"></div></div>
+                                    <div class="app-title"><span data-translate='EL_DASHBOARD_UTILITIES'>Utilities</div><br />
+                                    <div class="panel-preview">
+                                        <div class="collapsible-desc-text" data-translate='EL_DASHBOARD_UTILITIES_DESCRIPTION'></div>
+                                    </div>
+                                    <div style="position:relative;float:right;right:25px;top:25px;">
+                                        <a class="right carousel-control" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td><td class="td-right">
+                                    <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" id="utilitiesCarousel">
+                                        <div class="carousel-inner" id="id_utilities_carousel">
+                                        </div>
+                                        <a class="left carousel-control" href="#utilitiesCarousel" data-slide="prev">
+                                            <i class="glyphicon glyphicon-chevron-left"></i></a>
+                                        <a class="right carousel-control" href="#utilitiesCarousel" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                        <div class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header" id="id_collapsible_settings">
+                            <table>
+                                <tr><td class="td-left">
+                                    <div class="app-icon-circle"><div class="app-icon-settings"></div></div>
+                                    <div class="app-title"><span data-translate='MAIN_VB_QUICK_SETTINGS'>Quick settings</span></div><br />
+                                    <div class="panel-preview">
+                                        <div class="collapsible-desc-text" data-translate='EL_DASHBOARD_QUICK_SETTINGS_DESCRIPTION'>
+                                        </div>
+                                    </div>
+                                    <div style="position:relative;float:right;right:25px;top:25px;">
+                                        <a class="right carousel-control" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td><td class="td-right">
+                                    <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" id="settingsCarousel">
+                                        <div class="carousel-inner" id="id_settings_carousel">
+                                        </div>
+                                        <a class="left carousel-control" href="#settingsCarousel" data-slide="prev">
+                                            <i class="glyphicon glyphicon-chevron-left"></i></a>
+                                        <a class="right carousel-control" href="#settingsCarousel" data-slide="next">
+                                            <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                        <div class="collapsible-body"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-right-radio" style="display:none;"></div>
+        </div>
+        <script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+        <script type="text/javascript" src="../libs/mtvui/base.js"></script>
+        <script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="../libs/jquery-ui/jquery-ui.js"></script> -->
+        <!-- <script type="text/javascript" src="../libs/materialize/dist/js/materialize.min.js"></script> -->
+        <script type="text/javascript" src="../libs/materialize/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="../libs/materialize/js/collapsible.js"></script>
+        <!-- <script type="text/javascript" src="../libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
+        <script type="text/javascript" src="../libs/mtvui/utilities.js"></script>
+        <script type="text/javascript" src="./dash.js"></script>
+        <script type="text/javascript" src="../libs/mtvui/recording.js"></script>
+        <script type="text/javascript" src="../libs/mtvui/input_source.js"></script>
+        <script type="text/javascript" src="../libs/mtvui/channelObj.js"></script>
+        <script>
+         const CARD_WIDTH = 245;
+         const SEE_ALL_WIDTH = 148;
+
+         var dashObj = new DashObj();
+         var gPos = {"x":0, "y":0, "seeall":false};
+         var gIsFullDash = false;
+         var mtvObjRaw = new MtvObjRaw();
+         $.each($("[data-translate]"), function (k, item) {
+             var strId = $(item).data("translate");
+             $(item).text(mtvObjRaw.getLangString(strId));
+         });
+
+         $(document).ready(function() {
+             // remove the settings when NetTV or 3rd app (eg: NetFlix ...) is running
+             /* if (mtvuiUtil.getNetTvStatus() || mtvuiUtil.get3rdAppStatus())
+                $("#id_collapsible_settings").remove();
+              */
+             $(".collapsible-header.active ~ .collapsible-body").stop(true, true);/* stop cloapsible animation before visiable */
+             $('#id_div_contain').css("visibility", "visible");
+             $('.preloader-wrapper').hide();
+             /* hide the scroll text sign, use the scroll image instead. */
+             $(".carousel-control i").hide();
+             $(".carousel-control.left").append('<img style="position:absolute; top:40%; left:10%; display:inline-block;" src="../2K16_4K_UX_Asset/dashboard/arrow_left_hl_13x43.png" />');
+             $(".carousel-control.right").append('<img style="position:absolute; top:40%; right:26%; display:inline-block;" src="../2K16_4K_UX_Asset/dashboard/arrow_right_hl_13x43.png" />');
+             mtvuiUtil.makeMarquee($(".app-title"));
+             setTimeout(show_channel_div, 500);/* show container first, then start the PIP */
+             //setTimeout(show_channel_div, 1000);/* FIXME: may have problem for first time to start PIP, start it again */
+         });
+
+         var exitMenu = function (callback) {
+             $("#broadcast_vod").hide(0, function () {/* hide the VOD first, then stop the PIP */
+                 var pos = {
+                     v: 0,
+                     x: 0,
+                     y: 0,
+                     w: screen.width,
+                     h: screen.height
+                 };
+                 dashObj.pipRegionStop(pos);
+                 if (callback)
+                     callback();
+             });
+         };
+         $(window).unload(exitMenu());
+
+         var gotoSysPage = function (pageId, args) {
+             exitMenu(function () {
+                 mtvuiUtil.gotoSysPage(pageId, args);
+             });
+         };
+		 
+		 //  fix CR: DTV00762656 
+         mtvuiUtil.gotoSysPageOld = mtvuiUtil.gotoSysPage;
+         mtvuiUtil.tmp = function() {
+          	 exitMenu();
+             mtvuiUtil.gotoSysPageOld.apply(this, arguments);
+		 };
+		 mtvuiUtil.gotoSysPage = function(){
+         	 //return mtvuiUtil.tmp(arg);
+			return mtvuiUtil.tmp.apply(this, arguments);
+         };
+		 
+         var show_channel_div = function () {
+             if (dashObj.getChannelCount() <= 0) {
+                 $('#channel_epg_sum').text(mtvObjRaw.getLangString('MSG_DRCT_CH_FAIL'));
+                 $('#channel_epg_name').text("");
+                 $('#channel_epg_detail').text("");
+                 $('#broadcast_info').show();
+                 $('#channel_left div[id!=broadcast_info]').hide();
+                 return;
+             }
+
+             var chInfo = dashObj.getCurrentChannelInfo();
+             var epgNow = null;
+             if (chInfo.name && chInfo.brdType == "2")/* "1"--ATV, "2"--DTV, "3"--Satellite */
+                 epgNow = dashObj.getEpgNowEvent(chInfo.id);
+             console.log(chInfo);
+             console.log(epgNow);
+
+             /* try to show PIP when in non-TV source */
+             if (undefined == show_channel_div.prototype.pipVodSuccess
+              && dashObj.isPipAvaliable()) {
+                 /* add the event listener first */
+                 mtvObjRaw.addEventListener('ConfigUpdateNotify', function (status) {
+                     var obj = JSON.parse(status);
+                     if (obj.ITEMS[0].ARG1 == "1") {/* for sub */
+                         if (obj.ITEMS[0].ID == "8")  /* "8" --has video; "9" --no video */
+                             show_channel_div.prototype.pipVodSuccess = true;
+                         else if (obj.ITEMS[0].ID == "9")
+                             show_channel_div.prototype.pipVodSuccess = false;
+                         show_channel_div();
+                     }
+                 });
+                 /* then try start the PIP */
+                 var offset = $('#channel_left').offset();
+                 var pos = { v: 0, x: offset['left'], y: offset['top'], w: 1, h: 1 };
+                 dashObj.pipRegionStart(pos);
+             }
+
+             if (!show_channel_div.prototype.pipVodSuccess) {/* the PIP didn't start or not success */
+                 /* show channel info when TV present (and not CI+ host tune) */
+                 if (chInfo && !dashObj.isCiPlusHostTune()) {
+                     if (chInfo.brdType == "1") {
+                         $("#broadcast_ch_num span").text("CH " + chInfo.num);
+                         $("#broadcast_ch_num").show();
+                         $('#channel_left div[id!=broadcast_ch_num]').hide();
+                     }
+                     else {
+                         $('#channel_epg_name').text(chInfo.name);
+                         if (epgNow) {
+                             var sum = "";
+                             if (epgNow.EVENT_NAME)
+                                 sum += epgNow.EVENT_NAME;
+                             /* if (epgNow.DURATION && epgNow.DURATION > 0)
+                                sum += " - " + parseInt(epgNow.DURATION / 60) + " minutes"; */
+                             $('#channel_epg_sum').text(sum);
+                             $('#channel_epg_detail').text(epgNow.DETAILS);
+                         }
+                         $('#broadcast_info').show();
+                         $('#channel_left div[id!=broadcast_info]').hide();
+                     }
+                 }
+                 else {/*No channel info avaliable */
+                     $('#channel_epg_name').text("");
+                     $('#channel_epg_sum').text("");
+                     $('#broadcast_info').show();
+                     $('#channel_left div[id!=broadcast_info]').hide();
+                 }
+             }
+             /* the PIP already started successful */
+             else {
+                 $('#channel_left div[id!=broadcast_vod]').hide();
+                 var vodDiv = $("#broadcast_vod");
+                 vodDiv.show();/* show it first, then .offset() will get correct value */
+                 var pos = {
+                     v: 0,
+                     x: vodDiv.offset()['left'],
+                     y: vodDiv.offset()['top'],
+                     w: vodDiv.width() + 1,/* FIXME: add 1px to cover the margin */
+                     h: vodDiv.height() + 1
+                 };
+                 dashObj.pipRegionStart(pos);
+                 /* update the progress bar */
+                 var update_progress = function () {
+                     if (chInfo.brdType == "1")
+                         return;
+                     if (!vodDiv.is(":visible"))
+                         return;
+                     var epgNow = dashObj.getEpgNowEvent(chInfo.id);
+                     if (!epgNow) {
+                         $("#broadcast_vod progress").hide();
+                         return;
+                     }
+
+                     var curTime = parseInt(dashObj.getBroadcastUtcTime());
+                     var start = parseInt(epgNow.START_TIME);
+                     var duration = parseInt(epgNow.DURATION);
+                     console.log("curTime:", curTime, ", start:", start, ", duration:", duration);
+                     if (!isNaN(curTime) && !isNaN(start) && !isNaN(duration)
+                             && duration > 1 && start < curTime) {
+                                 $("#broadcast_vod progress").show();
+                                 $("#broadcast_vod progress").attr("value", Math.round((curTime - start) / duration * 100));
+                     }
+                     else {
+                         $("#broadcast_vod progress").hide();
+                     }
+                     clearTimeout(update_progress.prototype.hTimer);
+                     update_progress.prototype.hTimer = setTimeout(update_progress, 2500);
+                 };
+                 update_progress();
+             }
+         };
+         var set_carousel_items = function (target, list, args) {
+             if (0 == list.length)/* no cards */
+                 return false;
+
+             /* list = list.slice(0, 10); */
+             target.html("");/* clean all items */
+             var halfCardCnt = Math.ceil(list.length / 2);
+             var itemWidth = halfCardCnt * CARD_WIDTH + SEE_ALL_WIDTH;
+             /*  */
+             var sortIndex = [];
+             /* the cards in item sort horizontal, but the spec show a vertical
+                | 1 2 3 |,     spec: | 1 3 5 |
+                | 4 5 6 |            | 2 4 6 |
+              */
+             sortedList = [];
+             for (i = 0; i < list.length; i += 2) sortedList.push(list[i]);
+             for (i = 1; i < list.length; i += 2) sortedList.push(list[i]);
+
+             /* carousel active item */
+             carouselItem  = $('<div class="active item" style="width:'+itemWidth+'px;" />');
+             cardContainer = $('<div style="width:'+ halfCardCnt * CARD_WIDTH + 'px;">');
+             $.each(sortedList, function (k, e) {
+                 var icon = e.icon ? ('<img src="'+e.icon+'" />') : "";
+				 var trim = function (str) {
+					 return str.replace(/(^\s*)|(\s*$)/g,"");
+				 };
+				 var name = trim(e.name);
+				 name = !name || name == "" ? "-----" : name;
+                 var card = $('<div class="card mtvui" align="center" data-type="'
+                             +e.type+'" data-value="'
+                             +e.id+'"><div class="card-image">'
+                             +icon+'</div><div class="card-content"><span>'
+                             +name+'</span></div></div>');
+                 var ci = $('<div class="card-cell" style="float:left; width:'+CARD_WIDTH+'px;"></div>');
+                 card.appendTo(ci);
+                 ci.appendTo(cardContainer);
+                 if (e.mask) {
+                     var mask = parseInt(e.mask);
+                     /* "New" or "Favorite" */
+                     if ((mask & MaskList.Mask_new) == MaskList.Mask_new)
+                         card.append('<div class="icon new" />');
+                     else if ((mask & MaskList.Mask_favorite) == MaskList.Mask_favorite)
+                         card.append('<div class="icon favorite" />');
+                     if ((mask & MaskList.Mask_lock) == MaskList.Mask_lock)
+                         card.append('<div class="icon lock" />');
+                     if ((mask & MaskList.Mask_scrambled) == MaskList.Mask_scrambled)
+                         card.append('<div class="icon scrambled" />');
+                 }
+             });
+             cardContainer.appendTo(carouselItem);
+             if (args && args.seeall)
+                 $('<div class="shelf-tail"><div class="see-all" data-type="seeall" data-value="'
+                 + args.seeall + '"><span data-translate="DASHBOARD_SHELF_SEE_ALL">'
+                 + mtvObjRaw.getLangString('DASHBOARD_SHELF_SEE_ALL') + '</span></div></div>').appendTo(carouselItem);
+             carouselItem.appendTo(target);
+             if (halfCardCnt >= 4)
+                 target.parent().find(".carousel-control.right").show();
+         };
+         var getGridInfo = function (target) {
+             var gridInfo = {"x":-1, "y":-1, "seeall":false, "col1Cnt":0, "col2Cnt":0, hasSeeAll:false};
+             var item_cards = $(target).find(".item.active .card.mtvui");
+             var active_card = $(target).find(".item.active .card.mtvui.active");
+             /* no cards, find the buttons */
+             if (item_cards.length <= 0) {
+                 item_cards = $(target).find("div.btn");
+                 active_card = $(target).find("div.btn.active");
+                 if (item_cards.length <= 0)
+                     return true;
+                 gridInfo.col1Cnt = item_cards.length;
+                 gridInfo.col2Cnt = 0;
+                 gridInfo.seeall  = false;
+                 if (active_card.length > 0) {
+                     gridInfo.x = $.inArray(active_card[0], item_cards);
+                 }
+                 gridInfo.y = 0;
+             }
+             else {
+                 gridInfo.col1Cnt = Math.ceil(item_cards.length / 2);
+                 gridInfo.col2Cnt = item_cards.length - gridInfo.col1Cnt;
+                 gridInfo.hasSeeAll  = ($(target).find(".see-all").length > 0);
+                 if (active_card.length > 0) {
+                     p = $.inArray(active_card[0], item_cards);
+                     if (p < gridInfo.col1Cnt) {
+                         gridInfo.x = p;
+                         gridInfo.y = 0;
+                     } else {
+                         gridInfo.x = p - gridInfo.col1Cnt;
+                         gridInfo.y = 1;
+                     }
+                 }
+                 else {
+                     gridInfo.seeall = ($(target).find(".active.see-all").length > 0);
+                 }
+             }
+
+             return gridInfo;
+         };
+         var cleanGridStatus = function (target) {
+             var item_cards = $(target).find(".item.active .card.mtvui");
+             setCardStatus(item_cards, false); /* remove the ative style first */
+             setSeeAllStatus($(target).find(".see-all"), false);
+             $(target).find("div.btn").removeClass('active');
+             $(target).find(".td-left").removeClass("active");
+         };
+         var setGridStatus = function (target, pos, gridInfo) {
+             gridInfo = gridInfo || getGridInfo(target);
+             cleanGridStatus(target);
+             /* negative pos.x */
+             if (pos.x < 0)
+                 $(target).find(".td-left").addClass("active");
+             else if ((pos.y == 0 && pos.x == gridInfo.col1Cnt)
+                     || (pos.y == 1 && pos.x == gridInfo.col2Cnt))
+             {
+                 /* the cards in scond row maybe less than first row, so always use col1Cnt  */
+                 posX = (2-Math.max(2, gridInfo.col1Cnt - 1)) * CARD_WIDTH;
+                 $(target).find(".active.item").css("left", posX);
+                 setSeeAllStatus($(target).find(".see-all"), true);
+             }
+             else {
+                 var item_cards = $(target).find(".item.active .card.mtvui");
+                 if (item_cards.length <= 0)
+                     item_cards = $(target).find("div.btn");
+                 setCardStatus(item_cards[pos.x + pos.y * gridInfo.col1Cnt], true);
+                 posX = (2-Math.max(2, pos.x)) * CARD_WIDTH;
+                 $(target).find(".active.item").css("left", posX);
+                 if (posX < 0)
+                     $(target).find(".carousel-control.left").show();
+                 else
+                     $(target).find(".carousel-control.left").hide();
+             }
+         };
+         var cecAutoScan = function (list) {
+             var devList = [];
+             // copy the items without CEC name/icon, then update CEC name/icon
+             $.each(list, function (k, v) {
+                 if (v.oName && v.oName.indexOf('HDMI') == 0) {
+                     devList.push($.extend({}, v, {cName:null, cIcon: null}));
+                 }
+             });
+             var cecList = ipsCECObj.updateDeviceList(devList);
+             $.each(cecList, function (k, v) {
+                 v.name = v.cName || v.aName || v.oName;
+                 v.icon = v.cIcon || v.aIcon || v.oIcon;
+                 var card = $(".card.mtvui[data-type=input][data-value="+v.id+"]");
+                 card.find(".card-content>span").text(v.name);
+                 card.find(".card-image>img").attr("src", v.icon);
+             });
+         };
+         var switchToFulldash = function (heads) {
+             heads = heads ? heads : $('.collapsible-header');
+             /* init the cards */
+             var channelList = dashObj.getChannelList(10);
+             set_carousel_items($("#id_channel_carousel"),   channelList,
+                                {"seeall": "sys_channel_matrix"});
+
+             inputList = dashObj.getInputList(10);
+             set_carousel_items($("#id_input_carousel"),     inputList,
+                                {"seeall": "sys_input_source"});
+             setTimeout(function () {cecAutoScan(inputList)}, 500);             /* update the CEC for input source */
+
+             set_carousel_items($("#id_utilities_carousel"), dashObj.getUtilitiesList(10),
+                                {"seeall": "sys_utilities"});
+             set_carousel_items($("#id_settings_carousel"),  dashObj.getSettingsList(10),
+                                {"seeall": "fake_page_id_for_settings"});
+             /* make the "See All" be marquee */
+             mtvuiUtil.makeMarquee($(".see-all"));
+             mtvuiUtil.makeMarquee($(".card-content"));
+
+             gIsFullDash = true;
+
+             /* the PIP region is hollowed, hide it before animation */
+             mtvuiLoadScript("../libs/jquery-ui/jquery-ui.js", function () {
+                 $('#broadcast_vod').hide(0, function () {
+                     $(".page-right-radio").fadeIn(800);
+                     $('#id_div_contain').switchClass("dash-right-side", "dash-full-win", 800, function () {
+                         heads.find(".td-left").removeClass("active");
+                         $('.td-left .right.carousel-control').fadeOut();
+                         /* the active collapsible header maybe change due animation, so get current active */
+                         var activeHead = heads.filter('.collapsible-header.active');
+                         var idx = heads.index(activeHead);
+                         idx = (idx >= 0) ? idx : 0;/* use 0 as default */
+                         gPos.x = gPos.y = 0;
+                         /* set the initial highlight item */
+                         var updatePosInfo = function (target) {
+                             gridInfo = getGridInfo(target);
+                             gPos.x = gridInfo.x;
+                             gPos.y = gridInfo.y;
+                         };
+
+                         if (!dashObj.getChannelCount())
+                             $("#id_dlg_install_channel").fadeIn(function() {
+                                 /* make the buttons be marquee */
+                                 mtvuiUtil.makeMarquee($("div.btn"));
+                             });
+                         if (0 == idx) {
+                             show_channel_div();
+                         }
+                         updatePosInfo(activeHead);/* get current grid info */
+                         /* -1 mean no change, otherwise the active card was changed during the animation */
+                         if (gPos.x == -1) {
+                             gPos.y = 0;/* reset to 0 */
+                             if (0 == idx) {/* for channels, highlight current channel */
+                                 chInfo = dashObj.getCurrentChannelInfo();
+                                 if (chInfo) {
+                                     active = activeHead.find(".item.active .card.mtvui[data-value="+chInfo.id+"]");
+                                     if (active.length > 0) {
+                                         active.addClass('active');
+                                         updatePosInfo(activeHead);
+                                     }
+                                 }
+                             }
+                             else if (1 == idx) {/* for source, highlight current active one */
+                                 active = $.grep(inputList, function (v) { return v.active; });
+                                 if (active.length > 0) {
+                                     active = activeHead.find(".item.active .card.mtvui[data-value="+active[0].id+"]");
+                                     if (active.length > 0) {
+                                         active.addClass('active');
+                                         updatePosInfo(activeHead);
+                                     }
+                                 }
+                             }
+                             else
+                                 gPos.x = gPos.y = 0;/* default highlight first card */
+                             setGridStatus(activeHead, gPos);
+                         }
+                     });
+                 });
+             });
+
+         };
+         var keyDownProc_document = function (kc) {
+             key = kc.keyCode || kc.which;
+             if (KeyEvent.DOM_VK_MENU == key || key == KeyEvent.DOM_VK_BACK
+              || (!gIsFullDash && KeyEvent.DOM_VK_LEFT == key)) {
+                  gotoSysPage("sys_index");
+                  return false;
+             }
+             if (KeyEvent.DOM_VK_RETURN == key
+              && dashObj.checkTimeShift()) /* show message for TimeShift Mode. */
+                 return false;
+
+             active = $('.collapsible-header.active');
+
+             /* not cycle event */
+             if (kc != window.last_evt) {
+                 window.last_evt = kc;/* record it */
+                 var sys_item = get_sys_page_by_key(key);
+                 /* goto other page */
+                 if (sys_item && sys_item.id != "sys_dashboard") {
+                     gotoSysPage(sys_item.id);
+                     return false;
+                 }
+
+                 /* fire to sub element first */
+                 if (gIsFullDash && active.length > 0 ) {
+                     active.trigger(kc);
+                     return true;
+                 }
+             }
+
+             var show_brd_vod = function () {
+                 /* workaround for TV object black issue, the <object> won't transparent until it be repainted */
+                 if ("id_collapsible_channel" == $('.collapsible-header.active').attr("id"))
+                     show_channel_div();
+             }
+             var heads = $('.collapsible-header');
+             var idx = $.inArray(active[0], heads);
+             if (key == KeyEvent.DOM_VK_RETURN) {
+                 if (0 == idx) {
+                     var pageID = "sys_index";
+                     if (!dashObj.isPipAvaliable())
+                         pageID = "sys_page_epg";
+                     else {
+                         dashObj.setInputSource(1);/* set source to TV */
+                     }
+                     gotoSysPage(pageID, true);
+                 }
+                 else if (1 == idx)
+                     gotoSysPage("sys_input_source");
+                 else if (2 == idx)
+                     gotoSysPage("sys_utilities")
+                 else if (3 == idx)
+                     dashObj.procSettings("AllSettings");
+
+                 return false;
+             }
+             /* for dash side mode */
+             if (!gIsFullDash) {
+                 var nIdx = idx;
+                 if (key == KeyEvent.DOM_VK_UP)
+                     nIdx = (idx + heads.length - 1) % heads.length;
+                 else if (key == KeyEvent.DOM_VK_DOWN)
+                     nIdx = (idx + 1) % heads.length;
+                 else if (key == KeyEvent.DOM_VK_RIGHT)
+                     switchToFulldash(heads);
+                 else if (key == KeyEvent.DOM_VK_LEFT) {
+                     gotoSysPage("sys_index");
+                     return false;
+                 }
+                 else {
+                     return true;/* continue process for other keys (eg: F5, F12) */
+                 }
+
+                 if (nIdx == idx)
+                     return false;
+
+                 $(heads[idx]).find(".td-left").removeClass("active");
+                 $(heads[nIdx]).click();
+                 $(heads[nIdx]).find(".td-left").addClass("active");
+                 if (0 == nIdx)
+                     show_brd_vod();
+                 return false;
+             }
+
+             /* for dash full mode */
+             cleanGridStatus(active);/* clean the cards status */
+             switch (key) {
+                 case KeyEvent.DOM_VK_DOWN:
+                     heads[(idx + 1) % heads.length].click();
+                     gPos.y = 0;
+                     show_brd_vod();
+                     break;
+                 case KeyEvent.DOM_VK_UP:
+                     heads[(idx + heads.length - 1) % heads.length].click();
+                     gPos.y = 1;
+                     show_brd_vod();
+                     break;
+             }
+             active = $(".collapsible-header.active");/* update active */
+             var gridInfo = getGridInfo(active);
+             if (gridInfo.col2Cnt <= 0)
+                 gPos.y = 0;
+             var maxCnt = gPos.y == 0 ? gridInfo.col1Cnt : gridInfo.col2Cnt;
+             maxCnt = gridInfo.hasSeeAll ? maxCnt : maxCnt - 1;
+             gPos.x = Math.min(gPos.x, maxCnt);
+             setGridStatus(active, gPos, gridInfo);
+
+             return true;
+         };
+         var setCardStatus = function(cards, active) {
+             cards = (cards instanceof jQuery) ? cards : $(cards);
+             $.each(cards, function (k, item) {
+                 /* var img = $(item).find("img");
+                    if (img.length > 0) {
+                    var rp = active ? "hl" : "d";
+                    var src = $(img[0]).attr("src");
+                    src = src.replace(/(\/icon_.*)_(?:d|hl)_(.*)/, "$1_"+rp+"_$2");
+                    $(img[0]).attr("src", src);
+                    } */
+                 active ? $(item).addClass("active") : $(item).removeClass("active");
+             });
+         };
+         var setSeeAllStatus = function(seeall, active) {
+             $.each(seeall, function (k, item) {
+                 active ? $(item).addClass("active") : $(item).removeClass("active");
+             });
+         };
+         var keyDownProc_collapsible = function (kc) {
+             var key = kc.keyCode || kc.which;
+             var target = kc.currentTarget;
+
+             if (key == KeyEvent.DOM_VK_RETURN) {
+                 active_card = $(target).find(".active.item div.active");
+                 if (active_card.length <= 0)
+                     active_card = $(target).find("div.btn.active");
+                 if (active_card.length <= 0)
+                     return true;
+
+                 var type = null;
+                 if (active_card.length > 0 && (type = $(active_card[0]).attr("data-type"))) {
+                     value = $(active_card[0]).attr("data-value");
+                     switch(type) {
+                         case "channel":
+                             dashObj.setBrdcastChgChannel(value);
+                             gotoSysPage("sys_index", true);/* exit dashboard after tune channel */
+                             break;
+                         case "input":
+                             if (dashObj.checkTimeShift())
+                                 break;
+                             exitMenu(function () {
+                                 if (false !== dashObj.setInputSource(value)) {
+                                     if (value != InputSourceRaw.prototype.usbID
+                                      && value != InputSourceRaw.prototype.networkID)
+                                         gotoSysPage("sys_index", true);
+                                 }
+                             });
+                             break;
+                         case "utilities":
+                             exitMenu(function () {
+                                 dashObj.procUtilities(value);
+                             });
+                             break;
+                         case "settings":
+                             exitMenu(function () {
+                                 dashObj.procSettings(value);
+                             });
+                             break;
+                         case "scan_channel":
+                             exitMenu(function () {
+                                 dashObj.scanChannel();
+                             });
+                             break;
+                         case "show_half_side": gotoSysPage("sys_index"); break; /* exit dash board */
+                         case "seeall":
+                             if (value == "fake_page_id_for_settings")
+                                 exitMenu(function () {
+                                     dashObj.procSettings("AllSettings");
+                                 });
+                             else
+                                 gotoSysPage(value);
+                             break;
+                     }
+                 }
+                 return false;/* discontinue key process */
+             }
+             /* process navigation keys */
+             if ( $.inArray(key, [KeyEvent.DOM_VK_LEFT,
+                                  KeyEvent.DOM_VK_RIGHT,
+                                  KeyEvent.DOM_VK_UP,
+                                  KeyEvent.DOM_VK_DOWN]) < 0)
+                 return true;/* continue key process */
+
+             var idx = -1;
+             var gridInfo = getGridInfo(target);
+             if ($.inArray(key, [KeyEvent.DOM_VK_UP, KeyEvent.DOM_VK_DOWN]) >= 0) {
+                 if(gPos.x < 0/* in preview column  */
+                 || gridInfo.seeall // "See All" active now
+                 || (gPos.y == 0 && key == KeyEvent.DOM_VK_DOWN && gridInfo.col2Cnt <= 0) // first row && press down && no 2nd row
+                         || (gPos.y == 0 && key == KeyEvent.DOM_VK_UP)// first row && press up
+                         || (gPos.y == 1 && key == KeyEvent.DOM_VK_DOWN))// second row row && press down
+                 {
+                     //$(target).find(".active.item").css("left", 0);// reset the position
+                     return true;
+                 }
+             }
+
+             if (key == KeyEvent.DOM_VK_DOWN) {
+                  ++gPos.y;
+                 gPos.x = Math.min(gPos.x, gridInfo.col2Cnt - 1);
+             }
+             else if(key == KeyEvent.DOM_VK_UP) {
+                 --gPos.y;
+                 gPos.x = Math.min(gPos.x, gridInfo.col1Cnt - 1);
+             }
+             else if(key == KeyEvent.DOM_VK_LEFT) {
+                 if (gPos.x < 0) {
+                     gIsFullDash = false;
+                     /* hide the video before switch to dash-side */
+                     if (dashObj.isPipAvaliable()) {
+                         var pos = { v: 0, x: 0, y: screen.width - 1, w: 1, h: 1};
+                         dashObj.pipRegionStart(pos);/* hide the PIP */
+                     }
+                     mtvuiLoadScript("../libs/jquery-ui/jquery-ui.js", function () {
+                         $('#broadcast_vod').hide(0, function () {
+                             $('#id_div_contain').switchClass("dash-full-win", "dash-right-side", 0, function () {
+                                 $('.td-left .right.carousel-control').fadeIn();
+                                 show_channel_div();/* update the channel div */
+                             });
+                         });
+                     });
+                     return false;
+                 }
+                 --gPos.x;
+             }
+             else if(key == KeyEvent.DOM_VK_RIGHT) {
+                 var maxIdx = gPos.y == 0 ? gridInfo.col1Cnt : gridInfo.col2Cnt;
+                 maxIdx = gridInfo.hasSeeAll ? maxIdx : maxIdx - 1;
+                 gPos.x = Math.min(gPos.x + 1, maxIdx);
+             }
+             else {
+                 console.log("unreached condition");/* possible? */
+                 return true;
+             }
+             setGridStatus(target, gPos, gridInfo);
+             return false;
+         };
+         $(document).on("keydown", keyDownProc_document);
+         $(".collapsible-header").on("keydown", keyDownProc_collapsible);
+        </script>
+    </body>
+</html>

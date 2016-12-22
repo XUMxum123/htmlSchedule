@@ -1,0 +1,194 @@
+ .keyboard
+ {
+     width:480px;
+     height:200px;
+     text-align:center;
+	 top:10px;
+     position:relative;
+	
+ }
+
+ .keyboard div
+ {
+    height:40px;
+	line-height:50px; 
+    float:left; 
+	margin-top:4px;
+	margin-bottom:4px;
+ }
+
+ #keyboardHead
+ {
+ width:420px;
+     position:relative;
+ }
+
+ #keyboardSpaceBar
+ {
+    position:relative;
+	width:420px;
+    left:180px;
+ }
+ 
+ #keyboardLetterA
+ {
+    position:relative;
+	width:420px;
+    left:30px;
+ }
+ 
+ #keyboardLetterQ
+ {
+    position:relative;
+	width:420px;
+    left:30px;
+ }
+ 
+  #keyboardLetterZ
+ {
+    position:relative;
+	width:420px;
+    left:30px;
+ }
+ #keyboardSpaceBar 30 {
+     width:420px;
+     position:relative;
+     left:200px;
+     top:52px;
+ }
+
+ .simple3Key
+ {
+    width:40px;
+    margin-top:2px;	
+	background-color:gray;
+ }
+ 
+ .simple4Key
+ {
+    width:30px;
+    
+	background-color:gray;	 
+ }
+ 
+.symbolKey
+{
+    width:30px;
+    margin-top:2px;
+	margin-bottom:2px;   
+	background-color:gray;	 
+}
+ .enterKey
+ {
+     width:100px;
+     height:100px;
+     border:1px solid black;        
+ }
+
+ .shiftKey
+ {
+     width:50px;
+     border:1px solid black;   
+ }
+
+ .backspaceKey
+ {
+     width:80px;
+     border:1px solid black;
+ }
+
+ .capslockKey
+ {
+     width:90px;
+     border:1px solid black;
+ }
+
+ .spaceKey
+ {
+     width:50px;
+  border:1px solid black;   
+ }
+
+ .keyboard div[name="key"]:hover{
+     background: orange;
+	 box-shadow:0px 0px 50px 10px orange;
+ }
+
+ .keyboard div[name="key"]
+ {
+     cursor:pointer;
+ }
+ 
+ .keyBoard-dialog{
+	position:absolute; 
+	left:80px;
+	height:350px;
+	width:620px;
+	top:280px;
+	z-index:5;	
+	background-color:rgba(0, 0, 0, 0.9);
+ }
+ .input-text{
+    text-align: left;
+ 	position:relative; 
+	left:80px;
+	width:460px;
+	height:30px;
+	top:10px;
+	z-index:5;	
+    font-size:20px;
+	background-color:rgba(255, 255, 255, 0.9);
+ }
+ 
+ .keyboard div[value="a"], div[value="d"], div[value="j"], div[value="m"] , div[value="t"], div[value="w"],
+ div[value="A"], div[value="D"], div[value="J"], div[value="M"] , div[value="T"], div[value="W"]
+ {
+    margin-left:30px;
+ }
+
+ input[type=text] {
+
+	border-bottom: 0px;
+	border-radius: 0;
+	background-color: white!important;
+	margin: 0;
+	padding: 0;
+	height: 2rem;
+}
+ input[type=text]:focus{
+	border-bottom-color: white!important;
+	border-bottom-width:0px;
+ }
+.footer-keyBoard
+{
+position:absolute; 
+bottom:0; 
+width:100%; 
+left: 0px;
+padding:0px;
+margin:0 auto;
+height:38px; 
+background:url(../res/ColourBar/ColorKey_back_bar_fill.png);
+}
+
+.footer-keyBoard ul{ 
+margin:0px; 
+padding:0px; 
+text-align:center; 
+height:100%;
+line-height:38px;
+vertical-align:middle;
+} 
+.footer-keyBoard li
+{
+float: left;
+display: block;
+width: auto;
+height: 38px;
+color: white;
+text-align: center;
+margin-left: 40px;
+vertical-align: middle;
+line-height: 38px;
+font-size: 20px;
+}

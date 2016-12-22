@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Scheduler</title>
+    
+    <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="./css/scheduler_main.css" />
+    
+    <script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+    
+     
+</head>
+
+<body>
+<div id="tv_scheduler_background" style="position:absolute; left:0px; top:0px; width:1280px; heigth:720px; z-index:1; visibility:hidden;">
+      <img src="./img/slider_bg_n_d_720P.png" style="width:100%; height:100%; z-index:1;">
+</div>
+
+<!-- Scheduler Main Page --> 
+<div id="div_id_container" style="position:absolute; left:0px; top:0px; width:1280px; heigth:720px; z-index:1; visibility:hidden;"> 
+
+	<div id="top_bar" >
+		<div id="top_bar_home_icon_circle" 
+			style="color:#FFFFF; 
+			position:absolute; 
+			left:20px; top:20px; width:53px; heigth:48px;"> 
+			<img id="home_icon_circle_normal" src ='./img/topmenubar_home_icon_circle_normal.png'> 
+		</div>
+		<div id="top_bar_home_icon" 
+			style="color:#FFFFF; 
+			position:absolute; 
+			left:34px; top:32px; width:24px; heigth:24px;"> 
+			<img id="home_icon_circle_normal" src ='./img/icon_117_Home_Dashboard_d_24x24_px.png'>
+		</div>
+
+		<div id="top_bar_scheduler_icon_circle" 
+			style="color:#FFFFF; 
+			position:absolute; 
+			left:93px; top:20px; width:48px; heigth:48px;"> 
+			<img id="home_icon_circle_normal" src ='./img/topmenubar_icon_circle_activated.png'> 
+		</div>
+		<div id="top_bar_scheduler_icon" 
+			style="color:#FFFFF; 
+			position:absolute; 
+			left:101px; top:28px; width:32px; heigth:32px;"> 
+			<img id="home_icon_circle_normal" src ='./img/Home_Teletext_icon_H_32x32.png'>
+		</div>
+
+		<div id="top_bar_scheduler_text" class="top_scheduler_title"> 
+			Scheduler
+		</div>
+ 	</div>	
+	
+	<div id="time_bar">
+        <div id="timeslot_background" style="visibility:hidden; position:absolute; left:0px; top:152px; width:1280px; heigth:24px;">
+    	    <img src ="./img/subMenuBar_1280.png" style="width:100%; heigth:48px;">
+    	</div>		    
+		<div id="background" class="epg_time_line_bg"> 	    
+            <ul>
+        		<li id="time_1"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:310px; top:160px; width:200px; heigth:48px;">
+        			Mon
+        	    </li>
+        		<li id="time_2"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:455px; top:160px; width:200px; heigth:48px;">
+        			Tue
+        	    </li>
+        		<li id="time_3"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:600px; top:160px; width:200px; heigth:48px;">
+        			Wed
+        	    </li>
+        		<li id="time_4"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:745px; top:160px; width:200px; heigth:48px;">
+        			Thu
+        	    </li>
+        	    <li id="time_5"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:890px; top:160px; width:200px; heigth:48px;">
+        			Fri
+        	    </li>
+        	    <li id="time_6"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:1035px; top:160px; width:200px; heigth:48px;">
+        			
+Sat
+        	    </li>
+        	    <li id="time_7"
+        			style="color:rgb(160, 160, 160); font-size: 20px;
+        			position:absolute; 
+        			left:1176px; top:160px; width:200px; heigth:48px;">
+        			Sun
+        	    </li>
+    	     </ul>
+		</div>	
+		
+	</div> 
+	
+	<div id=indicator_text style="position:absolute;font-size:20px;text-align:center;left:240px; top:113px; width:2px; heigth:29px"><!--00:00--></div>
+	<div id="indicator" style="position:absolute; left:244px; top:128px; width:2px; heigth:29px;z-index:99;visibility:hidden;display:block;">
+		<img id="indicator_arrow" src="./img/arrowDown.png" style="float:left;">
+	</div>
+	<div id="time_line" style="position:absolute; left:1272px; top:146px;width:2px;height:130px;background-color:#ffffff;z-index:199;">
+	
+</div>
+
+	
+
+	
+	
+	<div id="divider" style="position:absolute; left:255px; top:146px; width:3px; heigth:507px; visibility:hidden; z-index:90;">
+		<img src ="../Assets/Contents_Browser/divider.png" style="width:100%; height:100%;">
+    </div>
+    
+    <!-- Channel List and Event List -->
+	<div id="schedule_left_list" style="z-index:99;position:absolute; left:20px; top:215px; width:250px; heigth:500px; color:#FFFFFF; font-size: 20px;"> 
+	</div>
+
+	<div id="schedule_right_list" style="z-index:99;position:absolute; left:260px; top:205px; width:1018px; heigth:500px; color:#FFFFFF; font-size: 20px;">
+	</div>
+		
+	
+	<div id="bottom_bar" style="visibility:hidden;font-size:20px;">
+		<div id="option_color_bar_background" style="position:absolute; left:0px; top:682px; width:1280px; heigth:38px; z-index:1;">
+			<img src="../Assets/_Color_Key_Bar/ColorKey_bar.png">
+		</div>		    
+		
+		<div id="color_key_yellow" style="visibility:hidden; color:rgb(255, 252, 0); position:absolute; text-align:center;left:51px; top:690px; width:120; heigth:40px; z-index:52" > 
+			<img src ="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"> <span id="color_key_yellow_recording" data-translate-epg='MOVE_UP'>MOVE UP</span>
+		</div>
+		
+		<div id="color_key_blue" style="visibility:hidden; color:rgb(0, 174, 239);position:absolute;text-align:center;left:258px; top:690px; width:120; heigth:40px; z-index:52" > 
+			<img src ="../Assets/_Color_Key_Bar/ColorKey_Blue.png"> <span data-translate-epg='MOVE_DOWN'>MOVE DOWN</span>
+		</div>
+	
+	
+		<div id="info_key" style="visibility:hidden; color:rgb(160, 160, 160); position:absolute;text-align:center; left:948px; top:690px; width:120; height:40px; z-index:52;" > 
+			<img src ="../Assets/_Color_Key_Bar/Icon_Info_2K14.png" > <span data-translate-epg='COLOR_KEY_MSG_INFO'>Info</span> 
+		</div>
+	
+	
+		<div id="color_key_option" style="visibility:hidden; color:rgb(160, 160, 160); position:absolute; text-align:center;left:1133px; top:690px; width:200; heigth:40px; z-index:52" > 
+			<img src ="../Assets/_Color_Key_Bar/Icon_Options_2K14.png"> <span data-translate-epg='OPTS'>Options</span>
+		</div>
+	</div>
+		 	
+</div>
+<!-- [END] Scheduler Main Page --> 
+
+
+        <script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/utility.js"></script>
+        <script type="text/javascript" src="./js/base.js"></script>
+        <script type="text/javascript" src="./js/sprintf.js"></script>
+ 
+
+        <script> 
+		
+    	$(document).ready(function(){
+		
+		
+    	    $('#div_id_container').css("visibility", "visible");
+            $('#info_key').css("visibility", "visible");
+            $('#color_key_yellow').css("visibility", "visible");
+            $('#color_key_blue').css("visibility", "visible");
+            $('#color_key_option').css("visibility", "visible");
+    	    $('#timeslot_background').css("visibility", "visible");
+    	    $('#indicator').css("visibility", "visible");
+    	    $('#divider').css("visibility", "visible");
+    	    $('.preloader-wrapper').hide();    	    
+    	    
+            setTimeout(function () {
+                     MenuInit();
+                },100);
+			
+    	      	    
+    	});
+
+    	 $(window).unload(function() {
+    	    MenuClose();    	    	    
+    	 });
+    	 
+		function closeApp() {
+		     try {
+		         return;
+		     } catch (e) {
+		         alert('Cannot destroy application');
+		     }
+		 }   	
+                     
+         var key_down_proc = function (kc) {
+             key = kc.keyCode || kc.which;
+                 if (KeyHandler(key)) 
+				 {
+                    return;
+                 }              
+         };
+         
+         $(document).on("keydown", key_down_proc);
+        </script>  
+        
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>option menu</title>
+	<link rel="stylesheet" href="../libs/roboto-fontface/css/roboto-fontface.css" />
+	<link rel="stylesheet" href="../libs/jquery-ui/themes/vader/jquery-ui.css" />
+	<link rel="stylesheet" href="../libs/materialize/dist/css/materialize.css" />
+	<link rel="stylesheet" href="../libs/mtvui/base.css" />
+	<script type="text/javascript" src="../libs/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../libs/js/keycodes.js"></script>
+	<script type="text/javascript" src="../libs/js/messenger.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/mtvapi_obj.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/test-data.js"></script>
+	<script type="text/javascript" src="js/handle_key.js"></script>
+	<link rel="stylesheet" href="./option.css" />
+<script type="text/javascript">
+ //<![CDATA[
+ $(document).on('keydown', function (evt){
+     var key = evt.which || evt.keyCode;
+     var sys_item = get_sys_page_by_key(key);
+     if (sys_item) {
+         /* not self page */
+         if (sys_item.id != "sys_program_option") {
+             window.location = "../" + sys_item.url;
+             return;
+         }
+     }
+     var key = evt.which || evt.keyCode;
+     if($('#list_content_right').attr("focus")== "true"){
+     		right_handleKeyCode(key);
+     }
+     else{
+     handleKeyCode(key);
+   	}
+     return true;
+ });
+ window.onload = function() {
+     list_left_Init();
+     /* initVideo(); */
+     /* registerKeyEventListener(); */
+     /* setDescr(); */
+     initApp();
+     nameselect('');
+     /* document.getElementById('relid').innerHTML = releaseinfo; */
+ };
+ function nameselect(snam) {
+     if (!snam) return;
+     for (var i=0; i<opts.length; i++) {
+         var check = opts[i].getAttribute('name');
+         if (check==snam) {
+             itemSelect(i);
+             setDescr();
+             break;
+         }
+     }
+ }
+ function handleKeyCode(kc) {
+     if (kc==KeyEvent.DOM_VK_UP) {
+     		 var i=0;
+     		 var items = document.getElementById('list_left').getElementsByTagName('li');
+         selected--;
+				for(i=selected;i>=0;i--)
+				{
+	         if($(items[selected]).attr("disable")== "true"){
+	         	selected--;
+	         }
+        }
+     } else if (kc==KeyEvent.DOM_VK_DOWN) {
+     		var i=0;
+     		var items = document.getElementById('list_left').getElementsByTagName('li');
+         selected++;
+        for(i=selected;i<items.length;i++)
+				{
+	         if($(items[selected]).attr("disable")== "true"){
+	         	selected++;
+	         }
+        }
+     } else if (kc==KeyEvent.DOM_VK_LEFT ||
+     						kc==KeyEvent.DOM_VK_RIGHT||
+     						kc==KeyEvent.DOM_VK_RETURN) {
+     		if ($('#list_content_right').css("display") != "none"){
+     				var pos = $("#hlbar").offset();
+	     			$('#hlbar_selected').show();
+	     			pos.left -=3;
+	     			pos.top +=4;
+	     		  $("#hlbar_selected").offset({top:pos.top});
+     				$("#hlbar_selected").offset({left:pos.left});
+	     			$('#list_content_right').attr("focus","true")
+						selected_right= 0;
+						itemSelect_right(selected_right);
+						/*show selected highlight bar*/
+	     			return true;
+						}
+				}
+		    itemSelect(selected);
+		    return false;
+ }
+ function setDescr() {
+     /* document.getElementById('descr').innerHTML = opts[selected].getAttribute('descr'); */
+ }
+ function closeApp() {
+     try {
+         var app = document.getElementById('appmgr').getOwnerApplication(document);
+         app.destroyApplication();
+         return;
+     } catch (e) {
+         alert('Cannot destroy application');
+     }
+ }
+ //]]>
+</script>
+  <style type="text/css">
+  </style>
+</head>
+<body>
+<div id="option" style="position:absolute; left:243px; top:126px; width:774px; height:470px;float:left;">
+<div id="list_content_left"  style="width:394px; height:460px;float:left;background-image: url(./img/OptionMeamu_Panel.png);">
+	<div id="title" style="position:absolute; left:-140px; top:120px; width:380px; height:42px; color:rgb(211,212,213);text-alignc:center;font-size:26px;vertical-align=middle;margin:0px;-webkit-transform:rotate(270deg);">Watch TV Option</div>
+	<div id="list_left" class="option_list" style="left:80px; width:314px;" >
+		<ul>
+			<li id="subtitles" tabindex='0' onfocus='item_focus(true,"subtitles");'  onblur='item_focus(false, "subtitles");' disable="none" >Subtitles</li>
+			<li id="subtitles_lang" tabindex='0' onfocus='item_focus(true,"subtitles_lang");'  onblur='item_focus(false, "subtitles_lang");' disable="none">Subtitle Language</li>
+			<li id="aud_lang" tabindex='0' onfocus='item_focus(true,"aud_lang");'  onblur='item_focus(false, "aud_lang");' disable="none">Auido Language</li>
+			<li id="dual" tabindex='0' onfocus='item_focus(true,"dual");'  onblur='item_focus(false, "dual");' disable="none">Dual I-II</li>
+			<li id="common" tabindex='0' onfocus='item_focus(true,"common");'  onblur='item_focus(false, "common");' disable="none">Common Interface</li>
+			<li id="ch_info" tabindex='0' onfocus='item_focus(true,"ch_info");'  onblur='item_focus(false, "ch_info");'  disable="none">Channel Info</li>
+			<li id="stereo" tabindex='0' onfocus='item_focus(true,"stereo");'  onblur='item_focus(false, "stereo");'  disable="none">mono/Stereo</li>
+		</ul>
+	</div>
+</div>
+<div  class="option_list" focus="false" style="width:380px;z-index:0;">
+    <div id ="hlbar" class= "hlbar" style="left:75px;top:36px;z-index:50;">
+		<img src="./img/List_Glow_Blue.png" style="left:5px;top:-32px;width:179px;height:108px ;position: inherit;">
+		<img src="./img/Blue_Left.png" style="left:10px; width:6px;position: inherit;">
+		<img src="./img/Blue_Middle.png" style="left:16px; width:302px;height:40px;position: inherit;">
+		<img src="./img/Blue_Right.png" style="left:318px; width:6px;position: inherit;">
+    </div>
+    <div id="list_content_right" style="position:absolute;z-index:100;">
+        <ul style="top:30px;margin-left:25px;">
+        </ul>
+    </div>
+</div>
+<div id ="hlbar_selected" class= "hlbar" style="left:80px;top:157px;display:none;">
+		<img src="./img/Selected_Left.png" style="left:10px; width:20px;position: inherit;">
+		<img src="./img/Selected_Middle.png" style="left:30px; width:270px;height:40px;position: inherit;">
+		<img src="./img/Selected_Right.png" style="left:286px; width:20px;height:40px;position: inherit;">
+</div>
+</div>
+</body>
+</html>

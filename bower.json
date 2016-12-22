@@ -1,0 +1,25 @@
+{
+  "name": "html-ui",
+  "version": "0.0.0",
+  "authors": [
+    "Sunline <sunlin7@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "jquery-ui": "~1.11.4",
+    "jquery.cookie": "jquery-cookie#~1.4.1",
+    "materialize": "~0.97.0",
+    "requirejs": "~2.1.22",
+    "roboto-fontface": "~0.4.3"
+  }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    	<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8" />
+        <link rel="prefetch" href="./dash/index.html" /><!-- use prefetch try speed up next page loading -->
+        <link rel="prefetch" href="./input_source/input_source.html" />
+        <link rel="stylesheet" href="./libs/mtvui/base.css" />
+		<link rel="stylesheet" href="./libs/jquery-ui/themes/vader/jquery-ui.css" />
+		<link rel="stylesheet" href="./libs/materialize/dist/css/materialize.css" />
+        <script type="text/javascript" src="./libs/mtvui/input_source.js"></script>
+        <!--<link   rel="stylesheet" href="./libs/roboto-fontface/css/roboto-fontface.css" />
+        <script type="text/javascript" src="./channel_zapper/base.js"></script>-->
+		<script type="text/javascript" src="./libs/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="./libs/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./libs/jquery-ui/ui/widget.js"></script>
+		<script type="text/javascript" src="./libs/mtvui/keycodes.js"></script>
+		<script type="text/javascript" src="./libs/mtvui/base.js"></script>
+        <script type="text/javascript" src="./libs/mtvui/recording.js"></script>
+		<script type="text/javascript" src="./libs/mtvui/mtvapi_obj.js"></script>
+		<script type="text/javascript" src="./libs/mtvui/channelObj.js"></script>
+		<!--<script type="text/javascript" src="./channel_zapper/osd_widget.js"></script>
+		<script type="text/javascript" src="../libs/materialize/dist/js/materialize.js"></script>-->
+
+		<script type="text/javascript" src="./epg/js/sprintf.js"></script>
+		<script type="text/javascript" src="./epg/js/utility.js"></script>
+		<!--<script type="text/javascript" src="./epg/js/progressbar.js"></script>-->
+        <style>
+         html {
+             background-color: rgba(0, 0, 0, 0);
+         }
+         body {
+             background-color: rgba(0, 0, 0, 0);
+         }
+         iframe{
+             border:1px solid blue;
+             margin:20px auto 0 auto;
+             position: absolute;
+             display: none;
+             z-index: -9;
+         }
+         #iframe_channel_zapper {
+             width:  100%;
+             height: 30vh;
+             top:    0;
+             left:   0;
+         }
+         #iframe_channel_matrix {
+             width:  100%;
+             height: 60vh;
+             bottom: 0;
+         }
+         #iframe_dashboard_sum {
+             width:  100%;
+             height: 100vh;
+             top:   0;
+             right: 0;
+         }
+        </style>
+		<style type="text/css">
+
+        .channel_zapper_container {
+            background:url(./Assets/_Slices/Slice_Zap.png);
+            background-size:1280px 256px;
+            background-repeat:no-repeat;
+            z-index:99;
+            top:0px;
+            left:0px;
+            width:1280px;
+            height:256px;
+            position:absolute;
+        }
+
+     </style>
+    </head>
+    <body>
+		<div tabindex="0" id="osd_zapper_channel"style="display:none;" ></div>
+		<!--<div tabindex="0" id="osd_channel" class="channel_zapper_container" style="display:none;" > </div>
+		<div tabindex="0" id="zapper_channel" class="channel_zapper_container" style="display:none;" > </div>-->
+        <!-- <iframe tabindex="-1" id="iframe_channel_zapper" src="./channel_zapper/index.html"></iframe>
+        <iframe tabindex="-1" id="iframe_channel_matrix" src="./channel_matrix/index.html"></iframe>
+        <iframe tabindex="-1" id="iframe_dashboard_sum"  src="./dash/index.html"></iframe> -->
+        <script>
+         $(document).ready(function () {
+             if (getParameterByName("action") == "reset"){
+                localStorage.clear();
+                mtvuiUtil.reinstallTv();
+             }
+
+             if (getParameterByName("action") == "show_tv") {
+                 if (mtvuiUtil.isFramed()) {/* compatible for the page which modify location directly */
+                     window.top.location = window.self.location;
+                     return false;
+                 }
+                 var inputSrcObj = new InputSource();
+                 if (inputSrcObj.checkTimeShift())
+                     return false;
+
+                 inputSrcObj.setInputSource("1");/* always try to switch source, in which will trigger "nav resume" */
+             }
+         });
+         $(document).on('keydown', function (evt) {
+             var key = evt.which || evt.keyCode;
+
+             /*if ( (key == KeyEvent.DOM_VK_CH_INCREASE) ||
+                  (key == KeyEvent.DOM_VK_CH_DECREASE) ) {
+                      channelZapperHotkeyHandler(key);
+                      return false;
+             }
+             /* the RETURN key call channel matrix in this page */
+             if (key == KeyEvent.DOM_VK_LIST) {
+                 window.location = "./channel_matrix/index.html";
+                 return false;
+             }
+             if ($.inArray(key, [KeyEvent.DOM_VK_INDEX, KeyEvent.DOM_VK_NUMPAD5]) >= 0) {
+                 window.location = "recording/recording.html";
+                 return false;
+             }
+             if ((key == KeyEvent.DOM_VK_BACK) || (key == KeyEvent.DOM_VK_CHANNEL_OSD)) {
+             	 var arg = $.extend({}, {
+	                indexFlag: "index",
+	             });
+				 getTvJspService().utility.notifyHtmlUIStatus('{"PageID":"HTML5_UI_PAGE_CHANNEL_ZAPPER", "Status":"Show"}');
+				 mtvuiLoadScript("./channel_zapper/osd_widget.js", function () {
+					$("#osd_zapper_channel").ChannelOsdDialog(arg);
+					$("#osd_zapper_channel").ChannelOsdDialog('open');
+				 });
+                 return false;
+             }
+             if (key == KeyEvent.DOM_VK_INFO) {
+                 window.location = "./epg/nownextinfo.html";
+                 return false;
+             }
+             var sys_item = get_sys_page_by_key(key);
+             if (sys_item) {
+                 if (sys_item.id != "sys_index") /* not self page */
+                     window.location = sys_item.url;
+                 return false;
+             }
+         });
+        </script>
+    </body>
+</html>

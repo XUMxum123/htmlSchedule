@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//HbbTV//1.1.1//EN" "http://www.hbbtv.org/dtd/HbbTV-1.1.1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+		<link 	rel="stylesheet" href="../OSMKB/css/keyBoard.css" />  
+		<link   rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css" />
+		<script type="text/javascript" src="../OSMKB/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+		<script type="text/javascript" src="../OSMKB/js/base.js"></script>
+	<!--	<script type="text/javascript" src="../libs/materialize/dist/js/materialize.js"></script>
+		<script type="text/javascript" src="../libs/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../libs/js/messenger.js"></script>
+		<script type="text/javascript" src="../libs/mtvui/mtvapi_obj.js"></script>-->
+		<script type="text/javascript" src="../OSMKB/js/osmkb.js" ></script>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<style>
+	 .new-search-dialog{
+	position:absolute; 
+	left:80px;
+	height:200px;
+	width:620px;
+	top:280px;
+	z-index:5;	
+	background-color:rgba(0, 0, 0, 0.9);
+ }
+ 
+ .new-search-dialog button{
+	margin-left: 35px;
+	margin-right: 35px;
+	top: 70px;
+	position:relative;
+	height: 30px;
+	width: 115px;
+ }
+ 
+ input[type=text] {
+
+	border-bottom: 0px;
+	border-radius: 0;
+	background-color: white!important;
+	margin: 0;
+	padding: 0;
+	height: 2rem;
+}
+ input[type=text]:focus{
+	border-bottom-color: white!important;
+	border-bottom-width:0px;
+ }
+	
+</style>
+	<body>
+		<!--<div id="new-search-dialog" class="new-search-dialog" style="display:block">
+			<div>
+				<p style="text-align: left; margin-left: 20px;"><font size="4" color="white">Find Channel </font></p>
+			</div>
+			<div class="osmkbinput-text" id="new-search-txtID" >
+			</div>
+			<div id="new-search-btn">
+				<button type="button" class="osmbtn-select-style" id="btn-new-srch-clr">Clear</button>
+				<button type="button" class="osmbtn-select-style" id="btn-new-srch-done">Done</button>
+				<button type="button" class="osmbtn-select-style" id="btn-new-srch-cancel">Cancel</button>
+			</div>
+		</div>-->
+        <div id="divid" style="margin-left:300px;margin-top: 500px;"> </div>
+		<script>
+			var osmkb=null;
+			//返回输入值  当键盘是hide 退出时，返回false 否则是输入的值
+			function getResult(){
+			   var result=osmkb.getResult(); 
+			   alert(result);
+			}
+		//	返回键盘状态   status（open ,close,done,hide）
+			function getStatus(){
+			  alert(osmkb.getStatus());
+			}
+		// 打开键盘
+			function action(){
+				var args=new Object();
+				args.element="divid";   // 指定键盘放在哪个位置，有div确定    ****目前可以不用指定
+				args.sendvalue="123456";   //  需要带入的参数
+				args.doneBack=function ( obj，arg){   // 键盘上done的回调函数   obj ———返回对象，arg—— 返回键盘输入的值
+					//  alert(args.sendvalue);
+				};
+				args.hideBack=function(obj){ // 键盘上hide的回调函数  obj ———返回对象
+					//   alert(321);
+				};
+			   osmkb.open(args); // 打开键盘
+			}
+		//	关闭键盘
+			function inaction(){
+			  osmkb.close();
+			}
+		/*	document.getElementById('new-search-txtID').focus();*/
+       window.onload=function(){
+	      osmkb=new OSMKB(); // 创建键盘
+	   $(document).on("keydown", function(event) {
+		  var key = event.which || event.keyCode;
+		 var keystatus = osmkb.keyProcess(event);    // 按键事件 返回true为执行结束，false是无此按键事件
+		  event.stopPropagation();
+	    }
+	  );
+   }
+      var isblink =0;
+      var textValue='';
+      var lightposition=textValue.length;
+      function remainTime(){  
+        key=48;
+        key=String.fromCharCode(key) ;
+        if(isblink==0){
+        	$("#new-search-txtID").text(textValue+ key);
+        	isblink=1;
+        }else{
+        	$("#new-search-txtID").text(textValue.substr(0,lightposition)+'|'+textValue.substring(lightposition));
+        	isblink=0;
+        }
+      setTimeout("remainTime()",800);  
+      }  
+      setTimeout("remainTime()",0);  
+		</script>
+
+	</body>
+<div onclick="action()" style="font-size: 30px;">打开</div>
+<div onclick="getResult()" style="font-size: 30px;">get</div>
+<div onclick="inaction()" style="font-size: 30px;">close</div>
+<div onclick="getStatus()" style="font-size: 30px;">状态</div>
+</html>

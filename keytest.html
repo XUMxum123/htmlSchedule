@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <style>
+         body {
+             background-color: white;
+         }
+        </style>
+    </head>
+    <body>
+        <h1>Event test page.</h1>
+        <span id="key_event"></span><br />
+        <span id="key_code"></span><br />
+        <script>
+         document.addEventListener("keydown", function(e) {
+             document.getElementById("key_event").innerText = e.keyIdentifier;
+             document.getElementById("key_code").innerText = e.KeyCode || e.which;
+             e.preventDefault();
+         }, false);
+        </script>
+    </body>
+</html>

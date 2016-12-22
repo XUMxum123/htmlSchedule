@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="./keycodes.js"></script>
+        <script type="text/javascript" src="./test-data.js"></script>
+        <script type="text/javascript" src="./base.js"></script>
+    </head>
+    <body>
+        <script>
+         /* useDebugChannelData(true); */
+         /* mtvui_debug_enable = true; */
+         var mtvObj = new MtvObj();
+         /* mtvObj.useDebugData(-1); */ /* default setting, use the debug data automatic */
+         /* $('<div />').html(mtvObj.getChannelCount()).appendTo(document); */
+         console.log(mtvObj.getChannelCount());
+         console.log(mtvObj.getChannelList());
+         console.log(mtvObj.getChannelInfo(1));
+         /* get current channel */
+         console.log(mtvObj.getCurrentChannelInfo());
+         /* set to new Channel */
+         console.log(mtvObj.setBrdcastChgChannel("20185217"));
+         /* now the channel should be channged */
+         console.log(mtvObj.getCurrentChannelInfo());
+
+         /* test the input source */
+         console.log(mtvObj.getInputInfo(''));
+         console.log(mtvObj.setInputInfo(2));
+         console.log(mtvObj.getInputInfo(''));
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Content Browser</title>
+<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8" />
+
+<link rel="stylesheet" href="./tab.css" />
+<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="../libs/mtvui/base.css" />
+<link rel="stylesheet" href="../libs/materialize/dist/css/materialize.css" />
+
+<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js" ></script>
+<script type="text/javascript" src="../libs/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="./js/iscroll.js"></script>
+<script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+<script type="text/javascript" src="../libs/mtvui/contentbrowser.js"></script>
+<script type="text/javascript" src="./js/common-data.js"></script>
+<script type="text/javascript" src="./js/translate_lang.js"></script>
+<script type="text/javascript" src="./js/dlna-common-data.js"></script>
+<script type="text/javascript" src="./js/fileBrowser.js" ></script>
+<script type="text/javascript" src="./js/handle-key-dialog.js"></script>
+<script type="text/javascript" src="./js/handle_key.js" ></script>
+<script type="text/javascript" src="./js/photo_play.js" ></script>
+<script type="text/javascript" src="./js/music_play.js"></script>
+<script type="text/javascript" src="./js/video_play.js"></script>
+<script type="text/javascript" src="./js/global_common.js" ></script>
+<script src="../libs/artDialog/lib/sea.js"></script>
+<style>
+body, html {
+    font-family: "roboto", sans-serif !important;
+    background-color: rgba(0, 0, 0, 0);
+}
+td {
+    padding: 0px;
+}
+
+</style>
+<script type="text/javascript">
+
+$(window).unload(function(){stopContentBrowser();});
+
+seajs.config({
+    alias: {
+        "jquery": "jquery-1.10.2.js"
+    }
+});
+
+var scroll, scroll1, scroll2;
+
+function loaded() {
+    console.log("loaded");
+    scroll = new IScroll('#music_list_layout',{
+        scrollbars: false,
+        mouseWheel: true,
+        interactiveScrollbars: true,
+        shrinkScrollbars: 'scale',
+        fadeScrollbars: false
+    });
+    scroll1 = new IScroll('#file_list_one_layout',{
+        scrollbars: true,
+        mouseWheel: true,
+        interactiveScrollbars: true,
+        shrinkScrollbars: 'scale',
+        fadeScrollbars: true});
+  
+    initCB();
+}
+
+document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}
+, false);
+document.addEventListener('DOMContentLoaded', loaded, false);
+
+//window.onload = initCB;
+
+function initCB(){
+    writeLog("initCB start");
+    //1 msgconvert(netflix);2 nettv;0 other app
+    var appStatus = mtvObj.acfgGetConfigValue('g_misc__next_app_status');
+    if(appStatus == 1){
+        mtvObj.pause3rdApp();
+    }
+    addCBEventListener(EventListenerName.cmpbNotify, contentBrowserCmpbNotify);
+    
+    mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_play_state, icl_mmp_play_status.on);
+
+    var action = getQueryString("action");
+    if(action){
+        if('browse_network' == action){
+            curBrowserType = BrowserType.Dlna;
+            mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_source_type, icl_mmp_source_type.dmp);
+        } else if('usb_mount' == action) {
+            //showNoUsbDialog("USB device memory reading file....", 3000);
+            mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_source_type, icl_mmp_source_type.usb);
+            var path = getQueryString("path");
+            usbObj.init(path);
+            var type = usbObj.getJumpSuperShopDemo();
+            if(type != 0){
+                superShopObj = new SuperShopObj();
+                superShopObj.init();
+                if(superShopObj.totalNum > 0){
+                    //TODO:play superShop demo
+                    waitLoading(false);
+                    usbDetectNotifyFunc = superShopUsbDetectNotifyFunc;
+                    contentBrowserObj.playVideo(superShopObj, null, true);
+                    return;
+                }
+            }
+        } else if('dmr_play' == action){
+            $(window).unload(function(){stopContentBrowser(false);});
+            mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_source_type, icl_mmp_source_type.dmr);
+            waitLoading(false);
+            focus_level = 3;
+            top_menu_selected_id = 'top_menu_3';
+            startDlnaDmr();
+            var param = getQueryString("params");
+            dmrNotifyFunc(param);
+            return;
+        } else {
+            mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_source_type, icl_mmp_source_type.usb);
+        }
+    } else {
+        mtvObj.acfgSetConfigItemValue(stvapi_config.mmp_source_type, icl_mmp_source_type.usb);
+    }
+    var page_info = $("input[name='page_info']").val();
+    
+    if(curBrowserType == BrowserType.Dlna){
+        initDlna(page_info);
+    } else {
+        initUsb(page_info);
+    }
+}
+
+
+function initUsb(page_info){
+    $('#browser_and_audio_play').show();
+    $('.top_menu_bar').show();
+    if(!page_info){
+        if(usbDetect()){
+            initPage('top_menu_3');
+            console.log("initPage end");
+        } else {
+            waitLoading(false);
+            showNoUsbDialog();
+        }
+        //setTimeout("hideLoading()", 1000);
+    } else {
+        var info = JSON.parse(page_info);
+        var obj =  info.curPageObj;
+
+        initPage(info.pageId, obj);
+    }
+    console.log("initUsb end");
+}
+
+function initDlna(page_info){
+    top_menu_selected_id = 'top_menu_3';
+    $('.top_menu_bar').hide();
+    $('#browser_and_audio_play').show();
+    $('#con_top_menu_3').show();
+    $($('#con_top_menu_3').find('.title_name')).html('DLNA');
+    
+    window.dmrUtil.networkNotifyCallback = networkNotifyFunc;
+    if(!page_info){
+        scanMediaServer(function(status){
+        initialDataLoading(top_menu_selected_id);
+        });
+    } else {
+        var info = JSON.parse(page_info);
+        var obj =  info.curPageObj;
+        initialDataLoading(top_menu_selected_id, obj);
+    }
+}
+$(function(){
+    $.each($("[data-translate]"), function (k, item) {
+        var strId = $(item).data("translate");
+        $(item).text(getTranslate(strId));
+    });
+
+})
+</script>
+
+</head>
+<body style='position:absolute; left:0px; top:0px; width:1280px; height:720px;padding:0px;margin:0 auto;'>
+<div id='browser_and_audio_play' style="display:none">
+<div style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:1;'>
+    <img src="../Assets/_Backgrounds/Background_1280x720.png" style="position:absolute; left:0px; top:0px;width:100%; height:100%" />
+</div>
+
+<div class="content_box">
+    <div id='footer' class="footer">
+        <ul>
+            <li><img src="../Assets/_Color_Key_Bar/Icon_Info_2K14.png" style='vertical-align:middle;'/></li>
+            <li><img src="../Assets/_Color_Key_Bar/ColorKey_Red.png"/></li>
+            <li><img src="../Assets/_Color_Key_Bar/ColorKey_Green.png"/></li>
+            <li><img src="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"/></li>
+            <li><img src="../Assets/_Color_Key_Bar/ColorKey_Blue.png"/></li>
+            <li><img src="../Assets/_Color_Key_Bar/Icon_Options_2K14.png" style='vertical-align:middle;'/></li>
+        </ul>
+    </div>
+    <div class="top_menu_bar" style='display:none;'>
+        <div style='position:absolute;left:319px;width:642px; height:48px;vertical-align:middle;margin:0 auto;'>
+            <img src="../Assets/_Top_Menu_Bar/TMB_BG_Panel_Left.png" style="width:6px;position: inherit;left:0px;">
+            <img src="../Assets/_Top_Menu_Bar/TMB_BG_Panel_Center.png" style="left:6px; width:630px;position:inherit;height:48px;">
+            <img src="../Assets/_Top_Menu_Bar/TMB_BG_Panel_Right.png" style="left:636px; width:6px;position: inherit;">
+        </div>
+        <ul class="Menubox"> 
+        <li id="top_menu_0" tabindex = '0' onfocus='top_menu_item_focus(true, "top_menu_0");'  onblur='top_menu_item_focus(false, "top_menu_0");' >
+            <img src="../Assets/_Top_Menu_Bar/Top_Menu_Bar_Icons/Music_Nor.png"/>
+            <p class="topMenuName">Music</p>
+        </li>
+        <li id="top_menu_1" tabindex = '0' onfocus='top_menu_item_focus(true, "top_menu_1");'  onblur='top_menu_item_focus(false, "top_menu_1");' >
+            <img src="../Assets/_Top_Menu_Bar/Top_Menu_Bar_Icons/Video_Nor.png"/>
+            <p class="topMenuName">Movie</p>
+        </li>
+        <li id="top_menu_2" tabindex = '0' onfocus='top_menu_item_focus(true, "top_menu_2");'  onblur='top_menu_item_focus(false, "top_menu_2");' >
+            <img src="../Assets/_Top_Menu_Bar/Top_Menu_Bar_Icons/Photo_Nor.png"/>
+            <p class="topMenuName">Photo</p>
+        </li> 
+        <li id="top_menu_3" tabindex = '0' data-focus-next-down="before_previous_foilder" onfocus='top_menu_item_focus(true, "top_menu_3");'  onblur='top_menu_item_focus(false, "top_menu_3");' >
+            <img src="../Assets/_Top_Menu_Bar/Top_Menu_Bar_Icons/Folder_Nor.png"/>
+            <p class="topMenuName">Folder</p>
+        </li> 
+        </ul>
+    </div>
+
+    <div id="con_top_menu_0" style="display:none">
+        <div class="title_name"></div>
+        <div class='submenu_bar_layout_bg'>
+            <div id='music_submenu_bar_layout' class="submenu_bar_layout">
+                <div class='submenu_bar'>
+                    <ul id='music_submenu_bar' data-focus-up-function='reset_top_menu_focus();'>
+                    <!-- add submenu information-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="music_content_list" class="music_content" style="display:none">
+            <div class="vertical_line" style= "left:444px; "></div>
+            <div class="vertical_line" style= "left:895px; "></div>
+            <div id='list-bumpers-left' style='position:absolute;top:37px;display:none;'><img src='../Assets/Contents_Browser/_Music_Browser/album-bumpers-left.png'/></div>
+            <div id='list-bumpers-right' style='position:relative;top:37px;float:right;display:none;'><img src='../Assets/Contents_Browser/_Music_Browser/album-bumpers-right.png'/></div>
+
+            <div class="music_title">
+                <span style="vertical-align:middle;position:relative;top:6px;"><img  id='artistAlbum' src="../Assets/Contents_Browser/_Music_Browser/MUSIC_AlbumLayout_default_icon.png" style="vertical-align:middle;width:271px;height:271px;"/></span>
+            </div>
+            <div style="position:absolute;top: 37px;left:446px;width: 410px;margin-left: 20px;height: 430px;background:black;opacity: 0.55;box-shadow: 0px 0px 20px 20px black;"></div>
+            <div id="music_list_layout">
+            <div  class="music_list" >
+            <ul id='music_list_ul'>
+                <!-- add music list information-->
+            </ul>
+            </div>
+            </div>
+        </div>
+        
+        <div id="music_content_album" class="music_content" style='display:none'>
+            
+            <div id='album-bumpers-left' style='position:absolute;top:32px;display:none;'><img src='../Assets/Contents_Browser/_Music_Browser/music-bumpers-left.png'/></div>
+            <div id='album-bumpers-right' style='position:relative;top:32px;float:right;display:none;'><img src='../Assets/Contents_Browser/_Music_Browser/music-bumpers-right.png'/></div>
+            <div id='music_album_container' class="container" style='width:1056px;position:relative;top:8px;margin:0 auto;'>
+            <!-- add music album information-->
+                
+            </div>
+        </div>
+        
+        <p id='music_file_path' class="file_path"></p>
+        <div  id='music_page_indicator_layout' style='position: absolute;bottom: 50px;margin: 0;padding: 0px;height:8px;width:1280px;'>
+            <ul id='music_page_indicator' class='page_indicator_ul'>
+
+            </ul>
+        </div>
+    </div> 
+    <div id="con_top_menu_1" style="display:none">
+        <div class="title_name"></div>
+
+        <div class='submenu_bar_layout_bg'>
+            <div class="submenu_bar_layout">
+                <div class='submenu_bar'>
+                    <ul id="video_submenu_bar" data-focus-up-function='reset_top_menu_focus();' data-focus-down-level='video_content_0'>
+                    <!-- add submenu information-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id='movie-bumpers-left' style='position:absolute;top:189px;display:none;'><img src='../Assets/Contents_Browser/_Movie_Browser/movie-bumpers-left.png'/></div>
+        <div id='movie-bumpers-right' style='position:relative;top:189px;float:right;display:none;'><img src='../Assets/Contents_Browser/_Movie_Browser/movie-bumpers-right.png'/></div>
+        <div id="video_content_0" data-focus-up-function='reset_submenu_focus();' data-focus-down-level='video_content_1' class="video_content">
+
+        </div>
+        <div id="video_content_1" data-focus-up-level='video_content_0' class="video_content" style="top:375px" >
+
+        </div>
+        <p id='video_file_path' class="file_path"></p>
+        <div  style='position: absolute;bottom: 50px;margin: 0;padding: 0px;height:8px;width:1280px;'>
+            <ul id='video_page_indicator' class='page_indicator_ul'>
+
+            </ul>
+        </div>
+    </div>
+    <div id="con_top_menu_2" style="display:none">
+        <div class="title_name"></div>
+        <div class='submenu_bar_layout_bg'>
+            <div id='music_submenu_bar_layout' class="submenu_bar_layout">
+                <div class='submenu_bar'>
+                    <ul id='photo_submenu_bar' data-focus-up-function='reset_top_menu_focus();' >
+                    <!-- add submenu information-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="photo_content_album" class="music_content" >
+            <div id='photo-bumpers-left' style='position:absolute;top:32px;display:none;'><img src='../Assets/Contents_Browser/_Music_Browser/music-bumpers-left.png'/></div>
+            <div id='photo-bumpers-right' style='position:relative;top:32px;float:right;display:none;'><img src='../Assets/Contents_Browser/_Music_Browser/music-bumpers-right.png'/></div>
+            <div id='photo_album_container' style='width:1092px;padding:0px;margin:0 auto;'>
+
+            </div>
+        </div>
+        <p id='photo_file_path' class="file_path"></p>
+        <div  style='position: absolute;bottom: 50px;margin: 0;padding: 0px;height:8px;width:1280px;'>
+            <ul id='photo_page_indicator' class='page_indicator_ul'>
+
+            </ul>
+        </div>
+    </div> 
+    <div id="con_top_menu_3" style="display:none">
+        <div class="title_name"></div>
+        <div id="file_content" class="file_conetnt" >
+            <div id="vertical_line1" class="vertical_line" style= "left:58px;display: none; "></div>
+            <div id="vertical_line2"  class="vertical_line" style= "left:123px;display: none; "></div>
+            <div id="vertical_line3"  class="vertical_line" style= "left:188px;display: none; "></div>
+            <div id="vertical_line4"  class="vertical_line" style= "left:639px; "></div>
+            <div id="vertical_line5"  class="vertical_line" style= "left:1090px; "></div>
+            
+            <div id="before_previous_foilder" class='before_previous_foilder' style="display: none;" >
+            <p style="margin:0 auto;color:#8E8E8E;font-size:30px;float:right;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width: 342px;text-align: right"></p><img src='../Assets/Contents_Browser/_Contents_Browser_Icons/Folder_Nor_Sel.png' style='vertical-align=middle;float:left;width: 80px;'/>
+            </div>
+            
+            <div id="previous_foilder" class='previous_foilder' style="display: none;">
+            <p style="margin:0 auto;color:#8E8E8E;font-size:36px;float:right;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width: 342px; text-align: right"></p><img src='../Assets/Contents_Browser/_Contents_Browser_Icons/Folder_Nor_Sel.png' style='vertical-align=middle;float:left;width: 80px;'/>
+            </div>
+            
+            <div id="file_list_one_layout">
+                <div  class="music_list" >
+                <ul id='file_folder_ul' >
+
+                </ul>
+                </div>
+                <div id="show_file_list_one_next_item" class="glyphicon glyphicon-chevron-down"></div>
+            </div>
+                <div class="file_list_div_focus"><span style="background:url(../Assets/_Highlight/Blue_Left.png);left:10px; top:55px;width:6px;height:40px;position: absolute;"></span>
+                <span style="background:url(../Assets/_Highlight/Blue_Middle.png);top:55px;left:16px; width:427px;height:40px;position: absolute;"></span>
+                <span style="background:url(../Assets/_Highlight/Blue_Right.png);left:433px; top:55px;width:6px;height:40px;position: absolute;"></span>
+                </div>
+            <div id="file_list_two_layout">
+                <div id="music_list" class="music_list" style="overflow: hidden;height: 380px;">
+                    <ul id='file_list_two' >
+                    </ul>
+                </div>
+                <p id="file_prompt_p" style="color:white;width: 400px;margin: 0;margin-left:30px;font-size: 24px;display:none;">
+                </p>
+                <div id="file_list_two_info" style='display:none'>
+                    <div class='file_img_layout'><table style='width: 100%;height: 100%;'><tr><td style='padding: 0px;text-align: center;'><img id='file_thumbnail_img' /> </td></tr></table></div>
+                    <div id="file_list_two_p">
+                    <p>Title:The Sinner In Me.mp3</p>
+                    <p>Artist:Depeche Mode</p>
+                    <p>Genre:pop</p>
+                    <p>Duration:3:45</p>
+                    </div>
+                </div>
+                <div id="file_list_two_info_video" style="display: none;">
+                    <div class="file_img_layout"><table style="width: 100%;height: 100%;"><tbody><tr><td style="padding: 0px;text-align: center;"><img id="file_thumbnail_img" src="../Assets/Contents_Browser/_Movie_Browser/movie-icon-HL.png"> </td></tr></tbody></table></div>
+                    <div id="file_list_two_p"><p class="metadate-style"><span data-translate="DP_TITLE"></span>-----</p><p class="metadate-style"><span data-translate="DP_SZ"></span>-----</p><p class="metadate-style"><span data-translate="DP_DT"></span>-----</p></div>
+                </div>
+                <div id="file_list_two_info_picture" style="display: none;">
+                    <div class="file_img_layout"><table style="width: 100%;height: 100%;"><tbody><tr><td style="padding: 0px;text-align: center;"><img id="file_thumbnail_img" src="../Assets/Contents_Browser/_Photo_Browser/Picture_icon.png"> </td></tr></tbody></table></div>
+                    <div id="file_list_two_p"><p class="metadate-style"><span data-translate="QT_MEDIA_FILE_NAME"></span>:-----</p><p class="metadate-style"><span data-translate="QT_MEDIA_FOLDER"></span>:-----</p><p class="metadate-style"><span data-translate="DP_DT"></span>-----</p><p class="metadate-style"><span data-translate="DP_SZ"></span>-----</p></div>
+                </div>
+                
+                
+                <div id="file_list_two_info_music" style="display: none;">
+                    <div class="file_img_layout"><table style="width: 100%;height: 100%;"><tbody><tr><td style="padding: 0px;text-align: center;"><img src="../Assets/Contents_Browser/_Music_Browser/MUSIC_AlbumLayout_default_icon.png"> </td></tr></tbody></table></div>
+                    <div ><p class="metadate-style"><span data-translate="DP_TITLE"></span>-----</p><p class="metadate-style"><span data-translate="SB_ARTIST"></span>-----</p><p class="metadate-style"><span data-translate="QT_MEDIA_ALBUM"></span>:-----</p><p class="metadate-style"><span data-translate="DP_DURATION"></span>-----</p><p class="metadate-style"><span data-translate="DP_DT"></span>-----</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    <div id="music_player_bg" style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:2;display:none;background:url(../Assets/_Slices/Slice_572.png);'>
+        <div id="music_player_layout" style="position:absolute;bottom:0px;height:148px;width:100%">
+            
+            <div class="music_progress_bar" id="bar">
+                <div id='music_progress' class="music_progress"></div>
+            </div>
+            <p id='music_player_current_time' class='music_player_current_time'>0:00</p>
+            <p id='music_player_total_time' class='music_player_total_time'>0:00</p>
+                <!--
+                <div style='height: 68px;width: 820px;margin: 0 auto;position: relative;top: 68px;'>
+                    <p class='music_player_previous_title'></p>
+                    <div tabindex='0' class='music_player_previous' onfocus='player_item_focus(true);' data-focus-up-function='play_pause_btn_focus();' data-focus-next-right='music_player_next' data-key-enter='previousClick();'></div>
+                    <p id="music_current_name" class='music_player_current_title'></p>
+                    <div  tabindex='0' class='music_player_next' onfocus='player_item_focus(true);' data-focus-up-function='play_pause_btn_focus();' data-focus-next-left='music_player_previous' data-key-enter='nextClick();'></div>
+                    <p class='music_player_next_title'></p>
+                </div>
+                -->
+            <div style='width:100%;margin:0 auto;position:relative;top:68px;'><p id="music_current_name" class='music_player_current_title'></p></div>
+        </div>
+        <div id="music_player_footer"class="footer" style='display:none;'>
+            <ul>
+                <li><img src="../Assets/_Color_Key_Bar/Icon_Info_2K14.png" style='vertical-align:middle;'/></li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Red.png"/></li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Green.png"/></li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"/></li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Blue.png"/></li>
+                <li><img src="../Assets/_Color_Key_Bar/Icon_Options_2K14.png" style='vertical-align:middle;'/></li>
+            </ul>
+        </div>
+    </div>
+        <!--
+        <div tabindex='0' id="music_play_btn" onfocus='player_item_focus(true);' data-focus-up-function='if(curDisplayMode == musicDisplayMode.simplePlay){switchDisMusicplayerMode(musicDisplayMode.hidePlay);} else {}' data-focus-next-down='music_player_previous' data-key-enter='playOrPauseClick();'></div>
+        -->
+    <div tabindex='0' id="music_play_btn" onfocus='player_item_focus(true);' data-focus-up-function='if(musicPlayObj.curDisplayMode == musicDisplayMode.simplePlay){musicPlayObj.switchDisMusicplayerMode(musicDisplayMode.hidePlay);}' data-key-enter='musicPlayObj.playOrPauseClick();'></div>
+</div>
+
+
+    <div id="photo_play_layout" style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:1; display:none'>
+
+        <div id="photo_player_bg" style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:2;'>
+            <img src="../Assets/_Slices/Slice_572.png" style="position:absolute; left:0px; top:0px;width:100%; height:100%" />
+            <div id="music_player_layout" style="position:absolute;bottom:0px;height:148px;width:100%;">
+            
+            <div id='photo_ctrl_lay' style='margin:0 auto;width:330px;height:68px;'>
+                <div tabindex='0' class='music_player_previous'  data-key-enter='photoPlayObj.showPhoto(false);'></div>
+                <div id='btnPlay' tabindex='0' class='photo_play_btn' data-key-enter='photoPlayObj.playpause();'></div>
+                <div  tabindex='0' class='music_player_next' data-key-enter='photoPlayObj.showPhoto(true);'></div>
+            </div>
+            
+            <p id="photo_current_name" class='music_player_current_title' style="width:1280px;"></p>
+            
+            </div>
+            <div id="photo_play_footer" class="footer">
+                <ul>
+                    <li><img src="../Assets/_Color_Key_Bar/Icon_Info_2K14.png" style='vertical-align:middle;'/>Info</li>
+                    <li><img src="../Assets/_Color_Key_Bar/ColorKey_Red.png"/>Slide Show</li>
+                    <li><img src="../Assets/_Color_Key_Bar/ColorKey_Green.png"/>Rotate</li>
+                    <li><img src="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"/></li>
+                    <li><img src="../Assets/_Color_Key_Bar/ColorKey_Blue.png"/>Help</li>
+                    <li><img src="../Assets/_Color_Key_Bar/Icon_Options_2K14.png" style='vertical-align:middle;'/>Option</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id='video_play_content' style='display:none' >
+        <div id="video_player_bg" style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:2;display:none'>
+            <img src="../Assets/_Slices/Slice_572.png" style="position:absolute; left:0px; top:0px;width:100%; height:100%" />
+            <div style="position:absolute;bottom:0px;height:148px;width:100%;">
+            
+                <div class="music_progress_bar" id="bar">
+                    <div id='video_progress' class="music_progress"></div>
+                </div>
+                <div id='btnVideoPlay' tabindex='0' class='music_play_btn' ></div>
+
+                <p id='video_player_current_time' class='music_player_current_time'>0:00</p>
+                <p id='video_player_total_time' class='music_player_total_time'>0:00</p>
+                <ul id="show_speed" style="display: none;">
+                    <li id="pre_select" class="inline_disblock_span glyphicon glyphicon-backward"></li>
+                    <li class="inline_disblock_span show_content_bottom">
+                    
+                        <ul class="pager">
+                            <li class="previous" id="sr_1">1x</li>
+                              <li id="sr_1_2">1/2</li>
+                            <li id="sr_1_4" class="next">1/4</li>
+                          </ul>
+                      </li>
+                    <li id="cur_select" class="inline_disblock_span glyphicon glyphicon-play"></li>
+                    <li class="inline_disblock_span show_content_bottom">
+                        <ul class="pager">
+                            <li id="sf_1_4" class="previous">1/4</li>
+                              <li id="sf_1_2" >1/2</li>
+                            <li id="sf_1" class="next">1x</li>
+                          </ul>
+                    
+                    </li>
+                    <li id="next_select" class="inline_disblock_span glyphicon glyphicon-forward"></li>
+                </ul>
+                <div id="show_video_title" style='height: 68px;width: 100%;margin: 0 auto;position: relative;top: 68px;'>
+                    <p id="video_current_name" class='music_player_current_title'></p>
+                </div>
+            </div>
+        </div>
+        <div id='video_play_footer' class="footer" style='display:none'>
+            <ul>
+                <li><img src="../Assets/_Color_Key_Bar/Icon_Info_2K14.png" style='vertical-align:middle;'/>Info</li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Red.png"/>Play All</li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Green.png"/>Shuffle On</li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Yellow.png"/></li>
+                <li><img src="../Assets/_Color_Key_Bar/ColorKey_Blue.png"/>Help</li>
+                <li><img src="../Assets/_Color_Key_Bar/Icon_Options_2K14.png" style='vertical-align:middle;'/>Option</li>
+            </ul>
+        </div>
+    </div>
+    <div id='loading_wait' class='watting' style="display: none;">
+        <div class='marquee' style="background:url(../Assets/Waiting/osd_waiting_tail.png);width:114px;height:4px;left:-132px;position: relative;top: 18px;"></div>
+        <div class='marqueeheader' style="background:url(../Assets/Waiting/osd_waiting_tail_start_glow_1.png);width:36px;height:36px;left:-36px;position: relative;top: 0px;"></div>
+    </div>
+    <div id='scan_loading' class="preloader-wrapper big active" style="position:fixed; top:50%; left:50%; margin-top:-32px; margin-left:-32px;z-index:4;">
+    <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left"><div class="circle"></div></div>
+            <div class="gap-patch"><div class="circle"></div></div>
+            <div class="circle-clipper right"><div class="circle"></div></div>
+        </div>
+    </div>
+<form style='display:none'><input class='saveHistory'  type="text" name="page_info"></form>
+
+<script>
+
+function initPage(id, obj){
+    top_menu_selected_id = id;
+    top_menu_bar_selected(id, 4);
+    initialDataLoading(id, obj);
+    document.getElementById(id).className = "selected";
+}
+
+function key_dispatch(isup, event) {
+    if (isDialogShow()) {
+        if (isOptionDialogShow()) {
+            if (isup) {
+                option_key_dispatch(event);
+            }
+            return;
+        } else {
+            color_bar_list_key_dispatch(isup, event);
+        }
+        return;
+    }
+    switch (focus_level) {
+    case 1:
+    case 2:
+        if (isup) {
+            top_menu_key_dispatch(true, event);
+        }
+        break;
+    case 3:
+        switch (top_menu_selected_id) {
+        case "top_menu_0":
+            if (isup) {
+                if (!isDispatchToPlayer) {
+                    if (musicPlayObj.curDisplayMode == musicDisplayMode.hidePlay) {
+                        setMusicPlayerModeTimer(6000, musicDisplayMode.simplePlay);
+                    }
+                    if (MUSIC_TRACK_SORT == musicObj.sortMode) {
+                        album_key_dispatch(isup, event);
+                    } else {
+                        music_list_key_dispatch(isup, event);
+                    }
+                } else {
+                    musicPlayObj.music_player_key_dispatch(isup, event);
+                }
+            }
+            break;
+        case "top_menu_1":
+            video_key_dispatch(isup, event);
+            break;
+        case "top_menu_2":
+            if (isup) {
+                album_key_dispatch(isup, event);
+            }
+            break;
+        case "top_menu_3":
+            if (!isDispatchToPlayer) {
+                if (musicPlayObj.curDisplayMode == musicDisplayMode.hidePlay) {
+                    setMusicPlayerModeTimer(6000, musicDisplayMode.simplePlay);
+                }
+                file_key_dispatch(isup, event);
+            } else {
+                musicPlayObj.music_player_key_dispatch(isup, event);
+            }
+            break;
+        }
+        break;
+    }
+}
+
+function keyDownDispath(event){
+    var key = event.which || event.keyCode;
+        switch (key) {
+        case KeyEvent.DOM_VK_UP:
+        case KeyEvent.DOM_VK_DOWN:
+        case KeyEvent.DOM_VK_LEFT:
+        case KeyEvent.DOM_VK_RIGHT:
+            key_dispatch(true, event);
+        break;
+        case KeyEvent.DOM_VK_RETURN:
+            key_dispatch(false, event);
+            break;
+        case KeyEvent.DOM_VK_TRACK_PREV:
+        case KeyEvent.DOM_VK_TRACK_NEXT:
+		case KeyEvent.DOM_VK_BLUE:
+        case KeyEvent.DOM_VK_RED:// cann't receive red key up event,so modify receive key down event
+        console.log("keyup curDisplayMode = " + musicPlayObj.curDisplayMode);
+        if (musicPlayObj.curDisplayMode > musicDisplayMode.fullPlay) {
+            console.log("top_menu_selected_id == \"top_menu_0\" && curDisplayMode > musicDisplayMode.fullPlay");
+            musicPlayObj.handleMusicPlayerKey(event);
+        } else {
+            handleCommonKey(event);
+        }
+        break;
+        }
+    return true;
+};
+
+function keyUpDispath(event){
+    var key = event.which || event.keyCode;
+    console.log("keyup key = " + key);
+    
+    switch (key) {
+    //case KeyEvent.DOM_VK_RED:
+    case KeyEvent.DOM_VK_GREEN:
+    case KeyEvent.DOM_VK_YELLOW:
+    // case KeyEvent.DOM_VK_BLUE:
+    case KeyEvent.DOM_VK_OPTION:
+    case KeyEvent.DOM_VK_INFO:
+    case KeyEvent.DOM_VK_BACK:
+    case KeyEvent.DOM_VK_STOP:
+    case KeyEvent.DOM_VK_PAUSE:
+    case KeyEvent.DOM_VK_FAST_FWD:
+    case KeyEvent.DOM_VK_REWIND:
+    case KeyEvent.DOM_VK_CH_INCREASE: //CH+
+    case KeyEvent.DOM_VK_CH_DECREASE:
+    case KeyEvent.DOM_VK_LIST:
+        console.log("keyup curDisplayMode = " + musicPlayObj.curDisplayMode);
+        if (musicPlayObj.curDisplayMode > musicDisplayMode.fullPlay) {
+            console.log("top_menu_selected_id == \"top_menu_0\" && curDisplayMode > musicDisplayMode.fullPlay");
+            musicPlayObj.handleMusicPlayerKey(event);
+        } else {
+            handleCommonKey(event);
+        }      
+        break;
+    case KeyEvent.DOM_VK_RETURN:
+    case KeyEvent.DOM_VK_PLAY:
+        key_dispatch(true, event);
+        break;
+    }
+}
+
+var keyDownNotify = keyDownDispath;
+var keyUpNotify = keyUpDispath;
+var lastKeyDownNum = -1;
+
+function stopKeyDownRepeat (){
+    lastKeyDownNum = -1;
+}
+
+$(document).on("keydown", function(event) {
+    var key = event.which || event.keyCode;
+    console.log("keydown key = " + key);
+        switch (key) {
+        case KeyEvent.DOM_VK_TRACK_PREV:
+        case KeyEvent.DOM_VK_TRACK_NEXT:
+        if(lastKeyDownNum == key){
+            return;
+        }
+        break;
+        }
+        lastKeyDownNum = key;
+        if(!keyDownNotify || keyDownNotify(event)){
+            if(KeyEvent.DOM_VK_BACK != key && KeyEvent.DOM_VK_RECORD != key && KeyEvent.DOM_VK_LIST != key){
+                mtvuiUtil.procSysKey(key);
+            }
+        }
+    event.stopPropagation();
+}
+);
+
+$(document).on("keyup", function(event) {
+    stopKeyDownRepeat();
+    if(keyUpNotify){
+        keyUpNotify(event);
+    }
+    event.stopPropagation();
+}
+);
+
+function contentBrowserCmpbNotify(jsonStr){
+    var cbNotify = JSON.parse(jsonStr);
+    if(cbNotify.URI != NotifyURI.Cmpb){
+        return;
+    }
+    for(index in cbNotify.ITEMS){
+        item = cbNotify.ITEMS[index];
+        var tag = Number(item.TAG);
+        switch(Number(item.TYPE)){
+        case MmpEventType.unknown:
+        break;
+        case MmpEventType.mp3cover_ready:
+        //playbackOperator(tag, playbackCommand.getThumbnailData);
+        //playbackDeinit(tag);
+        break;
+        case MmpEventType.thumbnail_ready:
+        console.log("thumbnail_ready jsonStr = " + jsonStr);    
+        if(thumbnailObj && thumbnailObj.pvTag == item.TAG){
+            var thumbnailPath = item.ARG1;
+            setThumbnail(thumbnailPath);
+            console.log("thumbnailPath = " + thumbnailPath);
+        }
+        break;
+        case MmpEventType.mp3cover_eeror:
+        case MmpEventType.thumbnail_error:
+        console.log("mp3cover_eeror jsonStr = " + jsonStr);
+        if(thumbnailObj && thumbnailObj.pvTag == item.TAG){
+            setThumbnail();
+        }
+        break;
+        default:
+        if(contentBrowserObj.curShowMode == contentBrowserObj.ShowMode.VideoPlay) {
+            videoPlayObj.videoPlayNotify(item);
+        } else {
+            // notify to music player
+            musicPlayObj.audioPlayNotify(item);
+        }
+        break;
+        }
+    }
+}
+</script>
+
+</body>
+</html>

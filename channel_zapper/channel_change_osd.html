@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Channel Zapper</title>
+	<link rel="stylesheet" href="../libs/mtvui/base.css" />
+	<!--<link rel="stylesheet" href="../libs/roboto-fontface/css/roboto-fontface.css" />-->
+    <link rel="stylesheet" href="../libs/jquery-ui/themes/vader/jquery-ui.css" />
+    <link rel="stylesheet" href="../libs/materialize/dist/css/materialize.css" />  
+    
+    <style type="text/css">       
+        
+             .channel_zapper_container {
+                 background:url(../Assets/_Slices/Slice_Zap.png);
+                 background-size:1280px 256px;
+                 background-repeat:no-repeat;
+                 z-index:99;
+                 top:0px;
+                 left:0px;
+                 width:1280px; 
+                 height:256px;
+                 position:absolute;
+             }    
+             
+     </style>
+   
+</head>
+
+<body>
+
+  	<div tabindex="0" id="osd_zapper_channel"style="display:none;" ></div>
+
+    <script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../libs/jquery-ui/jquery-ui.min.js"></script>
+    <!--<script type="text/javascript" src="../libs/materialize/dist/js/materialize.js"></script>-->    
+    <script type="text/javascript" src="../libs/mtvui/keycodes.js"></script>
+    <script type="text/javascript" src="../libs/mtvui/mtvapi_obj.js"></script>
+    <script type="text/javascript" src="../libs/mtvui/base.js"></script>
+	<script type="text/javascript" src="../libs/mtvui/channelObj.js"></script>
+    
+    <script type="text/javascript" src="../epg/js/sprintf.js"></script>
+    <script type="text/javascript" src="../epg/js/utility.js"></script>
+	<!--<script type="text/javascript" src="../epg/js/progressbar.js"></script>
+    <script type="text/javascript" src="./base.js"></script>-->
+    
+  <script>
+  window.onload = function () {
+	var arg = $.extend({}, {
+	    indexFlag: null,
+	});
+	mtvuiLoadScript("./osd_widget.js", function () {
+		$("#osd_zapper_channel").ChannelOsdDialog(arg);
+		$("#osd_zapper_channel").ChannelOsdDialog('open');
+	});
+  };
+  </script>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>dialog test</title>
+<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8">
+
+<link  rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="pvr.css"> 
+<link rel="stylesheet" href="dialog.css">   
+<script src="pvr.js"></script>  
+<script type="text/javascript"> 
+function disptime(){
+var today = new Date()£» //»񶃵±ǰʱ¼⋊var hh = today.getHours()£» //»񶄐¡ʱ¡¢·זӡ¢ī
+var mm = today.getMinutes()£»
+var ss = today.getSeconds()£»
+/*ʨ׃divµńۈގªµ±ǰʱ¼⨯
+document.getElementById("title_date").innerHTML="<h1>Ж՚ˇ:"+hh+":"+mm+":"+ss+"<h1>"£»
+/*
+ʹԃsetTimeout՚º¯˽disptime()ͥŚՙ´ε�etTimeout
+ʨ׃¶¨ʱǷÿ¸򲄫£¨1000º룩£¬µ�¯˽disptime()ִѐ£¬ˢтʱדДʾ
+*/
+}
+window.setInterval("disptime()",1000);//ÿ¸򲄫£¬µ�»´ͧetDateDemo() 
+</script>
+</head>
+<body>
+	<div id="dialog" class="dialog">
+	<div class="dialog_top_left"></div>
+	<div class="dialog_top_middle"></div>
+	<div class="dialog_top_right"></div>
+	<div class="dialog_2a_middle_left"></div>
+	<div class="dialog_2a_middle_center"></div>
+	<div class="dialog_2a_middle_right"></div>
+	<div class="dialog_3a_middle_left"></div>
+	<div class="dialog_3a_middle_center"></div>
+	<div class="dialog_3a_middle_right"></div>
+	<div class="dialog_Vertical_divider1"></div>
+	<div class="dialog_Vertical_divider2"></div>
+	<div id = "dialog_title" class="dialog_title">Unpair USB Recording Device </div>
+	<div id = "dialog_subtitle" class="dialog_subtitle">Uncheck the HDD that you no longer to use</div>
+	<div id = "dialog_button">
+			<div class="btn_left"></div>
+			<div class="btn_center"></div>
+			<div class="btn_right"></div>
+			<button type="button"  style=" left:893px;top:589px;width:196px; height:70px;  border:0;">
+				<span class="ui-button-text">Ok</span>
+			</button>
+			<button type="button"  style=" left:893px;top:589px;width:196px; height:70px;  border:0;">
+				<span class="ui-button-text">Ok</span>
+			</button>
+	</div>
+	</div>
+</body>
+</html>

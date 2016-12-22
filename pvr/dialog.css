@@ -1,0 +1,431 @@
+body,div,ul,li{ 
+padding:0; 
+text-align:center; 
+}
+body{
+	background: transparent;
+	position: absolute;
+	width:1280px; 
+	height:720px; 
+	margin:0 auto;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+}
+html{background:transparent;}/* CSS注释说明：对html设置背景颜色 */
+
+a:link{ 
+color:#00F; 
+text-decoration:none; 
+} 
+a:visited { 
+color: #00F; 
+text-decoration:none; 
+} 
+a:hover { 
+color: #c00; 
+text-decoration:underline; 
+} 
+ul{ list-style:none;} 
+
+.dialog
+{
+position: absolute;
+//left:148px;
+//top:33px;
+//width:984px; 
+//height:654px; 
+text-align:center; 
+margin:0 auto;
+}
+.dialog_top_left
+{
+position: absolute;
+left:148px;
+top:33px;
+width:32px; 
+height:32px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_1a_top_left.png); 
+}
+.dialog_top_middle
+{
+position: absolute;
+left:180px;
+top:33px;
+width:920px; 
+height:32px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_1b_top_center.png) repeat; 
+}
+
+.dialog_top_right
+{
+position: absolute;
+left:1100px;
+top:33px;
+width:32px; 
+height:32px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_1c_top_right.png); 
+}
+
+.dialog_2a_middle_left
+{
+position: absolute;
+left:148px;
+top:64px;
+width:32px; 
+height:590px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_2a_middle_left.png); 
+}
+.dialog_2a_middle_center
+{
+position: absolute;
+left:180px;
+top:64px;
+width:920px; 
+height:590px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_2b_middle_center.png) ; 
+}
+
+
+.dialog_2a_middle_right
+{
+position: absolute;
+left:1100px;
+top:64px;
+width:32px; 
+height:590px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_2c_middle_right.png) ; 
+}
+
+.dialog_3a_middle_left
+{
+position: absolute;
+left:148px;
+top:655px;
+width:32px; 
+height:32px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_3a_bottom_left.png) ; 
+}
+.dialog_3a_middle_center
+{
+position: absolute;
+left:180px;
+top:655px;
+width:920px; 
+height:32px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_3b_bottom_center.png) ; 
+}
+
+.dialog_3a_middle_right
+{
+position: absolute;
+left:1100px;
+top:655px;
+width:32px; 
+height:32px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/Dialog/dialog_panel_3c_bottom_right.png) ; 
+}
+
+.dialog_Vertical_divider1
+{
+position: absolute;
+left:197px;
+top:170px;
+width:886px; 
+height:1px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/pvr/PVR_Vertical_divider.png) ; 
+}
+.dialog_Vertical_divider2
+{
+position: absolute;
+left:197px;
+top:579px;
+width:886px; 
+height:2px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/pvr/PVR_Vertical_divider.png); 
+}
+
+.dialog_title
+{
+position: absolute;
+left:197px;
+top:78px;
+width:800px; 
+height:48px; 
+text-align:left; 
+margin:0 auto;
+font-size:34px;
+font-family:Helvetica,Arial,sans-serif;
+color:rgba(255,255,255,255);
+}
+.dialog_subtitle
+{
+position: absolute;
+left:197px;
+top:119px;
+width:800px; 
+height:26px; 
+text-align:left; 
+margin:0 auto;
+font-size:26px;
+font-family:Helvetica,Arial,sans-serif;
+color:rgba(141,148,152,125);
+}
+.dialog_content
+{
+position: relative;
+top:172px;
+left:148px;
+width:984px; 
+height:408px; 
+text-align:left; 
+margin-top: 158px;
+font-size:28px;
+font-family:Helvetica,Arial,sans-serif;
+color:rgb(255,255,255);
+}
+
+.dialog_notification_1line
+{
+position: absolute;
+top:473px;
+width:100%; 
+height:122px; 
+text-align:left;
+margin:0 auto; 
+font-size:24px;
+font-family:Helvetica,Arial,sans-serif;
+font-color:rgb(211,212,213);
+}
+.dialog_item_infomation
+{
+position: absolute;
+top:105px;
+left:148px;
+width:980px; 
+height:510px; 
+text-align:left;
+margin:0 auto; 
+font-size:24px;
+font-family:Helvetica,Arial,sans-serif;
+font-color:rgb(211,212,213);
+}
+.dialog_button_confirm
+{
+position: absolute;
+top:300px;
+left:148px;
+width:980px; 
+height:300px; 
+text-align:left;
+margin:0 auto; 
+font-size:24px;
+font-family:Helvetica,Arial,sans-serif;
+font-color:rgb(211,212,213);
+}
+.dialog_button
+{
+position: absolute;
+width:200px; 
+height:70px; 
+float:left;
+text-align:center; 
+margin:0 auto;
+font-size:26px;
+font-family:Helvetica,Arial,sans-serif;
+color:rgba(241,242,243,255);
+}
+.dialog_text
+{
+width:152px; 
+height:24px; 
+text-align:center; 
+margin:0 auto;
+font-size:26px;
+font-family:Helvetica,Arial,sans-serif;
+color:rgba(241,242,243,255);
+}
+.btn_left
+{
+left:895px;
+top:589px;
+width:22px; 
+height:70px; 
+text-align:center; 
+float:left;
+margin:0 auto;
+background:url(res/_Button_OK/But_Normal_Left.png); 
+}
+.btn_center
+{
+left:915px;
+top:589px;
+float:left;
+width:156px; 
+height:70px; 
+text-align:center; 
+margin:0 auto;
+background:url(res/_Button_OK/But_Normal_Center.png); 
+}
+.btn_right
+{
+left:1071px;
+top:589px;
+width:22px; 
+height:70px;
+float:left; 
+text-align:center; 
+margin:0 auto;
+background:url(res/_Button_OK/But_Normal_Right.png); 
+}
+.btn_text
+{
+position: absolute;
+left:917px;
+top:615px;
+width:152px; 
+height:24px; 
+text-align:center; 
+margin:0 auto;
+font-size:26px;
+font-family:Helvetica,Arial,sans-serif;
+color:rgba(241,242,243,125);
+}
+.scrollingtable {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  width: auto; /*if you want a fixed width, set it here, else set to auto*/
+  min-width: 0/*100%*/; /*if you want a % width, set it here, else set to 0*/
+  height: 188px/*100%*/; /*set table height here; can be fixed value or %*/
+  min-height: 0/*104px*/; /*if using % height, make this large enough to fit scrollbar arrows + caption + thead*/
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 20px 0 20px 0; /*need enough padding to make room for caption*/
+  text-align: left;
+}
+.scrollingtable * {box-sizing: border-box;}
+.scrollingtable > div {
+  position: relative;
+  border-top: 1px solid black;
+  height: 100%;
+  padding-top: 20px; /*this determines column header height*/
+}
+.scrollingtable > div:before {
+  top: 0;
+  background: cornflowerblue; /*header row background color*/
+}
+.scrollingtable > div:before,
+.scrollingtable > div > div:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+.scrollingtable > div > div {
+  min-height: 0/*43px*/; /*if using % height, make this large enough to fit scrollbar arrows*/
+  max-height: 100%;
+  overflow: scroll/*auto*/; /*set to auto if using fixed or % width; else scroll*/
+  overflow-x: hidden;
+  border: 1px solid black; /*border around table body*/
+}
+.scrollingtable > div > div:after {background: white;} /*match page background color*/
+.scrollingtable > div > div > table {
+  width: 100%;
+  border-spacing: 0;
+  margin-top: -20px; /*inverse of column header height*/
+  /*margin-right: 17px;*/ /*uncomment if using % width*/
+}
+.scrollingtable > div > div > table > caption {
+  position: absolute;
+  top: -20px; /*inverse of caption height*/
+  margin-top: -1px; /*inverse of border-width*/
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+.scrollingtable > div > div > table > * > tr > * {padding: 0;}
+.scrollingtable > div > div > table > thead {
+  vertical-align: bottom;
+  white-space: nowrap;
+  text-align: center;
+}
+.scrollingtable > div > div > table > thead > tr > * > div {
+  display: inline-block;
+  padding: 0 6px 0 6px; /*header cell padding*/
+}
+.scrollingtable > div > div > table > thead > tr > :first-child:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px; /*match column header height*/
+  border-left: 1px solid black; /*leftmost header border*/
+}
+.scrollingtable > div > div > table > thead > tr > * > div[label]:before,
+.scrollingtable > div > div > table > thead > tr > * > div > div:first-child,
+.scrollingtable > div > div > table > thead > tr > * + :before {
+  position: absolute;
+  top: 0;
+  white-space: pre-wrap;
+  color: white; /*header row font color*/
+}
+.scrollingtable > div > div > table > thead > tr > * > div[label]:before,
+.scrollingtable > div > div > table > thead > tr > * > div[label]:after {content: attr(label);}
+.scrollingtable > div > div > table > thead > tr > * + :before {
+  content: "";
+  display: block;
+  min-height: 20px; /*match column header height*/
+  padding-top: 1px;
+  border-left: 1px solid black; /*borders between header cells*/
+}
+.scrollingtable .scrollbarhead {float: right;}
+.scrollingtable .scrollbarhead:before {
+  position: absolute;
+  width: 100px;
+  top: -1px; /*inverse border-width*/
+  background: white; /*match page background color*/
+}
+.scrollingtable > div > div > table > tbody > tr:after {
+  content: "";
+  display: table-cell;
+  position: relative;
+  padding: 0;
+  border-top: 1px solid black;
+  top: -1px; /*inverse of border width*/
+}
+.scrollingtable > div > div > table > tbody {vertical-align: top;}
+.scrollingtable > div > div > table > tbody > tr {background: white;}
+.scrollingtable > div > div > table > tbody > tr > * {
+  border-bottom: 1px solid black;
+  padding: 0 6px 0 6px;
+  height: 20px; /*match column header height*/
+}
+.scrollingtable > div > div > table > tbody:last-of-type > tr:last-child > * {border-bottom: none;}
+.scrollingtable > div > div > table > tbody > tr:nth-child(even) {background: gainsboro;} /*alternate row color*/
+.scrollingtable > div > div > table > tbody > tr > * + * {border-left: 1px solid black;} /*borders between body cells*/

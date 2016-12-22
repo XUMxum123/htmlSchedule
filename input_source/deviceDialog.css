@@ -1,0 +1,154 @@
+/* color key edit */
+.deviceDialog {
+  width:630px;
+  /* height:400px; */
+  background:rgba(0,0,0,0.92);
+  box-shadow:0px 0px 10px #191919;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 14pt;
+}
+
+.deviceDialog .head {
+  width: 100%;
+  height: 72px;
+}
+.deviceDialog .body {
+  width:100%;
+  height:220px;
+}
+.deviceDialog .head .icon {
+  margin:12px;
+  width:48px;
+  height:48px;
+  float:right;
+  position:relative;
+}
+.deviceDialog .head .icon img {
+  -webkit-filter: grayscale(1);
+}
+.deviceDialog .head .name {
+  top:12px;
+  width:auto;
+  height: 48px;
+  float:right;
+  position:relative;
+  color:#7F7F7F;
+  padding:8px;
+  font-size: 17pt;
+  text-align: right;
+  line-height: 36px;            /* make middle, height - padding-top - padding-bottom */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.deviceDialog .body ul {
+  position:relative;
+  float:left;
+  width:620px;
+  margin:10px;
+}
+.deviceDialog .body li {
+  float:left;
+  width:150px;
+  height:100px;
+  border-radius: 4px;
+}
+.deviceDialog .body li img {
+  margin: 12px;
+  -webkit-filter: grayscale(1);
+  opacity: 0.45;
+}
+.deviceDialog .body .cardtext{
+  float: left;
+  font-size:12pt;
+  width:150px;
+  height:19px;
+  color: rgba(255, 255, 255, 0.45);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.deviceDialog .body li.marked {
+  background-color: rgba(255,255,255, 0.1);
+}
+.deviceDialog .body li.active {
+  background-color: rgba(255,255,255, 0.45);
+}
+.deviceDialog .body li.active img {
+  -webkit-filter: grayscale(0);
+  opacity: 1;
+}
+.deviceDialog .body li.active span {
+  color: #76D7D6;
+}
+/* .deviceDialog .body li:focus {
+  background-color: rgba(255,255,255, 0.45);
+}
+.deviceDialog .body li:focus img {
+  -webkit-filter: grayscale(0);
+  opacity: 1;
+}
+.deviceDialog .body li:focus span {
+  color: #76D7D6;
+} */
+.deviceDialog .body div.marked {
+  position:absolute;
+  left:50px;
+  top:80px;
+  width:24px;
+  height:24px;
+  display:none;
+}
+.deviceDialog .input-text {
+  color: white;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  border-radius: 0;
+  outline: none;
+  height: 2rem;
+  line-height: 2.5rem;          /* middle the text */
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all .3s; }
+.deviceDialog .input-text:focus {
+    border-bottom: 1px solid #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a; }
+
+.deviceDialog .foot {
+  width: 100%;
+  height: 50px;
+  padding: 0 50px;
+}
+.deviceDialog .foot button {
+  position:relative;
+  float:left;
+  height: 36px;
+  border: 2px solid #ffffff;
+  color:white;
+  background-color:#151515;
+  border-radius: 4px;
+  margin: 0 10px;
+  min-width: 120px;
+  margin: 0 25px;
+  top: 50%;                     /* vertical middle*/
+  transform: translateY(-50%);
+}
+
+.deviceDialog .foot button.disabled {
+  color: rgba(255,255,255, 0.45);
+  border-color: rgba(255,255,255, 0.45);
+}
+.deviceDialog .foot button:focus {
+  border-color: #76D7D6;
+  background-color: #76D7D6;
+}

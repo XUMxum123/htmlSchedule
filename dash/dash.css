@@ -1,0 +1,197 @@
+.dash-head {/* dash drawer */
+  left: -69px;
+  height: 97px;
+  position: relative;
+  padding-top: 24px;
+}
+.dash-full-win .dash-head {
+  left: 0px;
+  height: 100px;
+}
+.app-title {
+  float: left;
+  width: 285px;
+  height: 32px;
+  margin: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.app-icon-circle {
+  float: left;
+  background-image: none;
+}
+.app-icon-circle.home {
+  opacity: 0.45;
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_Punched_Drawer_Home_n_48x48_px.png);
+  margin-right: 48px;
+}
+.dash-full-win .app-icon-circle.home {
+  opacity: 1;
+  margin-left: 27px;
+  margin-right: 0px;
+  background-image: url(../2K16_4K_UX_Asset/dashboard/topmenubar_app_icon_circle_activated.png);
+}
+.app-icon-home {
+  width: 24px;
+  height: 24px;
+  background-image: none;
+}
+.dash-full-win .app-icon-home {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_117_Home_Dashboard_n_24x24_px.png)
+}
+.active .td-left .app-icon-circle {
+  background-image: url(../2K16_4K_UX_Asset/dashboard/topmenubar_app_icon_circle_activated.png);
+}
+.active .td-left.active .app-icon-circle {
+  background-image: url(../2K16_4K_UX_Asset/dashboard/topmenubar_app_icon_circle_highlighted.png);
+}
+.active .td-left .app-icon-list-view {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_116_List_View_n_24x24_px.png);
+}
+.active .td-left.active .app-icon-list-view {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_116_List_View_hl_24x24_px.png);
+}
+.active .td-left .app-icon-sources {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_192_Sources_n_24x24_px.png);
+}
+.active .td-left.active .app-icon-sources {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_192_Sources_hl_24x24_px.png);
+}
+.active .td-left .app-icon-utilities {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_305_Utilities_n_48x48_px.png);
+}
+.active .td-left.active .app-icon-utilities {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_305_Utilities_hl_48x48_px.png);
+}
+.active .td-left .app-icon-settings {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_8_Quick_Adjustments_Quick_Settings_n_24x24_px.png);
+}
+.active .td-left.active .app-icon-settings {
+  background-image: url(../2K16_4K_UX_Asset/Icons/icon_8_Quick_Adjustments_Quick_Settings_hl_24x24_px.png);
+}
+
+/* from bootstrap for carousel */
+.carousel {
+  position: relative;
+}
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+a.right.carousel-control {
+  right: 0;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9 {
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px
+}
+.col-md-12 {
+  width: 100%
+}
+.col-md-11 {
+  width: 91.66666667%
+}
+.col-md-10 {
+  width: 83.33333333%
+}
+.col-md-9 {
+  width: 75%
+}
+.col-md-8 {
+  width: 66.66666667%
+}
+.col-md-7 {
+  width: 58.33333333%
+}
+.col-md-6 {
+  width: 50%
+}
+.col-md-5 {
+  width: 41.66666667%
+}
+.col-md-4 {
+  width: 33.33333333%
+}
+.col-md-3 {
+  width: 25%
+}
+.col-md-2 {
+  width: 16.66666667%
+}
+.col-md-1 {
+  width: 8.33333333%
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}
+.btn.focus,.btn:focus,.btn:hover {
+    color: #333;
+    text-decoration: none;
+}
+.btn.active,.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125)
+}
+.btn.disabled,.btn[disabled],fieldset[disabled] .btn {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65
+}
+a.btn.disabled,fieldset[disabled] a.btn {
+    pointer-events: none
+}
+/* end bootstrap carousel */

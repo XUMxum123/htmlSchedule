@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>pvr test</title>
+<meta http-equiv="content-type" content="Content-Type: application/vnd.hbbtv.xhtml+xml; charset=UTF-8">
+
+<link  rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="dialog.css">
+<link   rel="stylesheet" href="../libs/mtvui/base.css" />
+<script src="pvr.js"></script>
+<script type="text/javascript" src="../libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../libs/js/keycodes.js"></script>
+<script type="text/javascript" src="../libs/mtvui/base.js"></script>
+<script type="text/javascript" src="js/handle_key.js"></script>
+<script type="text/javascript">
+ //<![CDATA[
+ $(document).on('keydown', function (evt){
+     var key = evt.which || evt.keyCode;
+     var sys_item = get_sys_page_by_key(key);
+     if (sys_item) {
+         /* not self page */
+         if (sys_item.id != "sys_program_record") {
+             window.location = "../" + sys_item.url;
+             return;
+         }
+     }
+     var key = evt.which || evt.keyCode;
+     handleKeyCode(key);
+     return true;
+ });
+ function startPvr() {
+	var obj_tvServices ;
+	var result=0 ;
+	$('#dialog_notification_1line_recording').show();
+	$('notification_content_text').innerHTML = "recording is starting";
+	result = obj_tvServices.startPvr();
+	if(result == 0)
+	{
+		$('notification_content_text').innerHTML = "recording is started";
+		$('#recording_start_icon').show();
+	}
+	else
+	{
+		$('notification_content_text').innerHTML = "recording is failed,error id is +'result' ";
+	}
+} 
+ function stopPvr() {
+	var obj_tvServices = new utility();
+	var result=0 ;
+	result = obj_tvServices.stopPvr();
+	if(result == 0)
+	{
+		$('notification_content_text').innerHTML = "recording isstoped";
+		$('#recording_start_icon').hide();
+	}
+	else
+	{
+		$('notification_content_text').innerHTML = "recording stop failed,error id is +'result' ";
+	}
+} 
+ window.onload = function() {
+		startPvr();
+ };
+ function nameselect(snam) {
+     if (!snam) return;
+     for (var i=0; i<opts.length; i++) {
+         var check = opts[i].getAttribute('name');
+         if (check==snam) {
+             itemSelect(i);
+             setDescr();
+             break;
+         }
+     }
+ }
+ function handleKeyCode(kc) {
+     if (kc==KeyEvent.DOM_VK_9) {
+     	
+        stopPvr();
+     }
+     return false;
+ }
+ function setDescr() {
+     /* document.getElementById('descr').innerHTML = opts[selected].getAttribute('descr'); */
+ }
+ function closeApp() {
+     try {
+         var app = document.getElementById('appmgr').getOwnerApplication(document);
+         app.destroyApplication();
+         return;
+     } catch (e) {
+         alert('Cannot destroy application');
+     }
+ }
+ //]]>
+</script>
+</head>
+
+<body>
+<div id= "handle_recording" style='position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:1;'>
+
+<div id="dialog_notification_1line_recording" >
+	<span id="dialog_notification_1line_recording" class="dialog_notification_1line" style="z-index:1;left:0px;display:hide;position:absolute;display:show;">
+		<div class="dialog_top_left" style="left:149px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:180px;top:0px;width:920px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:1100px;top:0px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:149px;top:32px; height:58px;position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:180px;top:32px;width:920px;height:58px;position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:1100px;top:32px;height:58px;position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:149px;top:90px;position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:180px;top:90px;width:920px;position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:1100px;top:90px;position:inherit;"></div>
+		<div id="notification_content" style ="float:left;position:inherit;">
+		<div  id="notification_content_icon" style="left:187px;top:38px;position:inherit;" ><img src="res/pvr/Notification_icon_warning.png"/></div>
+		<div  id="notification_content_text" style="left:232px;top:50px;width:500px;text-align:left;margin-left:16px;color:rgb(211,212,213);position:inherit;">Recording is started. </div>
+	</span>
+
+		</div>
+</div>
+<div id="recording_start_icon">
+	<span  id="recording_start_icon" style="z-index:1; display:hide;float:right;left:1132px;margin-top:20px;margin-right:20px;width:128px;height:128px; position:absolute;">
+		<div class="dialog_top_left" style="left:0px;top:0px;position:inherit;" ></div>
+		<div class="dialog_top_middle" style="left:32px;top:0px;width:32px;heigth:32px;position:inherit;"></div>
+		<div class="dialog_top_right" style="left:64px;top:0px; position:inherit;" ></div>
+		<div class="dialog_2a_middle_left" style="left:0px;top:32px; height:32px; position:inherit;" ></div>
+		<div class="dialog_2a_middle_center" style="left:32px;top:32px;width:32px;height:32px; position:inherit;"></div>
+		<div class="dialog_2a_middle_right" style="left:64px;top:32px;height:32px; position:inherit;"></div>
+		<div class="dialog_3a_middle_left" style="left:0px;top:64px; position:inherit;"></div>
+		<div class="dialog_3a_middle_center" style="left:32px;top:64px;width:32px;height:32px; position:inherit;"></div>
+		<div class="dialog_3a_middle_right" style="left:64px;top:64px;position:inherit;"></div>
+		<div id="starting_icon" style="left:26px;top:26px;position:inherit;"><img src="res/pvr/recording_normal.png"/></div>
+	</span>
+</div>
+</div>
+</body>
+</html>
