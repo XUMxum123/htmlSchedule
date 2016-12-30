@@ -1,0 +1,213 @@
+.PageStyle
+{
+	position: absolute;
+	background-color:#1D1F21;
+	left:0px;
+	top:0px;
+	width:1280px;
+	height:720px;
+}
+.Div_line{
+	position: absolute;
+	background-color:rgba(255, 255, 255, 0.09);
+	left:72px;
+	top:131px;
+	width:1px;
+	height:482px;
+}
+.descriptionText{
+	position: absolute;
+	right:36px;
+	top:131px;
+	width:200px;
+	font-size:12px;
+	word-wrap:break-word;
+	color: white;
+	z-index:1;
+}
+.Panel_title{
+	position: absolute;
+	left: 27px;
+	top: 131px;
+	width:482px;
+	height:45px;
+	color: white;
+	text-align:right;
+	line-height:36px;
+	font-size:24px;
+	transform:rotate(270deg);
+	margin-left: -218.5px;
+    margin-top: 219px;
+}
+.settings {
+	max-width:267px;
+	width:267px;
+    height: 32px;
+	padding-left: 16px;
+	padding-right: 16px;
+	color: white;
+
+	/* add marqueeContainer class from base.css*/		
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden; /* it cause position offset*/
+
+	border: 1px solid transparent;	
+	margin-top: 5px;
+}
+
+ul{
+    position: absolute;
+	left:83px;
+	top:131px;
+	width:267px;
+	height:483px;
+	list-style-type:none;		
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+#list_one_layout
+{
+	position: absolute;
+
+	left:0px;
+	top:131px;
+	width:359px;
+	height:485px;
+	overflow: hidden;
+}
+#list_one_layout
+{
+	position: absolute;
+	left:0px;
+	top:131px;
+	width:359px;
+	height:485px;
+}
+#page_one_layout
+{
+float:left;
+position:absolute; z-index:1;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+width:100%;
+padding:0;
+}
+
+#ul_list2{
+    position: absolute;
+	left:433px;
+	top:131px;
+	width:267px;
+	height:483px;
+	list-style-type:none;		
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+#ul_list1{
+    position: absolute;
+    left:83px;
+	top:131px;
+	width:267px;
+	height:100%;
+	list-style-type:none;		
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+	
+}
+
+span {
+    //height: 36px;
+    font-size:21px;
+    color: white;
+    text-align: left;
+    line-height: 32px;	
+}
+span.focus_txt{
+	color: #76D7D6;
+}
+span.normal_txt{
+	color: white;
+}
+span.option_marquee1 {
+  width: auto;
+  display:block;
+  animation: marquee1 1s ease-in-out infinite;
+  -webkit-animation: marquee1 1s ease-in-out infinite;
+}
+img.normal_arrow {
+	content:url(../2K16_4K_UX_Asset/Settings_screen/list_arrow_normal.png);
+	position:absolute;
+	left: 305px;
+	margin-top: 12px;
+	color: #76D7D6;
+}
+
+img.focus_arrow {
+	content:url(../2K16_4K_UX_Asset/Settings_screen/list_arrow_highlighted.png);
+	position:absolute;
+	left: 305px;
+	margin-top: 12px;
+}
+
+
+div.circle_outer{
+	float: left;   
+    width: 14px;
+    height: 14px;
+    border: 1px solid white;
+    border-radius: 14px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+div.circle_outer_focus{	
+	float: left;   
+    width: 14px;
+    height: 14px;
+    border: 1px solid #76D7D6;
+    border-radius: 14px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+div.circle_inner{	
+	width: 8px;
+    height: 8px;
+    border-radius: 99em;
+    background-color: white;
+    margin-top: 3px;    
+    margin-left: 3px;
+}
+
+div.circle_inner_focus{
+	width: 8px;
+    height: 8px;
+    border-radius: 99em;
+    background-color: #76D7D6;
+    margin-top: 3px;    
+    margin-left: 3px;	
+}
+
+
+div.selected {
+	border: 1px solid white;
+	border-radius: 30px;
+	display: inline-flex;
+	width:auto; /* auto to fit children tag(span) width */
+}
+
+div.focus {
+	border: 1px solid #76D7D6;
+	border-radius: 30px;	
+	display: inline-flex;
+	width:auto; /* auto to fit children tag(span) width */
+}
